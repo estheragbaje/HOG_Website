@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack } from '@chakra-ui/core';
-import SideSermon from '../components/SideSermon';
+import SideSermon from './SideSermon';
 
 function SideSermonList() {
   return (

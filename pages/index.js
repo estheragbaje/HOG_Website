@@ -7,7 +7,7 @@ import {
   Box,
   Heading,
   Button,
-  SimpleGrid,
+  Icon,
 } from '@chakra-ui/core';
 import MainHeading from '../components/MainHeading';
 import SubHeading from '../components/SubHeading';
@@ -15,6 +15,7 @@ import Navigation from '../components/Navigation';
 import SideSermonList from '../components/SideSermonList';
 import ServicesHomeList from '../components/ServicesHomeList';
 import LatestNewsList from '../components/LatestNewsList';
+import Footer from '../components/Footer';
 
 function HomePage({ color, children, fontSize, heading, subheading, content }) {
   return (
@@ -144,7 +145,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           backgroundColor="#61817C"
           width="100%"
           px={10}
-          paddingTop={12}
+          paddingTop={16}
           color="white"
         >
           <SubHeading>Get to know us better</SubHeading>
@@ -173,6 +174,44 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         </Box>
         <Image src="/assets/about_us.png" alt="About us" />
       </Flex>
+      <Box>
+        <Box py="80px" margin="0 80px">
+          <SubHeading color="#3AC7B1" marginBottom="16px">
+            Where to find us
+          </SubHeading>
+          <MainHeading fontSize="36px" marginBottom="28px">
+            WORSHIP WITH US
+          </MainHeading>
+          <Stack direction="row" spacing={12}>
+            <Image src="/assets/map.png" alt="House of Grace" />
+            <Box>
+              <Image src="/assets/church.png" alt="House of Grace" />
+              <MainHeading fontSize="21px" paddingTop="20px">
+                RCCG HOUSE OF GRACE
+              </MainHeading>
+              <Text>
+                Spreading the Word of God to the ends of the earth with the aims
+                of leading individuals to Christ.
+              </Text>
+              <Flex alignItems="center" paddingTop="10px">
+                <Icon name="phone" color="#3AC7B1" marginRight="20px" />
+                <Text>3617569889</Text>
+              </Flex>
+              <Flex alignItems="center" paddingTop="10px">
+                <Icon name="phone" color="#3AC7B1" marginRight="20px" />
+                <Text>
+                  2306 Airline Road, Unit 110A, Corpus Christi, TX 78414
+                </Text>
+              </Flex>
+              <Flex alignItems="center" paddingTop="10px">
+                <Icon name="email" color="#3AC7B1" marginRight="20px" />
+                <Text>rccghogcorpuschristi@gmail.com</Text>
+              </Flex>
+            </Box>
+          </Stack>
+        </Box>
+      </Box>
+      <Footer />
     </Box>
   );
 }

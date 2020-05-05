@@ -11,7 +11,7 @@ export function HoverLink({ link, label, ...props }) {
       rel="nofollow noopener noreferrer"
       aria-label={label}
       transition="all 0.3s"
-      _hover={{ transform: `translateY(-4px)`, color: 'teal.500' }}
+      _hover={{ transform: `translateY(-4px)`, color: '#3AC7B1' }}
       {...props}
     />
   );

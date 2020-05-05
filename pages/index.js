@@ -8,7 +8,10 @@ import {
   Heading,
   Button,
   Icon,
+  SimpleGrid,
+  AspectRatioBox,
 } from '@chakra-ui/core';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import MainHeading from '../components/MainHeading';
 import SubHeading from '../components/SubHeading';
 import Navigation from '../components/Navigation';
@@ -16,29 +19,44 @@ import SideSermonList from '../components/SideSermonList';
 import ServicesHomeList from '../components/ServicesHomeList';
 import LatestNewsList from '../components/LatestNewsList';
 import Footer from '../components/Footer';
+import { CustomButton } from '../components/Common';
 
 function HomePage({ color, children, fontSize, heading, subheading, content }) {
   return (
     <Box>
       <Box
-        backgroundImage="url(/assets/Banner_home.png)"
-        objectFit="contain"
-        paddingBottom={20}
+        backgroundImage="url(/assets/new_bg.jpg)"
+        backgroundSize="cover"
+        paddingBottom="140px"
       >
         <Navigation />
-        <Box textAlign="center" marginTop={150} color="white">
-          <SubHeading color="#3AC7B1" fontSize="26px">
+        <Box textAlign="center" marginTop={110} color="white">
+          <SubHeading
+            color="#3AC7B1"
+            fontSize={['18px', '18px', '26px', '30px']}
+          >
             Welcome to Redeemed Christian Church of God
           </SubHeading>
-          <MainHeading fontSize={64} marginBottom="24px">
+          <MainHeading
+            fontSize={['36px', '36px', '48px', '64px']}
+            marginBottom="24px"
+          >
             THE PLACE TO BE
           </MainHeading>
-          <Text fontSize="26px" fontWeight="300" marginBottom="60px">
+          <Text fontSize={['18px', '18px', '26px', '30px']} marginBottom="60px">
             Worship with us Sundays at 9:30am
           </Text>
-          <Button variantColor="teal" size="lg">
-            WATCH SERVICE ONLINE
-          </Button>
+          <CustomButton
+            height={['55px', '55px', '66px']}
+            width="374px"
+            bg="#3AC7B1"
+            _hover={{ bg: '#1FBDA5' }}
+            _focus="teal.800"
+            fontSize="21px"
+            fontWeight="400"
+            content="WATCH SERVICE
+          ONLINE"
+          />
         </Box>
       </Box>
       <Box py="80px" margin="0 80px">
@@ -48,24 +66,33 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         <MainHeading fontSize="36px" marginBottom="28px">
           OUR LATEST SERMONS
         </MainHeading>
-        <Stack direction="row" spacing={4} width="100%">
-          <Image
-            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1480&q=80"
-            width="632px"
-            height="420px"
-            objectFit="cover"
-          />
+
+        <SimpleGrid columns={2} spacing={5}>
+          <AspectRatioBox ratio={16 / 9} flex="1">
+            <Box
+              as="iframe"
+              title="The Lord is our Shepherd"
+              src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+              allowFullScreen
+            />
+          </AspectRatioBox>
           <SideSermonList />
-        </Stack>
+        </SimpleGrid>
+
         <Box textAlign="center">
-          <Button
+          <CustomButton
+            height="55px"
+            width="264px"
             variant="outline"
-            variantColor="teal"
-            size="lg"
+            _hover={{ bg: '#D0FFF8' }}
+            borderColor="#3AC7B1"
+            color="#3AC7B1"
+            _focus="teal.800"
+            fontSize="21px"
+            fontWeight="400"
             marginTop={20}
-          >
-            VIEW MORE SERMONS
-          </Button>
+            content="VIEW MORE SERMONS"
+          />
         </Box>
       </Box>
       <Box paddingTop="80px" backgroundColor="#F7F8F7">
@@ -77,23 +104,38 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         </Box>
         <Box textAlign="center">
           <ServicesHomeList />
-          <Button
+          <CustomButton
+            height="55px"
+            width="264px"
             variant="outline"
-            variantColor="teal"
-            size="lg"
+            _hover={{ bg: '#D0FFF8' }}
+            borderColor="#3AC7B1"
+            color="#3AC7B1"
+            _focus="teal.800"
+            fontSize="21px"
+            fontWeight="400"
             marginTop={20}
-          >
-            VIEW MORE SERMONS
-          </Button>
+            content="SEE ALL SERVICES"
+          />
         </Box>
+
         <Flex paddingTop="80px">
           <Image
             src="/assets/pastor_image.png"
             alt="Pastor Segun Olowookere"
+            objectFit="cover"
             size="750px"
           />
-          <Box backgroundColor="#61817C" width="100%" px={10} paddingTop={12}>
-            <SubHeading color="#3AC7B1">Welcome Address</SubHeading>
+          <Box
+            backgroundColor="#61817C"
+            width="100%"
+            px={10}
+            paddingTop={12}
+            paddingBottom="20px"
+          >
+            <SubHeading color="#3AC7B1" fontSize="21px">
+              Welcome Address
+            </SubHeading>
             <MainHeading fontSize="24px" color="white" paddingBottom={4}>
               WELCOME TO THE REDEEMED CHRISTIAN CHURCH OF GOD HOUSE OF GRACE,
               CORPUS CHRISTI!
@@ -102,23 +144,30 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
             <Text color="white" py={2}>
               We are so overwhelmed with Joy that God has brought you here. In
               this church we believe that we will experience God’s Divine’s
-              Grace abundantly, and that prayer is the gateway to God. Our
-              congregation is filled with people eager to experience and seek
-              God in a way they have never done before. Jesus touches us daily
-              and our lives are being transformed.
+              Grace abundantly, and that prayer is the gateway to God.{' '}
+              <b>
+                Our congregation is filled with people eager to experience and
+                seek God in a way they have never done before.
+              </b>{' '}
+              Jesus touches us daily and our lives are being transformed.
             </Text>
             <Text color="white" py={2}>
               We start off our day by committing our ways to the lord as a
               church, and we continue to encourage ourselves throughout the week
-              with our Tuesday Bible Study, Wednesday Hour with Jesus, and
-              monthly Friday Holy Ghost nights. We promise that your life will
-              never remain the same, and that our church will help catapult your
-              walk with Christ.
+              with our{' '}
+              <b>
+                Tuesday Bible Study, Wednesday Hour with Jesus, and monthly
+                Friday Holy Ghost nights.
+              </b>{' '}
+              We promise that your life will never remain the same, and that our
+              church will help catapult your walk with Christ.
             </Text>
             <Text color="white" py={2}>
-              Our prayer for you is that God’s unmerited favor will reign in
-              your life and that of your family. God Bless you, and Welcome to
-              our Church.
+              <b>
+                Our prayer for you is that God’s unmerited favor will reign in
+                your life and that of your family.
+              </b>{' '}
+              God Bless you, and Welcome to our Church.
             </Text>
             <MainHeading fontSize="24px" color="white" paddingTop={8}>
               OLUSEGUN, OLOWOOKERE
@@ -152,27 +201,35 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <MainHeading fontSize="36px">MORE ABOUT US</MainHeading>
           <Text py={4}>
             RCCG House of Grace based in Corpus Christi Texas is a Parish of the
-            Redeemed Christian Church of God (RCCG). Pastor E. A. Adeboye is the
-            General Overseer of RCCG Worldwide, and Pastor Olusegun Olowookere
-            is the pioneer and senior pastor of the Parish.
+            Redeemed Christian Church of God (RCCG).{' '}
+            <b>
+              Pastor E. A. Adeboye is the General Overseer of RCCG Worldwide,
+              and Pastor Olusegun Olowookere is the pioneer and senior pastor of
+              the Parish.
+            </b>
           </Text>
           <Text py={4}>
-            As a Bible believing, and God-fearing church, we teach and encourage
-            a life of holiness. House of Grace has an appeal to all types of
-            people, with a determination to teach and impart people to excel in
-            their various geographical areas, stages of secular life and levels
-            of spiritual development.
+            As a Bible believing, and God-fearing church,{' '}
+            <b>we teach and encourage a life of holiness.</b> House of Grace has
+            an appeal to all types of people, with a determination to teach and
+            impart people to excel in their various geographical areas, stages
+            of secular life and levels of spiritual development.
           </Text>
-          <Button
-            variantColor="white"
-            size="lg"
+          <CustomButton
+            height="55px"
+            width="264px"
             variant="outline"
+            _hover={{ bg: '#B3D7D1' }}
+            borderColor="white"
+            color="white"
+            _focus="teal.800"
+            fontSize="21px"
+            fontWeight="400"
             marginTop={10}
-          >
-            LEARN MORE
-          </Button>
+            content="LEARN MORE"
+          />
         </Box>
-        <Image src="/assets/about_us.png" alt="About us" />
+        <Image src="/assets/about_us.png" alt="About us" objectFit="cover" />
       </Flex>
       <Box>
         <Box py="80px" margin="0 80px">
@@ -182,8 +239,15 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <MainHeading fontSize="36px" marginBottom="28px">
             WORSHIP WITH US
           </MainHeading>
-          <Stack direction="row" spacing={12}>
-            <Image src="/assets/map.png" alt="House of Grace" />
+          <SimpleGrid columns={2} spacing={12}>
+            <AspectRatioBox ratio={16 / 9}>
+              <Box
+                as="iframe"
+                // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567723392506!5m2!1sen!2sng"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.979823200833!2d-97.36485948493838!3d27.687018482800358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668f5cdf44848ed%3A0x5015a69c9848f5cb!2s2306%20Airline%20Rd%20%23110A%2C%20Corpus%20Christi%2C%20TX%2078414%2C%20USA!5e0!3m2!1sen!2sng!4v1588706338081!5m2!1sen!2sng"
+                alt="demo"
+              />
+            </AspectRatioBox>
             <Box>
               <Image src="/assets/church.png" alt="House of Grace" />
               <MainHeading fontSize="21px" paddingTop="20px">
@@ -198,7 +262,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
                 <Text>3617569889</Text>
               </Flex>
               <Flex alignItems="center" paddingTop="10px">
-                <Icon name="phone" color="#3AC7B1" marginRight="20px" />
+                <Box as={FaMapMarkerAlt} color="#3AC7B1" marginRight="20px" />
                 <Text>
                   2306 Airline Road, Unit 110A, Corpus Christi, TX 78414
                 </Text>
@@ -208,7 +272,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
                 <Text>rccghogcorpuschristi@gmail.com</Text>
               </Flex>
             </Box>
-          </Stack>
+          </SimpleGrid>
         </Box>
       </Box>
       <Footer />

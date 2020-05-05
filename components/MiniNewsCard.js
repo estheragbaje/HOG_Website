@@ -6,7 +6,7 @@ import MainHeading from './MainHeading';
 function MiniNewsCard({ src, date, title, content, link, ...rest }) {
   return (
     <Stack direction="row" {...rest} spacing={6}>
-      <Image src={src} alt="Title" />
+      <Image src={src} alt="Title" objectFit="cover" />
       <Stack spacing={4}>
         <SubHeading fontSize="14px" color="#3AC7B1">
           {date}

@@ -3,7 +3,15 @@ import { Heading } from '@chakra-ui/core';
 
 function SubHeading({ children, fontSize, color, ...rest }) {
   return (
-    <Heading color={color} fontSize={fontSize} fontStyle="italic" marginBottom="24px"{...rest}>
+    <Heading
+      color={color}
+      fontFamily="subheading"
+      fontSize={fontSize}
+      fontStyle="italic"
+      fontWeight="500"
+      marginBottom="24px"
+      {...rest}
+    >
       {children}
     </Heading>
   );

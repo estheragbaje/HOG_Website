@@ -2,29 +2,34 @@ import React from 'react';
 import { Stack } from '@chakra-ui/core';
 import SideSermon from './SideSermon';
 
+
 function SideSermonList() {
   return (
-    <Stack>
+    <Stack spacing={4}>
       <SideSermon
-        date="Jun 5"
+        date="12"
+        month="JUN"
         service="Sunday Service"
         topic="THE LORD IS OUR SHEPHERD"
         isActive={true}
       />
       <SideSermon
-        date="Jun 5"
+        date="5"
+        month="JUN"
         service="Bible Study"
         topic="KNOWING GOD"
         isActive={false}
       />
       <SideSermon
-        date="Jun 5"
+        date="19"
+        month="JUN"
         service="Bible Study"
         topic="KNOWING GOD"
         isActive={false}
       />
       <SideSermon
-        date="Jun 5"
+        date="5"
+        month="JUN"
         service="Bible Study"
         topic="KNOWING GOD"
         isActive={false}

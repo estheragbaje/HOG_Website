@@ -39,10 +39,18 @@ function Footer() {
         <SubHeading color="white" marginBottom="16px">
           We would love to hear from you
         </SubHeading>
-        <MainHeading color="white" fontSize="36px" marginBottom="28px">
+        <MainHeading
+          color="white"
+          fontSize="36px"
+          fontSize={['24px', '24px', '36px']}
+          py={4}
+        >
           CONTACT US
         </MainHeading>
-        <SimpleGrid columns={{ base: 1, md: '2', lg: 2 }} spacing={32}>
+        <SimpleGrid
+          columns={{ base: 1, md: '2', lg: 2 }}
+          spacing={[16, 16, 32]}
+        >
           <Box minWidth="45%">
             <Stack spacing={4}>
               <Input
@@ -96,27 +104,37 @@ function Footer() {
               my={10}
             />
           </Box>
-          <Box>
-            <Image src="/assets/logo.png" alt="logo" />
-            <Text color="white" py={6}>
+          <Box textAlign={['center', 'left', 'left']}>
+            <Image
+              src="/assets/logo.png"
+              alt="logo"
+              margin={['auto', 'auto', '0']}
+            />
+            <Text color="white" py={[3, 3, 4]}>
               Welcome to the Redeemed Christian Church of God House of Grace,
               Corpus Christi! We are so overwhelmed with Joy that God has
               brought you here.
             </Text>
-            <MainHeading color="white" fontSize="24px">
+            <MainHeading
+              color="white"
+              fontSize="24px"
+              display={['none', 'none', 'block']}
+            >
               CONNECT WITH US
             </MainHeading>
-            <Stack
+            <SimpleGrid
               listStyleType="none"
-              direction="row"
+              columns={3}
+              spacing={-4}
               color="white"
-              spacing={8}
               py={3}
+              paddingBottom={[8, 8, 0]}
+              textAlign={['center', 'center', 'left']}
             >
               <SocialLink icon={FaFacebook} label="facebook" />
               <SocialLink icon={FaInstagram} label="facebook" />
               <SocialLink icon={FaTwitter} label="facebook" />
-            </Stack>
+            </SimpleGrid>
           </Box>
         </SimpleGrid>
       </Box>
@@ -125,9 +143,9 @@ function Footer() {
         textAlign="center"
         color="white"
         fontSize="12px"
-        py={4}
+        py={6}
       >
-        <SubHeading paddingTop={4}>
+        <SubHeading marginBottom="0px">
           © 2020 RCCG House of Grace, Texas | ️ Made with love by Esther Agbaje
         </SubHeading>
       </Box>

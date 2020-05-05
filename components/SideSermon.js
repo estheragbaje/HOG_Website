@@ -10,7 +10,6 @@ function SideSermon({ service, topic, date, isActive, month, ...rest }) {
       border="solid 2px"
       borderColor={isActive ? '#3AC7B1' : 'transparent'}
       borderRadius="5px"
-      marginBottom="16px"
       paddingY={3}
       as="button"
       {...rest}

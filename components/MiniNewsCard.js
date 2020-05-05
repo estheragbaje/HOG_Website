@@ -17,7 +17,7 @@ function MiniNewsCard({ src, date, title, content, link, ...rest }) {
         <SubHeading fontSize="14px" color="#3AC7B1">
           {date}
         </SubHeading>
-        <MainHeading fontSize="20px">{title}</MainHeading>
+        <MainHeading fontSize="20px" marginBottom={0}>{title}</MainHeading>
         <Text>{content}</Text>
         <Link href={link} color="#3AC7B1">
           READ MORE

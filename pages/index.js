@@ -52,7 +52,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           </Text>
           <CustomButton
             height={['55px', '55px', '66px']}
-            width={['250px', '300px', '374px']}
+            px={['20px', '20px', '30px']}
             bg="#3AC7B1"
             _hover={{ bg: '#1FBDA5' }}
             _focus="teal.800"
@@ -94,7 +94,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         <Box textAlign="center">
           <CustomButton
             height="55px"
-            width="264px"
+            px={['20px', '20px', '30px']}
             variant="outline"
             _hover={{ bg: '#D0FFF8' }}
             borderColor="#3AC7B1"
@@ -112,13 +112,15 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <SubHeading color="#3AC7B1">
             We are Passionate About Sharing the Gospel of Jesus
           </SubHeading>
-          <MainHeading fontSize="36px">JOIN OUR WEEKLY SERVICES</MainHeading>
+          <MainHeading fontSize={['24px', '24px', '36px']}>
+            JOIN OUR WEEKLY SERVICES
+          </MainHeading>
         </Box>
         <Box textAlign="center">
           <ServicesHomeList />
           <CustomButton
             height="55px"
-            width="264px"
+            px={['20px', '20px', '30px']}
             variant="outline"
             _hover={{ bg: '#D0FFF8' }}
             borderColor="#3AC7B1"
@@ -139,7 +141,8 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
             src="/assets/pastor_image.png"
             alt="Pastor Segun Olowookere"
             objectFit="cover"
-            size="750px"
+            width="750px"
+            minHeight="750px"
           />
           <Box
             backgroundColor="#61817C"
@@ -198,7 +201,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <SubHeading color="#3AC7B1" marginBottom="16px">
             Upcoming Events
           </SubHeading>
-          <MainHeading fontSize="36px" marginBottom="28px">
+          <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
             THE LATEST NEWS
           </MainHeading>
           <LatestNewsList paddingTop="20px" />
@@ -209,11 +212,13 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           backgroundColor="#61817C"
           width="100%"
           px={10}
-          paddingTop={16}
+          paddingY={16}
           color="white"
         >
           <SubHeading>Get to know us better</SubHeading>
-          <MainHeading fontSize="36px">MORE ABOUT US</MainHeading>
+          <MainHeading fontSize={['24px', '24px', '36px']}>
+            MORE ABOUT US
+          </MainHeading>
           <Text py={4}>
             RCCG House of Grace based in Corpus Christi Texas is a Parish of the
             Redeemed Christian Church of God (RCCG).{' '}
@@ -232,7 +237,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           </Text>
           <CustomButton
             height="55px"
-            width="264px"
+            px={['20px', '20px', '30px']}
             variant="outline"
             _hover={{ bg: '#B3D7D1' }}
             borderColor="white"
@@ -251,7 +256,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <SubHeading color="#3AC7B1" marginBottom="16px">
             Where to find us
           </SubHeading>
-          <MainHeading fontSize="36px" marginBottom="28px">
+          <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
             WORSHIP WITH US
           </MainHeading>
           <SimpleGrid columns={{ base: 1, md: '2', lg: 2 }} spacing={12}>

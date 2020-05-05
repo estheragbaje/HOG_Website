@@ -4,7 +4,7 @@ import SideSermon from './SideSermon';
 
 function SideSermonList() {
   return (
-    <Stack spacing={4} maxWidth="100%">
+    <Stack spacing={4} justifyContent="space-between">
       <SideSermon
         date="12"
         month="JUN"

@@ -2,10 +2,9 @@ import React from 'react';
 import { Stack } from '@chakra-ui/core';
 import SideSermon from './SideSermon';
 
-
 function SideSermonList() {
   return (
-    <Stack spacing={4}>
+    <Stack spacing={4} maxWidth="100%">
       <SideSermon
         date="12"
         month="JUN"

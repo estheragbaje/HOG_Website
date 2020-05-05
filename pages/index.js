@@ -23,14 +23,18 @@ import { CustomButton } from '../components/Common';
 
 function HomePage({ color, children, fontSize, heading, subheading, content }) {
   return (
-    <Box>
+    <Box maxWidth="100%">
       <Box
         backgroundImage="url(/assets/new_bg.jpg)"
         backgroundSize="cover"
-        paddingBottom="140px"
+        paddingBottom={['60px', '110px', '140px']}
       >
         <Navigation />
-        <Box textAlign="center" marginTop={110} color="white">
+        <Box
+          textAlign="center"
+          marginTop={['50px', '80px', '110px']}
+          color="white"
+        >
           <SubHeading
             color="#3AC7B1"
             fontSize={['18px', '18px', '26px', '30px']}
@@ -48,26 +52,34 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           </Text>
           <CustomButton
             height={['55px', '55px', '66px']}
-            width="374px"
+            width={['250px', '300px', '374px']}
             bg="#3AC7B1"
             _hover={{ bg: '#1FBDA5' }}
             _focus="teal.800"
-            fontSize="21px"
+            fontSize={['16px', '16px', '21px']}
             fontWeight="400"
             content="WATCH SERVICE
           ONLINE"
           />
         </Box>
       </Box>
-      <Box py="80px" margin="0 80px">
+      <Box
+        py="80px"
+        margin={['0 40px', '0 40px', '0 80px']}
+        textAlign={['center', 'center', 'center', 'left']}
+      >
         <SubHeading color="#3AC7B1" marginBottom="16px">
           Watch our services online
         </SubHeading>
-        <MainHeading fontSize="36px" marginBottom="28px">
+        <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
           OUR LATEST SERMONS
         </MainHeading>
 
-        <SimpleGrid columns={2} spacing={5}>
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 2 }}
+          spacing={5}
+          // textAlign={['center', 'center', 'left']}
+        >
           <AspectRatioBox ratio={16 / 9} flex="1">
             <Box
               as="iframe"
@@ -119,7 +131,10 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           />
         </Box>
 
-        <Flex paddingTop="80px">
+        <Flex
+          paddingTop="80px"
+          direction={{ base: 'column', md: 'column', lg: 'row' }}
+        >
           <Image
             src="/assets/pastor_image.png"
             alt="Pastor Segun Olowookere"
@@ -189,7 +204,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <LatestNewsList paddingTop="20px" />
         </Box>
       </Box>
-      <Flex>
+      <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
         <Box
           backgroundColor="#61817C"
           width="100%"
@@ -239,7 +254,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <MainHeading fontSize="36px" marginBottom="28px">
             WORSHIP WITH US
           </MainHeading>
-          <SimpleGrid columns={2} spacing={12}>
+          <SimpleGrid columns={{ base: 1, md: '2', lg: 2 }} spacing={12}>
             <AspectRatioBox ratio={16 / 9}>
               <Box
                 as="iframe"

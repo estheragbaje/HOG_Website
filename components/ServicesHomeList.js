@@ -5,7 +5,7 @@ import { CupIcon, BibleIcon, ImageIcon } from './Icons';
 
 function ServicesHomeList({ ...rest }) {
   return (
-    <SimpleGrid columns={3} my={12} mx={12}>
+    <SimpleGrid columns={{ base: 1, md: 1, lg: 3 }} my={12} mx={12}>
       <IconCard
         icon={<BibleIcon height="45px" width="45px" margin="auto" />}
         heading="BIBLE STUDY"

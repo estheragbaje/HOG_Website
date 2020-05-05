@@ -42,7 +42,7 @@ function Footer() {
         <MainHeading color="white" fontSize="36px" marginBottom="28px">
           CONTACT US
         </MainHeading>
-        <SimpleGrid columns={2} spacing={32}>
+        <SimpleGrid columns={{ base: 1, md: '2', lg: 2 }} spacing={32}>
           <Box minWidth="45%">
             <Stack spacing={4}>
               <Input

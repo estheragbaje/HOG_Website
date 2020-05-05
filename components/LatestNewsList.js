@@ -5,7 +5,11 @@ import { SimpleGrid, Box, Stack } from '@chakra-ui/core';
 function LatestNewsList({ src, date, title, content, link, ...rest }) {
   return (
     <Box {...rest}>
-      <SimpleGrid columns={2} spacing={20} direction="row">
+      <SimpleGrid
+        columns={{ base: 1, md: 1, lg: 2 }}
+        spacing={{ base: 10, md: 10, lg: 20 }}
+        direction="row"
+      >
         <MiniNewsCard
           src="/assets/good_friday.png"
           date="17.04.20"

@@ -92,12 +92,12 @@ function Footer() {
 
             <CustomButton
               type="submit"
-              height="56px"
+              height={['44px', '44px', '55px']}
               width="156px"
               bg="#3AC7B1"
               _hover={{ bg: '#1FBDA5' }}
               _focus="teal.800"
-              fontSize="21px"
+              fontSize={['16px', '16px', '21px']}
               fontWeight="400"
               color="white"
               content="SEND"
@@ -132,8 +132,8 @@ function Footer() {
               textAlign={['center', 'center', 'left']}
             >
               <SocialLink icon={FaFacebook} label="facebook" />
-              <SocialLink icon={FaInstagram} label="facebook" />
-              <SocialLink icon={FaTwitter} label="facebook" />
+              <SocialLink icon={FaInstagram} label="instagram" />
+              <SocialLink icon={FaTwitter} label="twitter" />
             </SimpleGrid>
           </Box>
         </SimpleGrid>

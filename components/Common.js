@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Button, Stack, Heading } from '@chakra-ui/core';
+import React, { Children } from 'react';
+import { Box, Button, Stack, Heading, Divider } from '@chakra-ui/core';
 
 export function CustomButton({
   content,

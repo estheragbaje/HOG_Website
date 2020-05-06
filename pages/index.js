@@ -93,14 +93,14 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
 
         <Box textAlign="center">
           <CustomButton
-            height="55px"
+            height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"
             _hover={{ bg: '#D0FFF8' }}
             borderColor="#3AC7B1"
             color="#3AC7B1"
             _focus="teal.800"
-            fontSize="21px"
+            fontSize={['16px', '16px', '21px']}
             fontWeight="400"
             marginTop={20}
             content="VIEW MORE SERMONS"
@@ -119,14 +119,14 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         <Box textAlign="center">
           <ServicesHomeList />
           <CustomButton
-            height="55px"
+            height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"
             _hover={{ bg: '#D0FFF8' }}
             borderColor="#3AC7B1"
             color="#3AC7B1"
             _focus="teal.800"
-            fontSize="21px"
+            fontSize={['16px', '16px', '21px']}
             fontWeight="400"
             marginTop={20}
             content="SEE ALL SERVICES"
@@ -236,14 +236,14 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
             of secular life and levels of spiritual development.
           </Text>
           <CustomButton
-            height="55px"
+            height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"
             _hover={{ bg: '#B3D7D1' }}
             borderColor="white"
             color="white"
             _focus="teal.800"
-            fontSize="21px"
+            fontSize={['16px', '16px', '21px']}
             fontWeight="400"
             marginTop={10}
             content="LEARN MORE"

@@ -42,7 +42,7 @@ function IconCard({
     >
      {icon}
       <Heading fontSize="21px" paddingTop="30px" fontWeight="600">{heading}</Heading>
-      <SubHeading color="#3AC7B1" marginBottom="0" marginTop="13px">
+      <SubHeading color="#3AC7B1" marginBottom="0" marginTop="10px">
         {subheading}
       </SubHeading>
       <Text marginTop="16px">{content}</Text>

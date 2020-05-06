@@ -28,7 +28,7 @@ function AboutUsList({ ...rest }) {
       <IconCard
         icon={<LocationIcon height="54px" width="54px" margin="auto" />}
         subheading="Our Locations"
-        content="TPresently, there are established missions in the United States, most African countries, as well as Europe, Asia, the Caribbean, Canada, South America and Australia."
+        content="Presently, there are established missions in the United States, most African countries, as well as Europe, Asia, the Caribbean, Canada, South America and Australia."
         borderColor="#006FC4"
       />
       <IconCard

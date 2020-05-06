@@ -56,7 +56,7 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
       paddingY="80px"
       {...rest}
     >
-      <Box px={4}>
+      <Box>
         <MainHeading color="#3AC7B1" fontSize={['24px', '24px', '36px']}>
           {heading}
         </MainHeading>
@@ -64,7 +64,15 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
           {children}
         </Text>
       </Box>
-      <Image src={src} alt={alt} objectFit="contain" width="550px" px={4} />
+      <Box size={['24px', '24px', '50px']} flexShrink="0"></Box>
+      <Image
+        src={src}
+        alt={alt}
+        width="550px"
+        objectFit="contain"
+        flexShrink="0"
+        borderRadius="10px"
+      />
     </Flex>
   );
 }
@@ -72,31 +80,21 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
 export function TextImage({ src, alt, content, ...rest }) {
   return (
     <Box {...rest} position="relative" textAlign="center">
-      <Image
-        src={src}
-        alt={alt}
-        width="385px"
-        minHeight="290"
-        objectFit="contain"
-        position="relative"
-        textAlign="center"
-      />
-
-      <MainHeading
-        position="absolute"
-        zIndex="999"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -10%)"
-        // margin="0 auto"
-        // left="0"
-        // right="0"
-        // top="40%"
-        textAlign="center"
-        width="60%"
+      <Box
+        backgroundImage={`url(${src}) `}
+        backgroundSize="contain"
+        backgroundColor="gray.800"
+        maxWidth={['290px', '290px', '385px']}
+        minHeight={['220px', '220px', '290px']}
+        style={{ backgroundBlendMode: 'overlay' }}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
       >
-        USHER
-      </MainHeading>
+        <MainHeading color="white" fontSize={['21px', '21px', '32px']}>
+          {content}
+        </MainHeading>
+      </Box>
     </Box>
   );
 }

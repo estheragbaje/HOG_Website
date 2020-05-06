@@ -1,37 +1,17 @@
+import { Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Image, useDisclosure } from '@chakra-ui/core';
 import React from 'react';
-import {
-  Box,
-  Text,
-  Radio,
-  RadioButtonGroup,
-  RadioGroup,
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  DrawerOverlay,
-  DrawerHeader,
-  useDisclosure,
-  Divider,
-  Image,
-  Icon,
-} from '@chakra-ui/core';
 import { AiOutlineMenu } from 'react-icons/ai';
 import MainHeading from '../components/MainHeading';
 
-function MobileNav({ icon }) {
+function MobileNav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [placement, setPlacement] = React.useState('right');
-  const handlePlacementChange = (event) => setPlacement(event.target.value);
 
   return (
     <>
-      <Button variantColor="blue" onClick={onOpen}>
-        <Box size="30px" as={icon}>
-          <Icon icon={AiOutlineMenu} />
-        </Box>
+      <Button variant="ghost" variantColor="blue" onClick={onOpen}>
+        <Box as={AiOutlineMenu} />
       </Button>
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader borderBottomWidth="1px">

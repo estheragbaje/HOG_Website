@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Image, Flex } from '@chakra-ui/core';
+import { Box, Text, Image, Flex, SimpleGrid } from '@chakra-ui/core';
 import Navigation from '../components/Navigation';
 import SubHeading from '../components/SubHeading';
 import MainHeading from '../components/MainHeading';
@@ -14,9 +14,8 @@ function About({ content }) {
         backgroundImage="url(/assets/about_us_bg.jpg) "
         backgroundSize="cover"
         paddingBottom={['60px', '110px', '120px']}
-        // backgroundColor="rgba(0,0,0,0.5)"
-        // z-index="2"
-        // box-shadow="inset 0 0 0 100vw rgba(0,0,0,0.5)"
+        backgroundColor="gray.600"
+        style={{ backgroundBlendMode: 'overlay' }}
       >
         <Navigation />
         <Box
@@ -83,19 +82,22 @@ function About({ content }) {
       <Box
         backgroundImage="url(/assets/what_we_believe.jpeg) "
         backgroundSize="cover"
-        // paddingBottom={['60px', '110px', '10px']}
-        // backgroundColor="rgba(0,0,0,0.5)"
-        // z-index="2"
-        // box-shadow="inset 0 0 0 100vw rgba(0,0,0,0.5)"
+        backgroundColor="gray.600"
+        style={{ backgroundBlendMode: 'overlay' }}
       >
-        <Box py="80px" margin={['0 40px', '0 40px', '0 80px']} color="white">
+        <Box
+          py="80px"
+          margin={['0 40px', '0 40px', '0 80px']}
+          color="white"
+          maxWidth="600px"
+        >
           <SubHeading color="#3AC7B1" marginBottom="16px">
             More About us
           </SubHeading>
           <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
             WHAT WE BELIEVE
           </MainHeading>
-          <Box paddingRight={['0', '0', '600px']}>
+          <Box>
             <Text py={4}>
               We at RCCG House of Grace get all of our beliefs directly from
               God, and strongly believe that only God can be held as the
@@ -122,8 +124,20 @@ function About({ content }) {
           </Box>
         </Box>
       </Box>
-      <Box py={80}>
-        <TextImage src="/assets/about_us.png" alt="image" content="USHERING" />
+      <Box py={80} margin={['0 40px', '0 40px', '0 80px']}>
+        <SimpleGrid columns={[1, 1, 3]} spacing={20} my={12}>
+          <TextImage src="/assets/about_us.png" alt="image" content="CHOIR" />
+          <TextImage
+            src="/assets/about_us.png"
+            alt="image"
+            content="USHERING"
+          />
+          <TextImage
+            src="/assets/about_us.png"
+            alt="image"
+            content="EVANGELISM"
+          />
+        </SimpleGrid>
         <Box textAlign="center">
           <CustomButton
             height={['44px', '44px', '55px']}

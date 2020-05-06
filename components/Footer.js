@@ -125,11 +125,12 @@ function Footer() {
             <SimpleGrid
               listStyleType="none"
               columns={3}
-              spacing={-4}
               color="white"
               py={3}
+              mx={['auto', 'auto', 0]}
               paddingBottom={[8, 8, 0]}
               textAlign={['center', 'center', 'left']}
+              maxWidth="300px"
             >
               <SocialLink icon={FaFacebook} label="facebook" />
               <SocialLink icon={FaInstagram} label="instagram" />

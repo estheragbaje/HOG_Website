@@ -3,7 +3,7 @@ import { Box, Text, Image, Flex, SimpleGrid } from '@chakra-ui/core';
 import Navigation from '../components/Navigation';
 import SubHeading from '../components/SubHeading';
 import MainHeading from '../components/MainHeading';
-import Footer from '../components/Footer';
+import {Footer} from '../components/Footer';
 import AboutUsList from '../components/AboutUsList';
 import { FlexCard, CustomButton, TextImage } from '../components/Common';
 

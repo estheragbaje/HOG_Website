@@ -8,6 +8,8 @@ import {
   Flex,
   Image,
   PseudoBox,
+  Icon,
+  SimpleGrid,
 } from '@chakra-ui/core';
 import MainHeading from './MainHeading';
 
@@ -99,5 +101,27 @@ export function TextImage({ src, alt, content, ...rest }) {
         </MainHeading>
       </Box>
     </Box>
+  );
+}
+
+export function IconText({ name, content, ...rest }) {
+  return (
+    <SimpleGrid
+      {...rest}
+      textAlign={['left', 'left', 'center']}
+      columns={['2', '2', '1']}
+      maxWidth="300px"
+      py={2}
+    >
+      <Icon name={name} size={['20px', '20px', '25px']} margin="auto" />
+      <Text
+        py={4}
+        color="#3AC7B1"
+        fontSize={['18px', '18px', '21px']}
+        px={['10px', '10px', 0]}
+      >
+        {content}
+      </Text>
+    </SimpleGrid>
   );
 }

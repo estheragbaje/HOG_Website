@@ -18,7 +18,7 @@ import Navigation from '../components/Navigation';
 import SideSermonList from '../components/SideSermonList';
 import ServicesHomeList from '../components/ServicesHomeList';
 import LatestNewsList from '../components/LatestNewsList';
-import Footer from '../components/Footer';
+import {Footer} from '../components/Footer';
 import { CustomButton } from '../components/Common';
 
 function HomePage({ color, children, fontSize, heading, subheading, content }) {

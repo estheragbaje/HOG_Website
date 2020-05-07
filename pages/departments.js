@@ -3,7 +3,9 @@ import { Box, Flex, Image, Text, SimpleGrid } from '@chakra-ui/core';
 import Navigation from '../components/Navigation';
 import SubHeading from '../components/SubHeading';
 import MainHeading from '../components/MainHeading';
-import Footer from '../components/Footer';
+import {Footer} from '../components/Footer';
+import { TextImage } from '../components/Common';
+import DepartmentList from '../components/DepartmentList';
 
 function Departments() {
   return (
@@ -33,7 +35,7 @@ function Departments() {
         </Box>
       </Box>
 
-      <Box paddingTop="80px" >
+      <Box paddingY="80px">
         <Box textAlign="center" margin={['0 40px', '0 40px', '0 320px']}>
           <SubHeading color="#3AC7B1">Get to know us better</SubHeading>
           <MainHeading fontSize={['24px', '24px', '36px']}>
@@ -44,12 +46,10 @@ function Departments() {
             in RCCG House of Grace Parish. Simply ask any of our ushers to guide
             you on what to do.
           </Text>
-          <SimpleGrid columns={[2, 2, 3]} spacing={20} my={12} mx={12}>
-
-          </SimpleGrid>
         </Box>
-        <Footer />
+        <DepartmentList />
       </Box>
+      <Footer />
     </Box>
   );
 }

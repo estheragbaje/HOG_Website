@@ -6,7 +6,7 @@ import MainHeading from '../components/MainHeading';
 import AboutUsList from '../components/AboutUsList';
 import { CustomButton } from '../components/Common';
 import AccordionList from '../components/AccordionList';
-import Footer from '../components/Footer';
+import {Footer} from '../components/Footer';
 
 function WhatWeBelieve() {
   return (

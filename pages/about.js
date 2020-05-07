@@ -14,7 +14,7 @@ function About({ content }) {
         backgroundImage="url(/assets/about_us_bg.jpg) "
         backgroundSize="cover"
         paddingBottom={['60px', '110px', '120px']}
-        backgroundColor="gray.600"
+        backgroundColor="gray.700"
         style={{ backgroundBlendMode: 'overlay' }}
       >
         <Navigation />
@@ -89,7 +89,7 @@ function About({ content }) {
           py="80px"
           margin={['0 40px', '0 40px', '0 80px']}
           color="white"
-          maxWidth="600px"
+          maxWidth="400px"
         >
           <SubHeading color="#3AC7B1" marginBottom="16px">
             More About us
@@ -124,8 +124,14 @@ function About({ content }) {
           </Box>
         </Box>
       </Box>
-      <Box py={80} margin={['0 40px', '0 40px', '0 80px']}>
-        <SimpleGrid columns={[1, 1, 3]} spacing={20} my={12}>
+      <Box py={80} margin="0 auto" textAlign="center">
+        <SubHeading color="#3AC7B1" marginBottom="16px">
+          Get to know us better
+        </SubHeading>
+        <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
+          OUR DEPARTMENTS
+        </MainHeading>
+        <SimpleGrid columns={[1, 1, 3, 3]} spacing={10} mx={8}>
           <TextImage src="/assets/about_us.png" alt="image" content="CHOIR" />
           <TextImage
             src="/assets/about_us.png"

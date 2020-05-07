@@ -82,12 +82,15 @@ export function TextImage({ src, alt, content, ...rest }) {
     <Box {...rest} position="relative" textAlign="center">
       <Box
         backgroundImage={`url(${src}) `}
-        backgroundSize="contain"
+        backgroundSize="cover"
         backgroundColor="gray.800"
-        maxWidth={['290px', '290px', '385px']}
+        width={['290px', '290px', '385px']}
+        // paddingX={['150px', '150px', '300px']}
         minHeight={['220px', '220px', '290px']}
         style={{ backgroundBlendMode: 'overlay' }}
         display="flex"
+        padding="30px"
+        margin="0 auto"
         alignItems="center"
         justifyContent="center"
       >

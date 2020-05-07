@@ -215,39 +215,41 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           paddingY={16}
           color="white"
         >
-          <SubHeading>Get to know us better</SubHeading>
-          <MainHeading fontSize={['24px', '24px', '36px']}>
-            MORE ABOUT US
-          </MainHeading>
-          <Text py={4}>
-            RCCG House of Grace based in Corpus Christi Texas is a Parish of the
-            Redeemed Christian Church of God (RCCG).{' '}
-            <b>
-              Pastor E. A. Adeboye is the General Overseer of RCCG Worldwide,
-              and Pastor Olusegun Olowookere is the pioneer and senior pastor of
-              the Parish.
-            </b>
-          </Text>
-          <Text py={4}>
-            As a Bible believing, and God-fearing church,{' '}
-            <b>we teach and encourage a life of holiness.</b> House of Grace has
-            an appeal to all types of people, with a determination to teach and
-            impart people to excel in their various geographical areas, stages
-            of secular life and levels of spiritual development.
-          </Text>
-          <CustomButton
-            height={['44px', '44px', '55px']}
-            px={['20px', '20px', '30px']}
-            variant="outline"
-            _hover={{ bg: '#B3D7D1' }}
-            borderColor="white"
-            color="white"
-            _focus="teal.800"
-            fontSize={['16px', '16px', '21px']}
-            fontWeight="400"
-            marginTop={10}
-            content="LEARN MORE"
-          />
+          <Box paddingLeft={['10px', '10px', '40px']}>
+            <SubHeading>Get to know us better</SubHeading>
+            <MainHeading fontSize={['24px', '24px', '36px']}>
+              MORE ABOUT US
+            </MainHeading>
+            <Text py={4}>
+              RCCG House of Grace based in Corpus Christi Texas is a Parish of
+              the Redeemed Christian Church of God (RCCG).{' '}
+              <b>
+                Pastor E. A. Adeboye is the General Overseer of RCCG Worldwide,
+                and Pastor Olusegun Olowookere is the pioneer and senior pastor
+                of the Parish.
+              </b>
+            </Text>
+            <Text py={4}>
+              As a Bible believing, and God-fearing church,{' '}
+              <b>we teach and encourage a life of holiness.</b> House of Grace
+              has an appeal to all types of people, with a determination to
+              teach and impart people to excel in their various geographical
+              areas, stages of secular life and levels of spiritual development.
+            </Text>
+            <CustomButton
+              height={['44px', '44px', '55px']}
+              px={['20px', '20px', '30px']}
+              variant="outline"
+              _hover={{ bg: '#B3D7D1' }}
+              borderColor="white"
+              color="white"
+              _focus="teal.800"
+              fontSize={['16px', '16px', '21px']}
+              fontWeight="400"
+              marginTop={10}
+              content="LEARN MORE"
+            />
+          </Box>
         </Box>
         <Image src="/assets/about_us.png" alt="About us" objectFit="cover" />
       </Flex>

@@ -1,4 +1,15 @@
-import { Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Image, useDisclosure } from '@chakra-ui/core';
+import {
+  Box,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  Image,
+  useDisclosure,
+  Flex,
+} from '@chakra-ui/core';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import MainHeading from '../components/MainHeading';
@@ -8,9 +19,12 @@ function MobileNav() {
 
   return (
     <>
-      <Button variant="ghost" variantColor="blue" onClick={onOpen}>
-        <Box as={AiOutlineMenu} />
-      </Button>
+      <Flex direction="row" justifyContent="space-between" alignItems="center">
+        <Image src="/assets/logo.png" alt="logo" size="80px" padding={4} />
+        <Button variantColor="white" onClick={onOpen}>
+          <Box as={AiOutlineMenu} size="40px" />
+        </Button>
+      </Flex>
       <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>

@@ -1,0 +1,57 @@
+import React from 'react';
+import { Box, Flex, Image, Text, SimpleGrid } from '@chakra-ui/core';
+import Navigation from '../components/Navigation';
+import SubHeading from '../components/SubHeading';
+import MainHeading from '../components/MainHeading';
+import Footer from '../components/Footer';
+
+function Departments() {
+  return (
+    <Box maxWidth="100%">
+      <Box
+        backgroundImage="url(/assets/we_believe.jpeg) "
+        backgroundSize="cover"
+        paddingBottom={['60px', '110px', '120px']}
+        backgroundColor="gray.700"
+        style={{ backgroundBlendMode: 'overlay' }}
+      >
+        <Navigation />
+        <Box
+          textAlign="center"
+          marginTop={['50px', '80px', '110px']}
+          color="white"
+        >
+          <SubHeading
+            color="#3AC7B1"
+            fontSize={['18px', '18px', '26px', '26px']}
+          >
+            RCCG House of Grace
+          </SubHeading>
+          <MainHeading fontSize={['36px', '36px', '48px', '60px']}>
+            OUR DEPARTMENTS
+          </MainHeading>
+        </Box>
+      </Box>
+
+      <Box paddingTop="80px" >
+        <Box textAlign="center" margin={['0 40px', '0 40px', '0 320px']}>
+          <SubHeading color="#3AC7B1">Get to know us better</SubHeading>
+          <MainHeading fontSize={['24px', '24px', '36px']}>
+            OUR DEPARTMENTS
+          </MainHeading>
+          <Text py={4}>
+            You are welcome to join any of the following departments as a worker
+            in RCCG House of Grace Parish. Simply ask any of our ushers to guide
+            you on what to do.
+          </Text>
+          <SimpleGrid columns={[2, 2, 3]} spacing={20} my={12} mx={12}>
+
+          </SimpleGrid>
+        </Box>
+        <Footer />
+      </Box>
+    </Box>
+  );
+}
+
+export default Departments;

@@ -3,7 +3,7 @@ import { Box, Text, Image, Flex, SimpleGrid } from '@chakra-ui/core';
 import Navigation from '../components/Navigation';
 import SubHeading from '../components/SubHeading';
 import MainHeading from '../components/MainHeading';
-import {Footer} from '../components/Footer';
+import { Footer } from '../components/Footer';
 import AboutUsList from '../components/AboutUsList';
 import { FlexCard, CustomButton, TextImage } from '../components/Common';
 
@@ -49,35 +49,37 @@ function About({ content }) {
         </MainHeading>
         <AboutUsList />
       </Box>
-      <FlexCard
-        heading="OUR VISION"
-        src="/assets/our_vision.jpeg"
-        alt="our vision"
-      >
-        RCCG has a vision to{' '}
-        <b>
-          spread the Word of God to the ends of the earth with the aims of
-          leading individuals to Christ
-        </b>
-        , and encouraging these individuals to take as many as possible with
-        them to heaven.
-      </FlexCard>
-      <FlexCard
-        heading="OUR MISSION"
-        src="/assets/our_vision.jpeg"
-        alt="our vision"
-        direction={['column', 'column', 'row-reverse']}
-        paddingTop={0}
-        paddingBottom={80}
-      >
-        Spreading the Word of God to the ends of the earth with the aims of
-        leading individuals to Christ, and{' '}
-        <b>
-          encouraging these individuals to take as many people as possible with
-          them to heaven
-        </b>
-        . Making people to get the best from their God.
-      </FlexCard>
+      <Box margin="auto">
+        <FlexCard
+          heading="OUR VISION"
+          src="/assets/our_vision.jpeg"
+          alt="our vision"
+        >
+          RCCG has a vision to{' '}
+          <b>
+            spread the Word of God to the ends of the earth with the aims of
+            leading individuals to Christ
+          </b>
+          , and encouraging these individuals to take as many as possible with
+          them to heaven.
+        </FlexCard>
+        <FlexCard
+          heading="OUR MISSION"
+          src="/assets/our_vision.jpeg"
+          alt="our vision"
+          direction={['column', 'column', 'row-reverse']}
+          paddingTop={0}
+          paddingBottom={80}
+        >
+          Spreading the Word of God to the ends of the earth with the aims of
+          leading individuals to Christ, and{' '}
+          <b>
+            encouraging these individuals to take as many people as possible
+            with them to heaven
+          </b>
+          . Making people to get the best from their God.
+        </FlexCard>
+      </Box>
 
       <Box
         backgroundImage="url(/assets/what_we_believe.jpeg) "

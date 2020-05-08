@@ -6,7 +6,7 @@ import MainHeading from '../components/MainHeading';
 import AboutUsList from '../components/AboutUsList';
 import { CustomButton } from '../components/Common';
 import AccordionList from '../components/AccordionList';
-import {Footer} from '../components/Footer';
+import { Footer } from '../components/Footer';
 
 function WhatWeBelieve() {
   return (
@@ -42,7 +42,7 @@ function WhatWeBelieve() {
         margin={['0 40px', '0 40px', '0 80px']}
         paddingY="80px"
       >
-        <Box>
+        <Box minW="300px">
           <SubHeading color="#3AC7B1" marginBottom="16px">
             More About us
           </SubHeading>
@@ -72,9 +72,9 @@ function WhatWeBelieve() {
         <Image
           src="/assets/about_us.png"
           alt="what we believe"
-          width="550px"
-          objectFit="contain"
-          flexShrink="0"
+          maxWidth="550px"
+          objectFit="cover"
+          // flexShrink="0"
           borderRadius="10px"
         />
       </Flex>

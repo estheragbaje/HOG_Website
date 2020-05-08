@@ -8,7 +8,7 @@ function ServicesHomeList({ ...rest }) {
     <SimpleGrid
       columns={[1, 1, 3]}
       spacing={4}
-      paddingTop="20px"
+      my={12}
       mx={('20px', '20p', '80px')}
       {...rest}
     >

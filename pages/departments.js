@@ -11,7 +11,7 @@ function Departments() {
   return (
     <Box maxWidth="100%">
       <Box
-        backgroundImage="url(/assets/we_believe.jpeg) "
+        backgroundImage="url(/assets/our_departments.jpeg) "
         backgroundSize="cover"
         paddingBottom={['60px', '110px', '120px']}
         backgroundColor="gray.700"

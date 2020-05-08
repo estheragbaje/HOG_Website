@@ -58,7 +58,7 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
       paddingY="80px"
       {...rest}
     >
-      <Box>
+      <Box minW="300px">
         <MainHeading color="#3AC7B1" fontSize={['24px', '24px', '36px']}>
           {heading}
         </MainHeading>
@@ -70,9 +70,9 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
       <Image
         src={src}
         alt={alt}
-        width="550px"
-        objectFit="contain"
-        flexShrink="0"
+        maxWidth="550px"
+        objectFit="cover"
+        // flexShrink="0"
         borderRadius="10px"
       />
     </Flex>
@@ -85,7 +85,7 @@ export function TextImage({ src, alt, content, ...rest }) {
       <Box
         backgroundImage={`url(${src}) `}
         backgroundSize="cover"
-        backgroundColor="gray.800"
+        backgroundColor="gray.700"
         minHeight={['220px', '220px', '290px']}
         style={{ backgroundBlendMode: 'overlay' }}
         display="flex"

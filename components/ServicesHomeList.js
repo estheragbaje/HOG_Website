@@ -5,7 +5,13 @@ import { CupIcon, BibleIcon, ImageIcon } from './Icons';
 
 function ServicesHomeList({ ...rest }) {
   return (
-    <SimpleGrid columns={[1, 1, 3]} spacing={4} my={12} mx={12} {...rest}>
+    <SimpleGrid
+      columns={[1, 1, 3]}
+      spacing={4}
+      paddingTop="20px"
+      mx={('20px', '20p', '80px')}
+      {...rest}
+    >
       <IconCard
         icon={<BibleIcon height="45px" width="45px" margin="auto" />}
         heading="BIBLE STUDY"
@@ -17,14 +23,14 @@ function ServicesHomeList({ ...rest }) {
         icon={<ImageIcon height="54px" width="54px" margin="auto" />}
         heading="AN HOUR WITH JESUS"
         subheading="Wednesdays,  11:00pm - 12.00 am"
-        content="This is a time of intimate prayers to God."
+        content="This is a time of refreshing and intimate prayers to God."
         borderColor="#28166F"
       />
       <IconCard
         icon={<CupIcon height="45px" width="45px" margin="auto" />}
         heading="HOLY COMMUNION"
         subheading="First Fridays,  10:00pm - 12.00 am"
-        content="This is a time of intimate prayers to God."
+        content="This is a time of refreshing and intimate prayers to God."
         borderColor="#61817C"
       />
     </SimpleGrid>

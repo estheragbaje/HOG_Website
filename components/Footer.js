@@ -153,7 +153,7 @@ export function Footer() {
           CONTACT US
         </MainHeading>
       </Box>
-      />
+
       <SimpleGrid
         columns={{ base: 1, md: '2', lg: 2 }}
         spacing={[16, 16, 32]}

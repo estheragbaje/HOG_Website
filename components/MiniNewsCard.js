@@ -5,19 +5,28 @@ import MainHeading from './MainHeading';
 
 function MiniNewsCard({ src, date, title, content, link, ...rest }) {
   return (
-    <SimpleGrid columns={{ base: 1, md: 2, lg: 2 }} {...rest} spacing={6}>
+    <SimpleGrid
+      columns={['1', '1', '2']}
+      {...rest}
+      spacing={5}
+      margin="auto"
+      maxWidth="700px"
+    >
       <Image
         src={src}
-        alt="Title"
+        alt="title"
         objectFit="cover"
-        width="274px"
-        height="174px"
+
+        // minWidth="274px"
+        // minHeight="174px"
       />
-      <Stack spacing={{ base: 2, md: 3, lg: 4 }}>
+      <Stack>
         <SubHeading fontSize="14px" color="#3AC7B1">
           {date}
         </SubHeading>
-        <MainHeading fontSize="20px" marginBottom={0}>{title}</MainHeading>
+        <MainHeading fontSize="20px" marginBottom={0}>
+          {title}
+        </MainHeading>
         <Text>{content}</Text>
         <Link href={link} color="#3AC7B1">
           READ MORE

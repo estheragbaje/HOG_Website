@@ -3,7 +3,7 @@ import { Box, Flex, Image, Text, SimpleGrid } from '@chakra-ui/core';
 import Navigation from '../components/Navigation';
 import SubHeading from '../components/SubHeading';
 import MainHeading from '../components/MainHeading';
-import {Footer} from '../components/Footer';
+import { Footer } from '../components/Footer';
 import { TextImage } from '../components/Common';
 import DepartmentList from '../components/DepartmentList';
 
@@ -36,7 +36,12 @@ function Departments() {
       </Box>
 
       <Box paddingY="80px">
-        <Box textAlign="center" margin={['0 40px', '0 40px', '0 320px']}>
+        <Box
+          textAlign="center"
+          maxWidth="640px"
+          mx="auto"
+          px={['16px', '16px', '0']}
+        >
           <SubHeading color="#3AC7B1">Get to know us better</SubHeading>
           <MainHeading fontSize={['24px', '24px', '36px']}>
             OUR DEPARTMENTS

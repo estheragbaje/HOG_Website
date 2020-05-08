@@ -14,9 +14,9 @@ function SideSermon({ service, topic, date, isActive, month, ...rest }) {
       as="button"
       {...rest}
     >
-      <Stack direction="row" spacing="50px">
+      <Stack direction="row">
         <BigDate bg="white" date={date} month={month} />
-        <Stack>
+        <Stack textAlign="left">
           <Text fontStyle="italic">{service}</Text>
           <Text>{topic}</Text>
         </Stack>

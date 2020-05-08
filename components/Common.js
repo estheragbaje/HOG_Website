@@ -86,13 +86,9 @@ export function TextImage({ src, alt, content, ...rest }) {
         backgroundImage={`url(${src}) `}
         backgroundSize="cover"
         backgroundColor="gray.800"
-        width={['290px', '290px', '385px']}
-        // paddingX={['150px', '150px', '300px']}
         minHeight={['220px', '220px', '290px']}
         style={{ backgroundBlendMode: 'overlay' }}
         display="flex"
-        padding="30px"
-        margin="0 auto"
         alignItems="center"
         justifyContent="center"
       >

@@ -18,7 +18,7 @@ import Navigation from '../components/Navigation';
 import SideSermonList from '../components/SideSermonList';
 import ServicesHomeList from '../components/ServicesHomeList';
 import LatestNewsList from '../components/LatestNewsList';
-import {Footer} from '../components/Footer';
+import { Footer } from '../components/Footer';
 import { CustomButton } from '../components/Common';
 
 function HomePage({ color, children, fontSize, heading, subheading, content }) {
@@ -65,7 +65,9 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
       </Box>
       <Box
         py="80px"
-        margin={['0 40px', '0 40px', '0 80px']}
+        margin="auto"
+        maxWidth="1100px"
+        // marginX={['30px', '30px', '80px']}
         textAlign={['center', 'center', 'center', 'left']}
       >
         <SubHeading color="#3AC7B1" marginBottom="16px">
@@ -76,11 +78,15 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         </MainHeading>
 
         <SimpleGrid
-          columns={{ base: 1, md: 2, lg: 2 }}
-          spacing={5}
+          columns={{ base: 1, md: 1, lg: 2 }}
+          spacing={8}
+          // maxWidth="1100px"
+          // marginX="auto"
+          // paddingX="12px"
+
           // textAlign={['center', 'center', 'left']}
         >
-          <AspectRatioBox ratio={16 / 9} flex="1">
+          <AspectRatioBox ratio={16 / 9} flex="1" minWidth="500px">
             <Box
               as="iframe"
               title="The Lord is our Shepherd"
@@ -136,13 +142,14 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         <Flex
           paddingTop="80px"
           direction={{ base: 'column', md: 'column', lg: 'row' }}
+          maxWidth="100%"
         >
           <Image
             src="/assets/pastor_image.png"
             alt="Pastor Segun Olowookere"
             objectFit="cover"
-            width="750px"
-            minHeight="750px"
+            mixWidth="300px"
+            minHeight={['200px', '200px', '750px']}
           />
           <Box
             backgroundColor="#61817C"
@@ -150,6 +157,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
             px={10}
             paddingTop={12}
             paddingBottom="20px"
+            minW="500px"
           >
             <SubHeading color="#3AC7B1" fontSize="21px">
               Welcome Address
@@ -210,12 +218,12 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
       <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
         <Box
           backgroundColor="#61817C"
-          width="100%"
-          px={10}
+          maxWidth="100%"
+          // px={10}
           paddingY={16}
           color="white"
         >
-          <Box paddingLeft={['10px', '10px', '40px']}>
+          <Box maxW="600px" px={['40px', '40px', '80px']}>
             <SubHeading>Get to know us better</SubHeading>
             <MainHeading fontSize={['24px', '24px', '36px']}>
               MORE ABOUT US
@@ -251,21 +259,34 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
             />
           </Box>
         </Box>
-        <Image src="/assets/about_us.png" alt="About us" objectFit="cover" />
+        <Image
+          src="/assets/about_us.png"
+          alt="About us"
+          objectFit="cover"
+          minWidth="400px"
+          minHeight={['200px', '200px', '750px']}
+          display={['none', 'none', 'inline-block']}
+        />
       </Flex>
-      <Box>
-        <Box py="80px" margin="0 80px">
+      <Box
+        width="100%"
+        px={10}
+        paddingTop={12}
+        paddingBottom="20px"
+        minW="500px"
+        py="80px"
+      >
+        <Box  margin="auto" maxWidth="1100px">
           <SubHeading color="#3AC7B1" marginBottom="16px">
             Where to find us
           </SubHeading>
           <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
             WORSHIP WITH US
           </MainHeading>
-          <SimpleGrid columns={{ base: 1, md: '2', lg: 2 }} spacing={12}>
+          <SimpleGrid columns={{ base: 1, md: '2', lg: 2 }} spacing={8}>
             <AspectRatioBox ratio={16 / 9}>
               <Box
                 as="iframe"
-                // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567723392506!5m2!1sen!2sng"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.979823200833!2d-97.36485948493838!3d27.687018482800358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668f5cdf44848ed%3A0x5015a69c9848f5cb!2s2306%20Airline%20Rd%20%23110A%2C%20Corpus%20Christi%2C%20TX%2078414%2C%20USA!5e0!3m2!1sen!2sng!4v1588706338081!5m2!1sen!2sng"
                 alt="demo"
               />

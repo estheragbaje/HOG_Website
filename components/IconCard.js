@@ -33,7 +33,7 @@ function IconCard({
     <Box
       backgroundColor="#fff"
       borderBottom="solid 6px"
-      width="340px"
+      // width="340px"
       textAlign="center"
       padding="30px"
       margin="0 auto"

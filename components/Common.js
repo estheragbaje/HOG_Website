@@ -12,6 +12,7 @@ import {
   SimpleGrid,
 } from '@chakra-ui/core';
 import MainHeading from './MainHeading';
+import SubHeading from './SubHeading';
 
 export function CustomButton({
   content,
@@ -119,5 +120,91 @@ export function IconText({ name, content, ...rest }) {
         {content}
       </Text>
     </SimpleGrid>
+  );
+}
+
+export function EventCard({ src, alt, title, date, time, ...rest }) {
+  return (
+    <Box
+      border="1px solid #C4C4C4"
+      // maxWidth="550px"
+      borderRadius="10px"
+      {...rest}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        objectFit="cover"
+        borderRadius="10px"
+        // minWidth="630px"
+      />
+      <Stack padding="30px">
+        <MainHeading fontSize={['18px', '18px', '24px']}>{title}</MainHeading>
+        <SubHeading fontSize="16px" color="#3AC7B1" py={2}>
+          {date}
+        </SubHeading>
+        <Text>{time}</Text>
+      </Stack>
+    </Box>
+  );
+}
+
+export function EventIcon({ name, content, ...rest }) {
+  return (
+    <Box>
+      <SimpleGrid
+        {...rest}
+        textAlign={['left', 'left', 'center']}
+        // spacing={6}
+        columns={2}
+        maxWidth="150px"
+        py={2}
+      >
+        <Icon
+          name={name}
+          size={['16px', '16px', '20px']}
+          margin="auto"
+          color="#3AC7B1"
+        />
+        <Text
+          py={4}
+          fontSize={['16px', '16px', '18px']}
+          px={['10px', '10px', 0]}
+        >
+          {content}
+        </Text>
+      </SimpleGrid>
+    </Box>
+  );
+}
+
+export function MessageCard({ src, topic, date, minister, day, ...rest }) {
+  return (
+    <Box {...rest}>
+      {src ? <Image src={src} alt={topic} objectFit="contain" /> : null}
+      <Box
+        padding="10px"
+        border="1px solid #C4C4C4"
+        borderRadius="5px"
+        textAlign="left"
+      >
+        <MainHeading fontSize={['16px', '16px', '18px']} py={2}>
+          {topic}
+        </MainHeading>
+        <SubHeading color="#3AC7B1">{date}</SubHeading>
+        <Flex justifyContent="space-between" alignItems="center">
+          <Text>{minister}</Text>
+          <Text
+            padding="5px"
+            fontSize="14px"
+            color="#7C7C7C"
+            border="1px solid #C4C4C4"
+            borderRadius="5px"
+          >
+            {day}
+          </Text>
+        </Flex>
+      </Box>
+    </Box>
   );
 }

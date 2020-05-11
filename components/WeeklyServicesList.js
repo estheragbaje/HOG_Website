@@ -1,0 +1,61 @@
+import React from 'react';
+import { Stack, Icon, SimpleGrid } from '@chakra-ui/core';
+import IconCard from './IconCard';
+import { CupIcon, BibleIcon, ImageIcon } from './Icons';
+import { TextImage } from './Common';
+
+function WeeklyServicesList({ ...rest }) {
+  return (
+    <SimpleGrid
+      columns={[1, 1, 3]}
+      spacing={10}
+      my={12}
+      mx={('20px', '20p', '80px')}
+      {...rest}
+    >
+      <IconCard
+        icon={<BibleIcon height="45px" width="45px" margin="auto" />}
+        heading="BIBLE STUDY"
+        subheading="Tuesdays,  7:00pm - 8:30 pm"
+        content="Our Bible Study is a time of digging deep into the Bible."
+        borderColor="#3498AF"
+      />
+      <IconCard
+        icon={<ImageIcon height="54px" width="54px" margin="auto" />}
+        heading="AN HOUR WITH JESUS"
+        subheading="Wednesdays,  11:00pm - 12.00 am"
+        content="This is a time of refreshing and intimate prayers to God."
+        borderColor="#28166F"
+      />
+      <IconCard
+        icon={<CupIcon height="45px" width="45px" margin="auto" />}
+        heading="HOLY COMMUNION"
+        subheading="First Fridays,  10:00pm - 12.00 am"
+        content="This is a time of refreshing and intimate prayers to God."
+        borderColor="#61817C"
+      />
+      <IconCard
+        icon={<BibleIcon height="45px" width="45px" margin="auto" />}
+        heading="BIBLE STUDY"
+        subheading="Tuesdays,  7:00pm - 8:30 pm"
+        content="Our Bible Study is a time of digging deep into the Bible."
+        borderColor="#3498AF"
+      />
+      <IconCard
+        icon={<BibleIcon height="45px" width="45px" margin="auto" />}
+        heading="BIBLE STUDY"
+        subheading="Tuesdays,  7:00pm - 8:30 pm"
+        content="Our Bible Study is a time of digging deep into the Bible."
+        borderColor="#3498AF"
+      />
+      <TextImage
+        src="assets/counseling.jpeg"
+        alt="join us"
+        content="WE WOULD LOVE YOU TO JOIN US"
+        backgroundColor="teal.700"
+      />
+    </SimpleGrid>
+  );
+}
+
+export default WeeklyServicesList;

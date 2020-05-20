@@ -6,7 +6,7 @@ function SideSermon({ service, topic, date, isActive, month, ...rest }) {
   return (
     <Box
       backgroundColor={isActive ? '#F9FFFE' : '#F7F8F7'}
-      minWidth="490px"
+      // minWidth="490px"
       border="solid 2px"
       borderColor={isActive ? '#3AC7B1' : 'transparent'}
       borderRadius="5px"

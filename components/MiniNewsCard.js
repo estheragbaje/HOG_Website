@@ -6,21 +6,23 @@ import MainHeading from './MainHeading';
 function MiniNewsCard({ src, date, title, content, link, ...rest }) {
   return (
     <SimpleGrid
-      columns={['1', '1', '2']}
+      columns={['1', '1', '1', '2']}
       {...rest}
-      spacing={5}
+      spacing={8}
       margin="auto"
-      maxWidth="700px"
+      // maxWidth="700px"
     >
-      <Image
-        src={src}
-        alt="title"
-        objectFit="cover"
+      <Box minW="200px">
+        <Image
+          src={src}
+          alt="title"
+          objectFit="contain"
 
-        // minWidth="274px"
-        // minHeight="174px"
-      />
-      <Stack>
+          // minWidth="274px"
+          // minHeight="174px"
+        />
+      </Box>
+      <Box>
         <SubHeading fontSize="14px" color="#3AC7B1">
           {date}
         </SubHeading>
@@ -31,7 +33,7 @@ function MiniNewsCard({ src, date, title, content, link, ...rest }) {
         <Link href={link} color="#3AC7B1">
           READ MORE
         </Link>
-      </Stack>
+      </Box>
     </SimpleGrid>
   );
 }

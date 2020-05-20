@@ -6,9 +6,9 @@ function LatestNewsList({ src, date, title, content, link, ...rest }) {
   return (
     <Box {...rest}>
       <SimpleGrid
-        columns={{ base: 1, md: 1, lg: 2 }}
-        spacing={{ base: 10, md: 10, lg: 20 }}
-        direction="row"
+        columns={['1', '1', 2]}
+        spacing={[10, 10, 20]}
+        direction={['column', 'column', 'row']}
       >
         <MiniNewsCard
           src="/assets/good_friday.png"

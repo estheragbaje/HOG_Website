@@ -7,9 +7,9 @@ function ServicesHomeList({ ...rest }) {
   return (
     <SimpleGrid
       columns={[1, 1, 3]}
-      spacing={4}
-      my={12}
-      mx={('20px', '20p', '80px')}
+      spacing={8}
+      marginTop={12}
+      px={['40px', '40px', '80px']}
       {...rest}
     >
       <IconCard

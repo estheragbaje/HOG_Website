@@ -44,7 +44,7 @@ export function BigDate({ month, date, ...rest }) {
         <Heading color="#3AC7B1" size="sm">
           {month}
         </Heading>
-        <Heading size="lg">{date}</Heading>
+        <Heading fontSize={['24px', '24px', '32px']}>{date}</Heading>
       </Stack>
     </Box>
   );

@@ -33,15 +33,17 @@ function IconCard({
     <Box
       backgroundColor="#fff"
       borderBottom="solid 6px"
-      // minWidth="200px"
+      // minWidth="240px"
       textAlign="center"
       padding="30px"
       margin="0 auto"
       borderColor={borderColor}
       {...rest}
     >
-     {icon}
-      <Heading fontSize="21px" paddingTop="30px" fontWeight="600">{heading}</Heading>
+      {icon}
+      <Heading fontSize="21px" paddingTop="30px" fontWeight="600">
+        {heading}
+      </Heading>
       <SubHeading color="#3AC7B1" marginBottom="0" marginTop="10px">
         {subheading}
       </SubHeading>

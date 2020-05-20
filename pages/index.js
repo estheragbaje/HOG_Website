@@ -1,25 +1,22 @@
-import React from 'react';
 import {
-  Flex,
-  Stack,
-  Text,
-  Image,
-  Box,
-  Heading,
-  Button,
-  Icon,
-  SimpleGrid,
   AspectRatioBox,
+  Box,
+  Flex,
+  Icon,
+  Image,
+  SimpleGrid,
+  Text,
 } from '@chakra-ui/core';
+import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import MainHeading from '../components/MainHeading';
-import SubHeading from '../components/SubHeading';
-import Navigation from '../components/Navigation';
-import SideSermonList from '../components/SideSermonList';
-import ServicesHomeList from '../components/ServicesHomeList';
-import LatestNewsList from '../components/LatestNewsList';
-import { Footer } from '../components/Footer';
 import { CustomButton } from '../components/Common';
+import { Footer } from '../components/Footer';
+import LatestNewsList from '../components/LatestNewsList';
+import MainHeading from '../components/MainHeading';
+import Navigation from '../components/Navigation';
+import ServicesHomeList from '../components/ServicesHomeList';
+import SideSermonList from '../components/SideSermonList';
+import SubHeading from '../components/SubHeading';
 
 function HomePage({ color, children, fontSize, heading, subheading, content }) {
   return (
@@ -66,9 +63,12 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
       <Box
         py="80px"
         margin="auto"
-        maxWidth="1100px"
-        // marginX={['30px', '30px', '80px']}
-        textAlign={['center', 'center', 'center', 'left']}
+        // maxWidth="1100px"
+        // // marginX={['30px', '30px', '80px']}
+        // textAlign={['center', 'center', 'center', 'left']}
+        // margin={['0 40px', '0 40px', '0 80px']}
+        px={['40px', '40px', '80px']}
+        // maxWidth="100%"
       >
         <SubHeading color="#3AC7B1" marginBottom="16px">
           Watch our services online
@@ -86,7 +86,11 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
 
           // textAlign={['center', 'center', 'left']}
         >
-          <AspectRatioBox ratio={16 / 9} flex="1" minWidth="500px">
+          <AspectRatioBox
+            ratio={16 / 9}
+            flex="1"
+            // minWidth="500px"
+          >
             <Box
               as="iframe"
               title="The Lord is our Shepherd"
@@ -205,14 +209,23 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         </Flex>
       </Box>
       <Box>
-        <Box py="80px" margin="0 80px">
-          <SubHeading color="#3AC7B1" marginBottom="16px">
-            Upcoming Events
-          </SubHeading>
-          <MainHeading fontSize={['24px', '24px', '36px']} marginBottom="28px">
-            THE LATEST NEWS
-          </MainHeading>
-          <LatestNewsList paddingTop="20px" />
+        <Box
+          // py="80px"
+          // margin="0 80px"
+          // px={['40px', '40px', '80px']}
+        >
+          <Box px={['40px', '40px', '80px']} py="80px">
+            <SubHeading color="#3AC7B1" marginBottom="16px">
+              Upcoming Events
+            </SubHeading>
+            <MainHeading
+              fontSize={['24px', '24px', '36px']}
+              marginBottom="28px"
+            >
+              THE LATEST NEWS
+            </MainHeading>
+            <LatestNewsList paddingTop="20px" />
+          </Box>
         </Box>
       </Box>
       <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
@@ -223,7 +236,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           paddingY={16}
           color="white"
         >
-          <Box maxW="600px" px={['40px', '40px', '80px']}>
+          <Box maxW="900px" px={['40px', '40px', '80px']}>
             <SubHeading>Get to know us better</SubHeading>
             <MainHeading fontSize={['24px', '24px', '36px']}>
               MORE ABOUT US
@@ -276,7 +289,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         minW="500px"
         py="80px"
       >
-        <Box  margin="auto" maxWidth="1100px">
+        <Box margin="auto" maxWidth="1100px">
           <SubHeading color="#3AC7B1" marginBottom="16px">
             Where to find us
           </SubHeading>

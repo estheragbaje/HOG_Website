@@ -9,7 +9,9 @@ import {
   Image,
   useDisclosure,
   Flex,
+  Link as ChakraLink,
 } from '@chakra-ui/core';
+import Link from 'next/link';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import MainHeading from '../components/MainHeading';
@@ -38,7 +40,11 @@ function MobileNav() {
               textAlign="center"
               fontWeight="500"
             >
-              HOME
+              <ChakraLink>
+                <Link href="/">
+                  <a>HOME</a>
+                </Link>
+              </ChakraLink>
             </MainHeading>
             <MainHeading
               py={4}
@@ -46,7 +52,11 @@ function MobileNav() {
               textAlign="center"
               fontWeight="500"
             >
-              ABOUT
+              <ChakraLink>
+                <Link href="/about">
+                  <a>ABOUT</a>
+                </Link>
+              </ChakraLink>
             </MainHeading>
             <MainHeading
               py={4}
@@ -54,7 +64,11 @@ function MobileNav() {
               textAlign="center"
               fontWeight="500"
             >
-              SERMONS
+              <ChakraLink>
+                <Link href="/sermons">
+                  <a>SERMONS</a>
+                </Link>
+              </ChakraLink>
             </MainHeading>
             <MainHeading
               py={4}
@@ -62,7 +76,11 @@ function MobileNav() {
               textAlign="center"
               fontWeight="500"
             >
-              WEEKLY SERVICES
+              <ChakraLink>
+                <Link href="/services">
+                  <a>WEEKLY SERVICES</a>
+                </Link>
+              </ChakraLink>
             </MainHeading>
             <MainHeading
               py={4}
@@ -70,7 +88,11 @@ function MobileNav() {
               textAlign="center"
               fontWeight="500"
             >
-              GIVE
+              <ChakraLink>
+                <Link href="/give">
+                  <a>GIVE</a>
+                </Link>
+              </ChakraLink>
             </MainHeading>
             <MainHeading
               py={4}
@@ -78,7 +100,11 @@ function MobileNav() {
               textAlign="center"
               fontWeight="500"
             >
-              CONTACT
+              <ChakraLink>
+                <Link href="/contact">
+                  <a>CONTACT</a>
+                </Link>
+              </ChakraLink>
             </MainHeading>
           </DrawerBody>
         </DrawerContent>

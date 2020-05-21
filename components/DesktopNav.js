@@ -1,5 +1,13 @@
 import React from 'react';
-import { Box, Flex, Stack, Text, Image } from '@chakra-ui/core';
+import Link from 'next/link';
+import {
+  Box,
+  Flex,
+  Stack,
+  Text,
+  Image,
+  Link as ChakraLink,
+} from '@chakra-ui/core';
 
 function DesktopNav() {
   return (
@@ -14,12 +22,36 @@ function DesktopNav() {
         >
           <Image src="/assets/logo.png" alt="logo" paddingRight="10px" />
           <Stack isInline={true} spacing="60px" textAlign="center">
-            <Text>HOME</Text>
-            <Text>ABOUT</Text>
-            <Text>SERMONS</Text>
-            <Text>WEEKLY SERVICES</Text>
-            <Text>GIVE</Text>
-            <Text>CONTACT</Text>
+            <ChakraLink>
+              <Link href="/">
+                <a>HOME</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink>
+              <Link href="/about">
+                <a>ABOUT</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink>
+              <Link href="/sermons">
+                <a>SERMONS</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink>
+              <Link href="/services">
+                <a>WEEKLY SERVICES</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink>
+              <Link href="/give">
+                <a>GIVE</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink>
+              <Link href="/contact">
+                <a>CONTACT</a>
+              </Link>
+            </ChakraLink>
           </Stack>
         </Flex>
       </Box>

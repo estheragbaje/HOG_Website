@@ -6,6 +6,7 @@ import {
   Image,
   SimpleGrid,
   Text,
+  Link,
 } from '@chakra-ui/core';
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -47,6 +48,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <Text fontSize={['18px', '18px', '26px', '30px']} marginBottom="60px">
             Worship with us Sundays at 9:30am
           </Text>
+
           <CustomButton
             height={['55px', '55px', '66px']}
             px={['20px', '20px', '30px']}
@@ -210,9 +212,9 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
       </Box>
       <Box>
         <Box
-          // py="80px"
-          // margin="0 80px"
-          // px={['40px', '40px', '80px']}
+        // py="80px"
+        // margin="0 80px"
+        // px={['40px', '40px', '80px']}
         >
           <Box px={['40px', '40px', '80px']} py="80px">
             <SubHeading color="#3AC7B1" marginBottom="16px">

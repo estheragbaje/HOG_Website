@@ -6,9 +6,10 @@ import {
   Image,
   SimpleGrid,
   Text,
-  Link,
+  Link as ChakraLink,
 } from '@chakra-ui/core';
 import React from 'react';
+import Link from 'next/link';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { CustomButton } from '../components/Common';
 import { Footer } from '../components/Footer';
@@ -48,8 +49,23 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <Text fontSize={['18px', '18px', '26px', '30px']} marginBottom="60px">
             Worship with us Sundays at 9:30am
           </Text>
-
+          {/* <ChakraLink outline="0">
+            <Link href="/sermon" >
+              <CustomButton
+                height={['55px', '55px', '66px']}
+                px={['20px', '20px', '30px']}
+                bg="#3AC7B1"
+                _hover={{ bg: '#1FBDA5' }}
+                _focus="teal.800"
+                fontSize={['16px', '16px', '21px']}
+                fontWeight="400"
+                content="WATCH SERVICE
+          ONLINE"
+              />
+            </Link>
+          </ChakraLink> */}
           <CustomButton
+            href="/sermon"
             height={['55px', '55px', '66px']}
             px={['20px', '20px', '30px']}
             bg="#3AC7B1"
@@ -105,6 +121,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
 
         <Box textAlign="center">
           <CustomButton
+            href="/sermon"
             height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"
@@ -131,6 +148,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         <Box textAlign="center">
           <ServicesHomeList />
           <CustomButton
+            href="/services"
             height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"
@@ -260,6 +278,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
               areas, stages of secular life and levels of spiritual development.
             </Text>
             <CustomButton
+              href="/whatwebelieve"
               height={['44px', '44px', '55px']}
               px={['20px', '20px', '30px']}
               variant="outline"

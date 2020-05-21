@@ -70,6 +70,7 @@ function Services({ content }) {
           </Text>
           <Text py={4}>We would love you to join us at the next events.</Text>
           <CustomButton
+            href="/events"
             height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"

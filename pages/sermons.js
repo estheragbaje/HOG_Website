@@ -96,6 +96,7 @@ function Sermons({ content }) {
               with other brethren.
             </Text>
             <CustomButton
+              href="/services"
               type="submit"
               height={['44px', '44px', '55px']}
               px={['20px', '20px', '30px']}

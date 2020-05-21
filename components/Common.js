@@ -1,20 +1,22 @@
-import React, { Children } from 'react';
 import {
   Box,
   Button,
-  Stack,
-  Heading,
-  Text,
   Flex,
-  Image,
-  PseudoBox,
+  Heading,
   Icon,
+  Image,
+  Link as ChakraLink,
   SimpleGrid,
+  Stack,
+  Text,
 } from '@chakra-ui/core';
+import Link from 'next/link';
+import React from 'react';
 import MainHeading from './MainHeading';
 import SubHeading from './SubHeading';
 
 export function CustomButton({
+  href,
   content,
   width,
   height,
@@ -23,7 +25,8 @@ export function CustomButton({
   ...rest
 }) {
   return (
-    <Box>
+    <ChakraLink href={href}  textDecoration="none">
+      {/* <Link href={href}> */}
       <Button
         width={width}
         height={height}
@@ -33,7 +36,8 @@ export function CustomButton({
       >
         {content}
       </Button>
-    </Box>
+      {/* </Link> */}
+    </ChakraLink>
   );
 }
 

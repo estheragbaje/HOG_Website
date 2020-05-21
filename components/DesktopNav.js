@@ -33,6 +33,11 @@ function DesktopNav() {
               </Link>
             </ChakraLink>
             <ChakraLink>
+              <Link href="/events">
+                <a>EVENTS</a>
+              </Link>
+            </ChakraLink>
+            <ChakraLink>
               <Link href="/sermons">
                 <a>SERMONS</a>
               </Link>

@@ -65,6 +65,18 @@ function MobileNav() {
               fontWeight="500"
             >
               <ChakraLink>
+                <Link href="/events">
+                  <a>EVENTS</a>
+                </Link>
+              </ChakraLink>
+            </MainHeading>
+            <MainHeading
+              py={4}
+              borderBottomWidth="1px"
+              textAlign="center"
+              fontWeight="500"
+            >
+              <ChakraLink>
                 <Link href="/sermons">
                   <a>SERMONS</a>
                 </Link>

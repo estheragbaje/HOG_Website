@@ -111,6 +111,7 @@ function About({ content }) {
               as well.{' '}
             </Text>
             <CustomButton
+              href="/whatwebelieve"
               type="submit"
               height={['44px', '44px', '55px']}
               px={['20px', '20px', '30px']}
@@ -148,6 +149,7 @@ function About({ content }) {
         </SimpleGrid>
         <Box textAlign="center">
           <CustomButton
+            href="/departments"
             height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"

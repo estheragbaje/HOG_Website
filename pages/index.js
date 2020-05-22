@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Text,
   Link as ChakraLink,
+  Button,
 } from '@chakra-ui/core';
 import React from 'react';
 import Link from 'next/link';
@@ -49,33 +50,20 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
           <Text fontSize={['18px', '18px', '26px', '30px']} marginBottom="60px">
             Worship with us Sundays at 9:30am
           </Text>
-          {/* <ChakraLink outline="0">
-            <Link href="/sermon" >
-              <CustomButton
-                height={['55px', '55px', '66px']}
-                px={['20px', '20px', '30px']}
-                bg="#3AC7B1"
-                _hover={{ bg: '#1FBDA5' }}
-                _focus="teal.800"
-                fontSize={['16px', '16px', '21px']}
-                fontWeight="400"
-                content="WATCH SERVICE
-          ONLINE"
-              />
-            </Link>
-          </ChakraLink> */}
-          <CustomButton
-            href="/sermon"
-            height={['55px', '55px', '66px']}
-            px={['20px', '20px', '30px']}
-            bg="#3AC7B1"
-            _hover={{ bg: '#1FBDA5' }}
-            _focus="teal.800"
-            fontSize={['16px', '16px', '21px']}
-            fontWeight="400"
-            content="WATCH SERVICE
-          ONLINE"
-          />
+
+          <Link href="/sermon">
+            <Button
+              height={['55px', '55px', '66px']}
+              px={['20px', '20px', '30px']}
+              bg="#3AC7B1"
+              _hover={{ bg: '#1FBDA5' }}
+              _focus="teal.800"
+              fontSize={['16px', '16px', '21px']}
+              fontWeight="400"
+              children="WATCH SERVICE
+              ONLINE"
+            />
+          </Link>
         </Box>
       </Box>
       <Box
@@ -120,20 +108,21 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         </SimpleGrid>
 
         <Box textAlign="center">
-          <CustomButton
-            href="/sermon"
-            height={['44px', '44px', '55px']}
-            px={['20px', '20px', '30px']}
-            variant="outline"
-            _hover={{ bg: '#D0FFF8' }}
-            borderColor="#3AC7B1"
-            color="#3AC7B1"
-            _focus="teal.800"
-            fontSize={['16px', '16px', '21px']}
-            fontWeight="400"
-            marginTop={20}
-            content="VIEW MORE SERMONS"
-          />
+          <Link href="/sermon">
+            <Button
+              height={['44px', '44px', '55px']}
+              px={['20px', '20px', '30px']}
+              variant="outline"
+              _hover={{ bg: '#D0FFF8' }}
+              borderColor="#3AC7B1"
+              color="#3AC7B1"
+              _focus="teal.800"
+              fontSize={['16px', '16px', '21px']}
+              fontWeight="400"
+              marginTop={20}
+              children="VIEW MORE SERMONS"
+            />
+          </Link>
         </Box>
       </Box>
       <Box paddingTop="80px" backgroundColor="#F7F8F7">
@@ -181,7 +170,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
             px={10}
             paddingTop={12}
             paddingBottom="20px"
-            minW="500px"
+            minW={['0', '0', '500px']}
           >
             <SubHeading color="#3AC7B1" fontSize="21px">
               Welcome Address
@@ -307,7 +296,7 @@ function HomePage({ color, children, fontSize, heading, subheading, content }) {
         px={10}
         paddingTop={12}
         paddingBottom="20px"
-        minW="500px"
+        minW={['0', '0', '500px']}
         py="80px"
       >
         <Box margin="auto" maxWidth="1100px">

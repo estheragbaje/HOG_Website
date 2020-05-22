@@ -5,7 +5,6 @@ import {
   Heading,
   Icon,
   Image,
-  Link as ChakraLink,
   SimpleGrid,
   Stack,
   Text,
@@ -25,9 +24,10 @@ export function CustomButton({
   ...rest
 }) {
   return (
-    <ChakraLink href={href}  textDecoration="none">
-      {/* <Link href={href}> */}
+    // <ChakraLink href={href} textDecoration="none">
+    // <Link href={href} passHref>
       <Button
+        as="a"
         width={width}
         height={height}
         variant={variant}
@@ -36,8 +36,8 @@ export function CustomButton({
       >
         {content}
       </Button>
-      {/* </Link> */}
-    </ChakraLink>
+    // </Link>
+    // </ChakraLink>
   );
 }
 

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weekly_services",
+  "info": {
+    "name": "weekly-service"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true,
+      "unique": true
+    },
+    "Time": {
+      "type": "time",
+      "required": true,
+      "unique": true
+    }
+  }
+}

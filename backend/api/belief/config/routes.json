@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/beliefs",
+      "handler": "belief.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/beliefs/count",
+      "handler": "belief.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/beliefs/:id",
+      "handler": "belief.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/beliefs",
+      "handler": "belief.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/beliefs/:id",
+      "handler": "belief.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/beliefs/:id",
+      "handler": "belief.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

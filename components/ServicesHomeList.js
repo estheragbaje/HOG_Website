@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Stack, Icon, SimpleGrid } from '@chakra-ui/core';
 import IconCard from './IconCard';
 import { CupIcon, BibleIcon, ImageIcon } from './Icons';
 
 function ServicesHomeList({ ...rest }) {
+  
   return (
     <SimpleGrid
       columns={[1, 1, 3]}

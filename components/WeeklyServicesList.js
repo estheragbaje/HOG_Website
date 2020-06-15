@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Stack, Icon, SimpleGrid } from '@chakra-ui/core';
 import IconCard from './IconCard';
 import { CupIcon, BibleIcon, ImageIcon } from './Icons';

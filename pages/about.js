@@ -149,7 +149,7 @@ function About({ content }) {
         </SimpleGrid>
         <Box textAlign="center">
           <CustomButton
-            href="/departments"
+            href="/departments "
             height={['44px', '44px', '55px']}
             px={['20px', '20px', '30px']}
             variant="outline"

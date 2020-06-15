@@ -31,15 +31,7 @@ export function FormStack({ ...rest }) {
   });
   return (
     <form onSubmit={formik.handleSubmit}>
-      <Box
-        // // px={10}
-        // // paddingTop="20px"
-        // paddingX={['0 40px', '0 40px', '0 80px']}
-        // paddingY="80px"
-        // py="80px"
-        // margin="0 80px"
-        {...rest}
-      >
+      <Box {...rest}>
         <Box minWidth="45%">
           <Stack spacing={4}>
             <Input

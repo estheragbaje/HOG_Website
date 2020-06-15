@@ -21,7 +21,7 @@ import ServicesHomeList from '../components/ServicesHomeList';
 import SideSermonList from '../components/SideSermonList';
 import SubHeading from '../components/SubHeading';
 
-function HomePage({ color, children, fontSize, heading, subheading, content }) {
+function HomePage() {
   return (
     <Box maxWidth="100%">
       <Box

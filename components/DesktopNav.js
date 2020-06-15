@@ -21,42 +21,33 @@ function DesktopNav() {
           maxWidth="1200px"
         >
           <Image src="/assets/logo.png" alt="logo" paddingRight="10px" />
-          <Stack isInline={true} spacing="60px" textAlign="center">
-            <ChakraLink>
-              <Link href="/">
-                <a>HOME</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink>
-              <Link href="/about">
-                <a>ABOUT</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink>
-              <Link href="/events">
-                <a>EVENTS</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink>
-              <Link href="/sermons">
-                <a>SERMONS</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink>
-              <Link href="/services">
-                <a>WEEKLY SERVICES</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink>
-              <Link href="/give">
-                <a>GIVE</a>
-              </Link>
-            </ChakraLink>
-            <ChakraLink>
-              <Link href="/contact">
-                <a>CONTACT</a>
-              </Link>
-            </ChakraLink>
+          <Stack
+            isInline={true}
+            spacing="60px"
+            textAlign="center"
+            shouldWrapChildren
+          >
+            <Link href="/">
+              <a>HOME</a>
+            </Link>
+            <Link href="/about">
+              <a>ABOUT</a>
+            </Link>
+            <Link href="/events">
+              <a>EVENTS</a>
+            </Link>
+            <Link href="/sermons">
+              <a>SERMONS</a>
+            </Link>
+            <Link href="/services">
+              <a>WEEKLY SERVICES</a>
+            </Link>
+            <Link href="/give">
+              <a>GIVE</a>
+            </Link>
+            <Link href="/contact">
+              <a>CONTACT</a>
+            </Link>
           </Stack>
         </Flex>
       </Box>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Icon, SimpleGrid } from '@chakra-ui/core';
 import IconCard from './IconCard';
 import {
@@ -10,10 +11,42 @@ import {
   OutreachIcon,
 } from './Icons';
 
+const aboutObj = {
+  'our-parish': { icon: ChurchIcon, borderColor: '#3498AF' },
+};
+
 function AboutUsList({ ...rest }) {
+  const [abouts, setAbouts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:1337/abouts/')
+      .then((res) => {
+        setAbouts(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <SimpleGrid columns={[1, 1, 3]} spacing={20} my={12} mx={12} {...rest}>
-      <IconCard
+      {abouts.map((about) => {
+        const values = aboutObj[about.Label];
+        const Icon = values && values.icon;
+
+        return (
+          <IconCard
+            icon={
+              Icon ? <Icon height="54px" width="54px" margin="auto" /> : null
+            }
+            key={about.id}
+            subheading={about.Title}
+            content={about.Description}
+            borderColor={values && values.borderColor}
+          />
+        );
+      })}
+      {/* <IconCard
         icon={<ChurchIcon height="54px" width="54px" margin="auto" />}
         subheading="Our Parish"
         content="RCCG House of Grace is a Parish of the Redeemed Christian Church of God. Pastor Olusegun Olowookere is  the pioneer and senior pastor of the Parish."
@@ -48,7 +81,7 @@ function AboutUsList({ ...rest }) {
         subheading="Our Impact"
         content="House of Grace has an appeal to all types of people, with a determination to teach and impart people to excel in their various stages of secular life and levels of spiritual development. "
         borderColor="#00923F"
-      />
+      /> */}
     </SimpleGrid>
   );
 }

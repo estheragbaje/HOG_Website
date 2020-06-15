@@ -24,20 +24,16 @@ export function CustomButton({
   ...rest
 }) {
   return (
-    // <ChakraLink href={href} textDecoration="none">
-    // <Link href={href} passHref>
-      <Button
-        as="a"
-        width={width}
-        height={height}
-        variant={variant}
-        variantColor={variantColor}
-        {...rest}
-      >
-        {content}
-      </Button>
-    // </Link>
-    // </ChakraLink>
+    <Button
+      as="a"
+      width={width}
+      height={height}
+      variant={variant}
+      variantColor={variantColor}
+      {...rest}
+    >
+      {content}
+    </Button>
   );
 }
 

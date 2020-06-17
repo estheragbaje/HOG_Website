@@ -27,6 +27,10 @@
       "type": "time",
       "required": true,
       "unique": true
+    },
+    "Label": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -36,6 +36,11 @@
       ],
       "plugin": "upload",
       "required": true
+    },
+    "Location": {
+      "type": "string",
+      "private": false,
+      "required": true
     }
   }
 }

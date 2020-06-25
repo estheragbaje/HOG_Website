@@ -31,3 +31,5 @@ yarn-error.log*
 .env.production.local
 
 package-lock.json
+
+node_modules

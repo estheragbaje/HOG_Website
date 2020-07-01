@@ -33,6 +33,5 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-node_modules
-.next
-./node_modules
+frontend/.next
+

@@ -41,10 +41,6 @@
       "type": "string",
       "private": false,
       "required": true
-    },
-    "Image_url": {
-      "type": "string",
-      "required": true
     }
   }
 }

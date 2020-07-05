@@ -24,10 +24,6 @@
       ],
       "plugin": "upload",
       "required": true
-    },
-    "Image_url": {
-      "type": "string",
-      "unique": true
     }
   }
 }

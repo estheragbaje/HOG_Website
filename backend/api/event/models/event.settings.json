@@ -41,6 +41,11 @@
       "type": "string",
       "private": false,
       "required": true
+    },
+    "Link": {
+      "type": "string",
+      "unique": true,
+      "required": true
     }
   }
 }

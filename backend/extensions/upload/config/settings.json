@@ -1,0 +1,11 @@
+{
+  "provider": "aws-s3",
+  "providerOptions": {
+    "accessKeyId": "AKIAJ7YZQNSRWAU3UHYA",
+    "secretAccessKey": "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",
+    "region": "us-west-1",
+    "params": {
+      "Bucket": "strapiuploadprovider1"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sermons",
+  "info": {
+    "name": "Sermon"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Topic": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Preacher": {
+      "type": "string",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "Day": {
+      "type": "datetime",
+      "required": true
+    },
+    "Video_url": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

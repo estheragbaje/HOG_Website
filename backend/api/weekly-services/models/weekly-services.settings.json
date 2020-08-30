@@ -31,6 +31,17 @@
     "Label": {
       "type": "string",
       "required": true
+    },
+    "Weekday": {
+      "type": "enumeration",
+      "enum": [
+        "Sundays",
+        "Tuesdays",
+        "Wednesdays",
+        "First_Fridays",
+        "Saturdays",
+        "Everyday"
+      ]
     }
   }
 }

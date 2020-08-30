@@ -18,12 +18,7 @@
       "type": "richtext",
       "required": true
     },
-    "Date": {
-      "type": "datetime",
-      "required": true,
-      "unique": true
-    },
-    "Time": {
+    "StartTime": {
       "type": "time",
       "required": true,
       "unique": true
@@ -42,6 +37,10 @@
         "Saturdays",
         "Everyday"
       ]
+    },
+    "Stoptime": {
+      "type": "time",
+      "required": true
     }
   }
 }

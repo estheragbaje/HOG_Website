@@ -21,7 +21,7 @@
     "StartTime": {
       "type": "time",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "Label": {
       "type": "string",

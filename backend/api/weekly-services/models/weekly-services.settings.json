@@ -18,11 +18,6 @@
       "type": "richtext",
       "required": true
     },
-    "StartTime": {
-      "type": "time",
-      "required": true,
-      "unique": false
-    },
     "Label": {
       "type": "string",
       "required": true
@@ -37,10 +32,6 @@
         "Saturdays",
         "Everyday"
       ]
-    },
-    "Stoptime": {
-      "type": "time",
-      "required": true
     }
   }
 }

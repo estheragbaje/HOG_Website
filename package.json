@@ -1,0 +1,13 @@
+{
+  "name": "hog_website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/estheragbaje/HOG_Website.git",
+  "author": "Folasade Agbaje <folasadeagbaje@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "deploy:backend": "git subtree push --prefix backend heroku master",
+    "start:backend": "cd backend && yarn develop",
+    "start:frontend": "cd frontend && yarn dev"
+  }
+}

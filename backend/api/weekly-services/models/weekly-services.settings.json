@@ -32,6 +32,9 @@
         "Saturdays",
         "Everyday"
       ]
+    },
+    "Time": {
+      "type": "time"
     }
   }
 }

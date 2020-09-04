@@ -22,19 +22,15 @@
       "type": "string",
       "required": true
     },
-    "Weekday": {
-      "type": "enumeration",
-      "enum": [
-        "Sundays",
-        "Tuesdays",
-        "Wednesdays",
-        "First_Fridays",
-        "Saturdays",
-        "Everyday"
-      ]
+    "StartTime": {
+      "type": "string",
+      "required": false
     },
-    "Time": {
-      "type": "time"
+    "StopTime": {
+      "type": "string"
+    },
+    "Weekday": {
+      "type": "string"
     }
   }
 }

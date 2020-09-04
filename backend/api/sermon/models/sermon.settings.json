@@ -18,18 +18,41 @@
       "type": "string",
       "required": true
     },
-    "Date": {
-      "type": "date",
-      "required": true
-    },
-    "Day": {
-      "type": "datetime",
-      "required": true
-    },
     "Video_url": {
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "Date": {
+      "type": "string",
+      "required": true
+    },
+    "Day": {
+      "type": "enumeration",
+      "enum": [
+        "Sunday",
+        "Midweek"
+      ],
+      "required": true,
+      "default": "Sunday"
+    },
+    "Month": {
+      "type": "enumeration",
+      "enum": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "required": true
     }
   }
 }

@@ -35,24 +35,6 @@
       ],
       "required": true,
       "default": "Sunday"
-    },
-    "Month": {
-      "type": "enumeration",
-      "enum": [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sept",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
-      "required": true
     }
   }
 }

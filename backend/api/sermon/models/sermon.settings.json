@@ -26,15 +26,6 @@
     "Date": {
       "type": "string",
       "required": true
-    },
-    "Day": {
-      "type": "enumeration",
-      "enum": [
-        "Sunday",
-        "Midweek"
-      ],
-      "required": true,
-      "default": "Sunday"
     }
   }
 }

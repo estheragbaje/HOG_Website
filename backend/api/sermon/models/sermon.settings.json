@@ -26,10 +26,6 @@
     "Date": {
       "type": "string",
       "required": true
-    },
-    "Weekday": {
-      "type": "string",
-      "required": true
     }
   }
 }

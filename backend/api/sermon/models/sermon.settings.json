@@ -26,10 +26,6 @@
     "Date": {
       "type": "string",
       "required": true
-    },
-    "SermonMonth": {
-      "type": "string",
-      "required": true
     }
   }
 }

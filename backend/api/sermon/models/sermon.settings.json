@@ -22,6 +22,14 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "Date": {
+      "type": "string",
+      "required": true
+    },
+    "Month": {
+      "type": "string",
+      "required": true
     }
   }
 }

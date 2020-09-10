@@ -26,6 +26,10 @@
     "Date": {
       "type": "string",
       "required": true
+    },
+    "Month": {
+      "type": "string",
+      "required": true
     }
   }
 }

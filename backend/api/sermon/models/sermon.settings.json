@@ -27,7 +27,7 @@
       "type": "string",
       "required": true
     },
-    "Month": {
+    "SermonMonth": {
       "type": "string",
       "required": true
     }

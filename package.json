@@ -8,6 +8,6 @@
   "scripts": {
     "deploy:backend": "git subtree push --prefix backend heroku master",
     "start:backend": "cd backend && yarn develop",
-    "start:frontend": "cd frontend && yarn dev"
+    "start:frontend": "cd website && yarn dev"
   }
 }

@@ -1,23 +1,34 @@
-import React from 'react';
-import { ThemeProvider, CSSReset, theme } from '@chakra-ui/core';
-import Navigation from '../components/Navigation';
+import React from "react";
+import { ThemeProvider, CSSReset, theme } from "@chakra-ui/core";
+import Navigation from "../components/Navigation";
+import NextHead from "next/head";
 
 const myTheme = {
   ...theme,
   fonts: {
-    heading: 'Montserrat, sans-serif',
-    subheading: 'Noto Serif, serif',
-    body: 'Montserrat, sans-serif',
+    heading: "Montserrat, sans-serif",
+    subheading: "Noto Serif, serif",
+    body: "Montserrat, sans-serif",
   },
 };
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={myTheme}>
-      <CSSReset />
-      <Navigation />
-      <Component width='100%' margin='auto' {...pageProps} />
-    </ThemeProvider>
+    <>
+      <NextHead>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+          media="print"
+          onload="this.media='all'"
+        />
+      </NextHead>
+      <ThemeProvider theme={myTheme}>
+        <CSSReset />
+        <Navigation />
+        <Component width="100%" margin="auto" {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }
 

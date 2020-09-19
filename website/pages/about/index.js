@@ -12,7 +12,6 @@ import DepartmentList from '../../components/DepartmentList';
 function About({ abouts, departments }) {
   return (
     <Box maxWidth='100%'>
-      {/* <Navigation /> */}
       <Box
         backgroundImage='url(/assets/about_us_bg.jpg) '
         backgroundSize='cover'

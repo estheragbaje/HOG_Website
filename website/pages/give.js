@@ -57,15 +57,7 @@ function Give({ departments }) {
             justifyContent='space-between'
             paddingY='80px'
           >
-            <Box
-              maxW='900px'
-              fontSize='18px'
-              textAlign='left'
-
-              // minW='300px'
-
-              // px={['40px', '40px', '80px']}
-            >
+            <Box maxW='900px' fontSize='18px' textAlign='left'>
               <Text>
                 You can make a recurring or one time giving.{' '}
                 <b>
@@ -78,20 +70,22 @@ function Give({ departments }) {
                 There is zero obligation to give, but rather an open avenue of
                 worship to connect fully with the heart of God.
               </Text>
-              <Link href='/give '>
-                <Button
-                  height={['44px', '44px', '55px']}
-                  px={['20px', '20px', '30px']}
-                  variant='outline'
-                  _hover={{ bg: '#D0FFF8' }}
-                  borderColor='#3AC7B1'
-                  color='#3AC7B1'
-                  _focus='teal.800'
-                  fontSize={['16px', '16px', '21px']}
-                  fontWeight='400'
-                  marginTop={20}
-                  children='GIVE ONLINE'
-                />
+              <Link href='https://tithe.ly/give?c=2129309'>
+                <a target='_blank'>
+                  <Button
+                    height={['44px', '44px', '55px']}
+                    px={['20px', '20px', '30px']}
+                    variant='outline'
+                    _hover={{ bg: '#D0FFF8' }}
+                    borderColor='#3AC7B1'
+                    color='#3AC7B1'
+                    _focus='teal.800'
+                    fontSize={['16px', '16px', '21px']}
+                    fontWeight='400'
+                    marginTop={20}
+                    children='GIVE ONLINE'
+                  />
+                </a>
               </Link>
             </Box>
             <Image
@@ -101,10 +95,8 @@ function Give({ departments }) {
               maxWidth='550px'
               objectFit='cover'
               flexShrink='0'
-              // borderRadius='10px'
               objectFit='cover'
               minWidth='400px'
-              // minHeight={['200px', '200px', '750px']}
               display={['none', 'block', 'block']}
             />
           </Flex>

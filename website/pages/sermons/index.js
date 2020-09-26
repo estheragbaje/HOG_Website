@@ -3,90 +3,98 @@ import {
   Button,
   Flex,
   Icon,
+  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
-  Text,
+  InputRightElement,
   SimpleGrid,
-} from '@chakra-ui/core';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
-import { Footer } from '../../components/Footer';
-import MainHeading from '../../components/MainHeading';
-import MessageList from '../../components/MessageList';
-import SubHeading from '../../components/SubHeading';
-import { MessageCard } from '../../components/Common';
+  Text,
+} from "@chakra-ui/core";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import useSWR from "swr";
+import { MessageCard } from "../../components/Common";
+import { Footer } from "../../components/Footer";
+import MainHeading from "../../components/MainHeading";
+import SubHeading from "../../components/SubHeading";
 
-function Sermons({ sermons, page, ...rest }) {
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+const API_URL = "https://hog-website.herokuapp.com";
+
+const useUpdateEffect = (effect, dependencies = []) => {
+  const isInitialMount = React.useRef(true);
+
+  React.useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      effect();
+    }
+  }, dependencies);
+};
+
+function Sermons(props) {
+  const { sermons, page, totalPages } = props;
   const router = useRouter();
-  const [searchResults, setSearchResults] = useState([]);
 
-  const useDebounce = (value, timeout) => {
-    const [state, setState] = useState(value);
-    useEffect(() => {
-      const handler = setTimeout(() => setState(value), timeout);
-      return () => clearTimeout(handler);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [value]);
-    return state;
-  };
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const debouncedSearch = useDebounce(searchTerm, 700);
+  const apiUrl = `${API_URL}/sermons?_q=${searchQuery}`;
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const { data: searchResult, error } = useSWR(apiUrl, fetcher);
+  const loading = !searchResult && !error;
 
-  useEffect(() => {
-    const results = sermons.filter((sermon) =>
-      sermon.Topic.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
-  }, [searchTerm]);
+  useUpdateEffect(() => {
+    if (searchQuery === "") {
+      setIsSearching(false);
+    }
+  }, [searchQuery]);
 
   return (
-    <Box maxWidth='100%'>
+    <Box maxWidth="100%">
       <Box
-        backgroundImage='url(/assets/sermons.jpg) '
-        backgroundSize='cover'
-        paddingY={['60px', '110px', '120px']}
-        backgroundColor='gray.700'
-        style={{ backgroundBlendMode: 'overlay' }}
+        backgroundImage="url(/assets/sermons.jpg) "
+        backgroundSize="cover"
+        paddingY={["60px", "110px", "120px"]}
+        backgroundColor="gray.700"
+        style={{ backgroundBlendMode: "overlay" }}
       >
-        <Box textAlign='center' color='white'>
+        <Box textAlign="center" color="white">
           <SubHeading
-            color='#3AC7B1'
-            fontSize={['18px', '18px', '26px', '26px']}
+            color="#3AC7B1"
+            fontSize={["18px", "18px", "26px", "26px"]}
           >
             RCCG House of Grace
           </SubHeading>
-          <MainHeading fontSize={['36px', '36px', '48px', '60px']}>
+          <MainHeading fontSize={["36px", "36px", "48px", "60px"]}>
             SERMONS
           </MainHeading>
         </Box>
       </Box>
 
       <Box
-        py='80px'
-        margin='auto'
-        maxWidth='1100px'
-        marginX={['40px', '40px', '80px']}
-        textAlign='left'
+        py="80px"
+        margin="auto"
+        maxWidth="1100px"
+        marginX={["40px", "40px", "80px"]}
+        textAlign="left"
       >
         <Flex
-          justifyContent='space-between'
-          alignItems='left'
-          direction={['column', 'column', 'row']}
+          justifyContent="space-between"
+          alignItems="left"
+          direction={["column", "column", "row"]}
         >
           <Box>
-            <SubHeading color='#3AC7B1' marginBottom='16px'>
+            <SubHeading color="#3AC7B1" marginBottom="16px">
               Sermon Archive
             </SubHeading>
             <MainHeading
-              fontSize={['24px', '24px', '36px']}
-              marginBottom='28px'
+              fontSize={["24px", "24px", "36px"]}
+              marginBottom="28px"
             >
               VIEW MESSAGES
             </MainHeading>
@@ -94,67 +102,114 @@ function Sermons({ sermons, page, ...rest }) {
 
           <InputGroup zIndex={0}>
             <InputLeftElement
-              children={<Icon name='search' color='#3AC7B1' />}
+              children={<Icon name="search" color="#3AC7B1" />}
             />
             <Input
-              placeholder='Find Sermons'
-              focusBorderColor='#3AC7B1'
-              value={searchTerm}
-              onChange={handleChange}
+              placeholder="Find Sermons"
+              focusBorderColor="#3AC7B1"
+              value={searchQuery}
+              onChange={(e) => {
+                if (e.target.value.length > 2) {
+                  setIsSearching(true);
+                }
+                setSearchQuery(e.target.value);
+              }}
             />
+            {searchQuery.length > 0 && (
+              <InputRightElement
+                children={
+                  <IconButton
+                    onClick={() => {
+                      setSearchQuery("");
+                    }}
+                    size="xs"
+                    icon="close"
+                  />
+                }
+              />
+            )}
           </InputGroup>
         </Flex>
 
-        {/* <MessageList sermons={sermons} /> */}
+        {isSearching && loading && <Box>Loading...</Box>}
+
         <SimpleGrid
+          hidden={!isSearching}
           columns={[1, 1, 3]}
           spacing={10}
           py={5}
-          px={['12px', '12px', '0px']}
-          {...rest}
+          px={["12px", "12px", "0px"]}
         >
-          {searchResults.map((sermon) => (
-            <Link href={`/sermons/${sermon.id}`}>
-              <MessageCard
-                src={sermon.Video_url}
-                topic={sermon.Topic}
-                date={sermon.Date}
-                minister={sermon.Preacher}
-                // day={sermon.Day}
-              />
-            </Link>
-          ))}
+          {searchResult?.length > 0 ? (
+            searchResult.map((sermon) => (
+              <Link href={`/sermons/${sermon.id}`}>
+                <MessageCard
+                  src={sermon.Video_url}
+                  topic={sermon.Topic}
+                  date={sermon.Date}
+                  minister={sermon.Preacher}
+                />
+              </Link>
+            ))
+          ) : (
+            <Box>No sermons found for {searchQuery}</Box>
+          )}
         </SimpleGrid>
-        <Flex justifyContent='space-between'>
-          <Button
-            onClick={() => router.push(`/sermons?page=${page - 1}`)}
-            isDisabled={page <= 1}
+
+        <Box hidden={isSearching}>
+          <SimpleGrid
+            columns={[1, 1, 3]}
+            spacing={10}
+            py={5}
+            px={["12px", "12px", "0px"]}
           >
-            Previous
-          </Button>
-          <Button onClick={() => router.push(`/sermons?page=${page + 1}`)}>
-            Next
-          </Button>
-        </Flex>
+            {sermons.map((sermon) => (
+              <Link href={`/sermons/${sermon.id}`}>
+                <MessageCard
+                  src={sermon.Video_url}
+                  topic={sermon.Topic}
+                  date={sermon.Date}
+                  minister={sermon.Preacher}
+                  // day={sermon.Day}
+                />
+              </Link>
+            ))}
+          </SimpleGrid>
+
+          <Flex justifyContent="space-between">
+            <Button
+              onClick={() => router.push(`/sermons?page=${page - 1}`)}
+              isDisabled={page <= 1}
+            >
+              Previous
+            </Button>
+            <Button
+              onClick={() => router.push(`/sermons?page=${page + 1}`)}
+              isDisabled={page >= totalPages}
+            >
+              Next
+            </Button>
+          </Flex>
+        </Box>
       </Box>
 
       <Box
-        backgroundImage='url(/assets/weekly_services.jpg) '
-        backgroundSize='cover'
-        backgroundColor='gray.600'
-        style={{ backgroundBlendMode: 'overlay' }}
+        backgroundImage="url(/assets/weekly_services.jpg) "
+        backgroundSize="cover"
+        backgroundColor="gray.600"
+        style={{ backgroundBlendMode: "overlay" }}
       >
         <Box
-          py='80px'
-          margin={['0 40px', '0 40px', '0 80px']}
-          color='white'
-          maxWidth='500px'
+          py="80px"
+          margin={["0 40px", "0 40px", "0 80px"]}
+          color="white"
+          maxWidth="500px"
         >
-          <SubHeading color='#3AC7B1' marginBottom='16px'>
+          <SubHeading color="#3AC7B1" marginBottom="16px">
             Get to know about our weekly activites
           </SubHeading>
-          <MainHeading fontSize={['24px', '24px', '36px']} marginBottom='28px'>
-            OUR WEEKLY SERVICES{' '}
+          <MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
+            OUR WEEKLY SERVICES{" "}
           </MainHeading>
           <Box>
             <Text py={4}>
@@ -167,18 +222,18 @@ function Sermons({ sermons, page, ...rest }) {
               grow much deeper in the Christian life through regular fellowship
               with other brethren.
             </Text>
-            <Link href='/services'>
+            <Link href="/services">
               <Button
-                type='submit'
-                height={['44px', '44px', '55px']}
-                px={['20px', '20px', '30px']}
-                bg='#3AC7B1'
-                _hover={{ bg: '#1FBDA5' }}
-                _focus='teal.800'
-                fontSize={['16px', '16px', '21px']}
-                fontWeight='400'
-                color='white'
-                children='VIEW SERVICES'
+                type="submit"
+                height={["44px", "44px", "55px"]}
+                px={["20px", "20px", "30px"]}
+                bg="#3AC7B1"
+                _hover={{ bg: "#1FBDA5" }}
+                _focus="teal.800"
+                fontSize={["16px", "16px", "21px"]}
+                fontWeight="400"
+                color="white"
+                children="VIEW SERVICES"
                 my={10}
               />
             </Link>
@@ -191,34 +246,28 @@ function Sermons({ sermons, page, ...rest }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch('https://hog-website.herokuapp.com/sermons/');
-//   const sermons = await res.json();
+export async function getServerSideProps(ctx) {
+  const page = ctx.query?.page ?? 1;
+  const perPage = 3;
 
-//   return {
-//     props: {
-//       sermons,
-//     },
-//   };
-// }
+  const start = +page === 1 ? 0 : (+page - 1) * perPage;
 
-export async function getServerSideProps({ query: { page = 1 } }) {
-  // Fetch data from external API
-
-  const start = +page === 1 ? 0 : (+page - 1) * 3;
-
-  const res = await fetch(
-    // `https://hog-website.herokuapp.com/sermons/?_start=${start}`
-    `https://hog-website.herokuapp.com/sermons/?_limit=3&_start=${start}`
+  const sermonsResponse = await fetch(
+    `${API_URL}/sermons?_limit=${perPage}&_start=${start}`
   );
+  const sermons = await sermonsResponse.json();
 
-  const sermons = await res.json();
+  const countResponse = await fetch(`${API_URL}/sermons/count`);
+  const count = await countResponse.json();
+
+  const totalPages = Math.ceil(count / perPage);
 
   // Pass data to the page via props
   return {
     props: {
       sermons,
       page: +page,
+      totalPages,
     },
   };
 }

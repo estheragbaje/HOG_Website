@@ -80,18 +80,30 @@ function Sermon({ content, sermon, sermons, ...rest }) {
 //   return { props: { sermon, sermons } };
 // }
 
-export async function getStaticProps() {
-  const res = await fetch(
-    'https://hog-website.herokuapp.com/sermons/?_limit=3'
-  );
+// export async function getStaticProps() {
+//   const res = await fetch(
+//     'https://hog-website.herokuapp.com/sermons/?_limit=3'
+//   );
 
+//   const sermons = await res.json();
+
+//   return {
+//     props: {
+//       sermons,
+//     },
+//   };
+// }
+
+export async function getServerSideProps({ params }) {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  const res = await fetch(
+    `https://hog-website.herokuapp.com/sermons/${params.id}`
+  );
   const sermons = await res.json();
 
-  return {
-    props: {
-      sermons,
-    },
-  };
+  // Pass post data to the page via props
+  return { props: { sermons } };
 }
 
 export default Sermon;

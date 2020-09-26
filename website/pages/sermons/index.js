@@ -18,7 +18,7 @@ import MessageList from '../../components/MessageList';
 import SubHeading from '../../components/SubHeading';
 import { MessageCard } from '../../components/Common';
 
-function Sermons({ sermons, page, ...rest }) {
+function Sermons({ sermons, ...rest }) {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = React.useState('');
   const [searchResults, setSearchResults] = React.useState([]);
@@ -112,7 +112,7 @@ function Sermons({ sermons, page, ...rest }) {
             </Link>
           ))}
         </SimpleGrid>
-        <Flex justifyContent='space-between'>
+        {/* <Flex justifyContent='space-between'>
           <Button
             onClick={() => router.push(`/sermons?page=${page - 1}`)}
             isDisabled={page <= 1}
@@ -122,7 +122,7 @@ function Sermons({ sermons, page, ...rest }) {
           <Button onClick={() => router.push(`/sermons?page=${page + 1}`)}>
             Next
           </Button>
-        </Flex>
+        </Flex> */}
       </Box>
 
       <Box
@@ -178,35 +178,35 @@ function Sermons({ sermons, page, ...rest }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch('https://hog-website.herokuapp.com/sermons/');
-//   const sermons = await res.json();
-
-//   return {
-//     props: {
-//       sermons,
-//     },
-//   };
-// }
-
-export async function getServerSideProps({ query: { page = 1 } }) {
-  // Fetch data from external API
-
-  const start = +page === 1 ? 0 : (+page - 1) * 3;
-
-  const res = await fetch(
-    `https://hog-website.herokuapp.com/sermons/?_start=${start}&_limit=3`
-  );
-
+export async function getStaticProps() {
+  const res = await fetch('https://hog-website.herokuapp.com/sermons/');
   const sermons = await res.json();
 
-  // Pass data to the page via props
   return {
     props: {
       sermons,
-      page: +page,
     },
   };
 }
+
+// export async function getServerSideProps({ query: { page = 1 } }) {
+//   // Fetch data from external API
+
+//   const start = +page === 1 ? 0 : (+page - 1) * 3;
+
+//   const res = await fetch(
+//     `https://hog-website.herokuapp.com/sermons/?_start=${start}&_limit=3`
+//   );
+
+//   const sermons = await res.json();
+
+//   // Pass data to the page via props
+//   return {
+//     props: {
+//       sermons,
+//       page: +page,
+//     },
+//   };
+// }
 
 export default Sermons;

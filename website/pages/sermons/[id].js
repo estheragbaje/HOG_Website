@@ -94,6 +94,7 @@ function Sermon({ content, sermon, sermons, ...rest }) {
 //   };
 // }
 
+
 export async function getServerSideProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1

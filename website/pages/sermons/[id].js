@@ -81,7 +81,9 @@ function Sermon({ content, sermon, sermons, ...rest }) {
 // }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:1337/sermons/?_limit=3');
+  const res = await fetch(
+    'https://hog-website.herokuapp.com/sermons/?_limit=3'
+  );
 
   const sermons = await res.json();
 

@@ -20,15 +20,13 @@ function Contact() {
   const handleSubmit = async (data) => {
     console.log(data);
 
-    const res = await fetch("/api/send-email", {
+    await fetch("/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
 
-    console.log("content");
-
-    // router.push("/thank-you");
+    router.push("/thank-you");
   };
 
   return (

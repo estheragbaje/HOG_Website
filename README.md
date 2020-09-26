@@ -14,17 +14,31 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## How to Update Content on the Site
 
-To learn more about Next.js, take a look at the following resources:
+### Uploading Images 
+Login to the heroku admin site and go to media library. Then upload images.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Events
+Login to the heroku admin site, Go to events and edit and/or add content accordingly. 
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+### About
+Login to the heroku admin site, Go to abouts and edit and/or add content accordingly. 
 
-## Deploy on ZEIT Now
+### Beliefs
+Login to the heroku admin site, Go to beliefs and edit and/or add content accordingly. 
 
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Departments
+Login to the heroku admin site, Go to departments and edit and/or add content accordingly. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Sermons
+Login to the heroku admin site, Go to sermons and edit and/or add content accordingly. 
+
+### Weekly Services
+Login to the heroku admin site, Go to weekly services and edit and/or add content accordingly. 
+
+## How to Add more pages url the Site such as `/newurl`
+Go to the website directory, then pages directory and create a new page
+
+
+

@@ -11,7 +11,7 @@ function SideSermonList({ sermons, isActive }) {
           <Link href={`/sermons/${sermon.id}`}>
             <SideSermon
               date={sermon.Date}
-              month='JUN'
+              // month='JUN'
               service='Sunday Service'
               topic={sermon.Topic}
             />

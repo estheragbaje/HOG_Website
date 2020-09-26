@@ -140,7 +140,6 @@ function HomePage({ services, events, event, sermons }) {
           <AspectRatioBox
             ratio={16 / 9}
             flex='1'
-            // minWidth="500px"
           >
             <Box
               as='iframe'
@@ -268,16 +267,8 @@ function HomePage({ services, events, event, sermons }) {
       </Flex>
 
       <Box>
-        <Box
-        // py="80px"
-        // margin="0 80px"
-        // px={['40px', '40px', '80px']}
-        >
-          <Box
-            // px={['40px', '40px', '80px']}
-            py='80px'
-            paddingX={['40px', '40px', '80px']}
-          >
+        <Box>
+          <Box py='80px' paddingX={['40px', '40px', '80px']}>
             <MainHeading
               fontSize={['24px', '24px', '36px']}
               marginBottom='28px'

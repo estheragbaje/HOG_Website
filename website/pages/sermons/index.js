@@ -1,3 +1,5 @@
+/**@jsx jsx */
+import { jsx } from "@emotion/core";
 import {
   Box,
   Button,
@@ -76,13 +78,29 @@ function Sermons(props) {
         </Box>
       </Box>
 
-      <Box
-        py="80px"
-        margin="auto"
-        maxWidth="1100px"
-        marginX={["40px", "40px", "80px"]}
-        textAlign="left"
-      >
+      <Box py="80px" margin="auto" maxWidth="1100px" mx="auto" textAlign="left">
+        <Box mb="80px">
+          <MainHeading
+            textTransform="uppercase"
+            fontSize={["24px", "24px", "36px"]}
+            marginBottom="28px"
+          >
+            Watch our Live Service
+          </MainHeading>
+
+          <Box>
+            <div
+              id="vidlive-embed-2844"
+              css={{
+                "#vidlive-placeholder": {
+                  width: "100%",
+                  margin: "0 auto",
+                },
+              }}
+            />
+          </Box>
+        </Box>
+
         <Flex
           justifyContent="space-between"
           alignItems="left"

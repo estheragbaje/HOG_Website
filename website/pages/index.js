@@ -103,7 +103,7 @@ function HomePage({ services, events, event, sermons }) {
             Worship with us Sundays at 9:30am
           </Text>
 
-          <Link href="/watch_online">
+          <Link href="/sermons">
             <Button
               height={["55px", "55px", "66px"]}
               px={["20px", "20px", "30px"]}
@@ -112,36 +112,19 @@ function HomePage({ services, events, event, sermons }) {
               _focus="teal.800"
               fontSize={["16px", "16px", "21px"]}
               fontWeight="400"
-              children="WATCH SERVICE
-              ONLINE"
-            />
+              textTransform="uppercase"
+            >
+              Watch Sermons
+            </Button>
           </Link>
         </Box>
       </Box>
-      <Box
-        py="80px"
-        margin="auto"
-        margin={["0 40px", "0 40px", "0 80px"]}
-        // maxWidth="1100px"
-        // // marginX={['30px', '30px', '80px']}
-        // textAlign={['center', 'center', 'center', 'left']}
-        // margin={['0 40px', '0 40px', '0 80px']}
-        // maxWidth="100%"
-        // px={['40px', '40px', '80px']}
-      >
+      <Box py="80px" margin="auto" margin={["0 40px", "0 40px", "0 80px"]}>
         <MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
           OUR LATEST SERMONS
         </MainHeading>
 
-        <SimpleGrid
-          columns={{ base: 1, md: 1, lg: 2 }}
-          spacing={8}
-          // maxWidth="1100px"
-          // marginX="auto"
-          // paddingX="12px"
-
-          // textAlign={['center', 'center', 'left']}
-        >
+        <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} spacing={8}>
           <AspectRatioBox ratio={16 / 9} flex="1">
             <Box
               as="iframe"
@@ -173,9 +156,6 @@ function HomePage({ services, events, event, sermons }) {
       </Box>
       <Box paddingY="80px" backgroundColor="#F7F8F7">
         <Box textAlign="center" paddingX={["40px", "40px", "80px"]}>
-          {/* <SubHeading color='#3AC7B1'>
-            We are Passionate About Sharing the Gospel of Jesus
-          </SubHeading> */}
           <MainHeading fontSize={["24px", "24px", "36px"]}>
             JOIN OUR WEEKLY SERVICES
           </MainHeading>

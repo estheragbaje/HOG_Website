@@ -11,6 +11,7 @@ import {
   InputLeftElement,
   InputRightElement,
   SimpleGrid,
+  Spinner,
   Text,
 } from "@chakra-ui/core";
 import Link from "next/link";
@@ -21,6 +22,7 @@ import { MessageCard } from "../../components/Common";
 import { Footer } from "../../components/Footer";
 import MainHeading from "../../components/MainHeading";
 import SubHeading from "../../components/SubHeading";
+import useScript, { ScriptStatus } from "@charlietango/use-script";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -57,6 +59,8 @@ function Sermons(props) {
   }, [searchQuery]);
 
   const showPagination = totalPages > 1;
+
+  const [ready] = useScript("https://www.vidlive.co/embed/2844/embed.js");
 
   return (
     <Box maxWidth="100%">
@@ -100,6 +104,12 @@ function Sermons(props) {
                 },
               }}
             />
+            {!ready ? (
+              <Flex align="center" justify="center" h="634px" bg="gray.50">
+                <Spinner />
+                Loading...
+              </Flex>
+            ) : null}
           </Box>
         </Box>
 

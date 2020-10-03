@@ -14,7 +14,6 @@ class CustomDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif:ital@0;1&display=swap"
             rel="stylesheet"
           />
-          <script src="https://www.vidlive.co/embed/2844/embed.js" />
         </Head>
         <body>
           <Main />

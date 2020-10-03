@@ -19,7 +19,6 @@ function MessageList({ sermons, ...rest }) {
             topic={sermon.Topic}
             date={sermon.Date}
             minister={sermon.Preacher}
-            // day={sermon.Day}
           />
         );
       })}

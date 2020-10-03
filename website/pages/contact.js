@@ -1,32 +1,21 @@
-import React from "react";
-import {
-  Box,
-  Flex,
-  Image,
-  Text,
-  SimpleGrid,
-  Stack,
-  Icon,
-} from "@chakra-ui/core";
-import Navigation from "../components/Navigation";
-import SubHeading from "../components/SubHeading";
-import MainHeading from "../components/MainHeading";
-import { Footer, FooterText, ContactForm } from "../components/Footer";
-import { IconText } from "../components/Common";
+import { Box, SimpleGrid, Stack } from "@chakra-ui/core";
 import { useRouter } from "next/router";
+import React from "react";
+import { IconText } from "../components/Common";
+import { ContactForm, FooterText } from "../components/Footer";
+import MainHeading from "../components/MainHeading";
+import SubHeading from "../components/SubHeading";
 
 function Contact() {
   const router = useRouter();
   const handleSubmit = async (data) => {
-    console.log(data);
-
     await fetch("/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
 
-    router.push("/thank-you");
+    // router.push("/thank-you");
   };
 
   return (

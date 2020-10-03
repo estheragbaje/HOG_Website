@@ -1,24 +1,23 @@
 import {
+  AspectRatioBox,
   Box,
   Button,
   Flex,
+  FormControl,
+  FormErrorMessage,
   Heading,
   Icon,
   Image,
+  Input,
+  PseudoBox,
   SimpleGrid,
   Stack,
   Text,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Input,
-  PseudoBox,
-  AspectRatioBox,
-} from '@chakra-ui/core';
-import Link from 'next/link';
-import React from 'react';
-import MainHeading from './MainHeading';
-import SubHeading from './SubHeading';
+} from "@chakra-ui/core";
+import React from "react";
+import { BiCalendar } from "react-icons/bi";
+import MainHeading from "./MainHeading";
+import SubHeading from "./SubHeading";
 
 export function CustomButton({
   href,
@@ -31,7 +30,7 @@ export function CustomButton({
 }) {
   return (
     <Button
-      as='a'
+      as="a"
       width={width}
       height={height}
       variant={variant}
@@ -45,13 +44,12 @@ export function CustomButton({
 
 export function BigDate({ month, date, ...rest }) {
   return (
-    <Box>
-      <Stack textAlign='center' marginX='40px' px={6} py={2}>
-        <Heading color='#3AC7B1' size='sm'>
-          {month}
-        </Heading>
-        <Heading fontSize={['20px', '20px', '24px']}>{date}</Heading>
+    <Box textAlign="center" marginX="40px" px={6} py={2}>
+      <Stack isInline align="center" spacing="1">
+        <Box as={BiCalendar} mt="-2px" size="18px" color="teal.400" />
+        <Text>Date</Text>
       </Stack>
+      <Heading fontSize={["20px", "20px", "24px"]}>{date}</Heading>
     </Box>
   );
 }
@@ -59,26 +57,26 @@ export function BigDate({ month, date, ...rest }) {
 export function FlexCard({ src, alt, heading, children, ...rest }) {
   return (
     <Flex
-      direction={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
-      justifyContent='space-between'
-      paddingY='40px'
+      direction={["column-reverse", "column-reverse", "column-reverse", "row"]}
+      justifyContent="space-between"
+      paddingY="40px"
       {...rest}
     >
-      <Box minW='300px'>
-        <MainHeading color='#3AC7B1' fontSize={['24px', '24px', '28px']}>
+      <Box minW="300px">
+        <MainHeading color="#3AC7B1" fontSize={["24px", "24px", "28px"]}>
           {heading}
         </MainHeading>
-        <Text fontSize={['16px', '16px', '18px']} py={4}>
+        <Text fontSize={["16px", "16px", "18px"]} py={4}>
           {children}
         </Text>
       </Box>
-      <Box size={['24px', '24px', '50px']} flexShrink='0'></Box>
+      <Box size={["24px", "24px", "50px"]} flexShrink="0"></Box>
       <Image
         src={src}
         alt={alt}
-        maxWidth='300px'
-        objectFit='cover'
-        borderRadius='10px'
+        maxWidth="300px"
+        objectFit="cover"
+        borderRadius="10px"
       />
     </Flex>
   );
@@ -86,18 +84,18 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
 
 export function TextImage({ src, alt, content, backgroundColor, ...rest }) {
   return (
-    <Box {...rest} position='relative' textAlign='center'>
+    <Box {...rest} position="relative" textAlign="center">
       <Box
         backgroundImage={`url(${src}) `}
-        backgroundSize='cover'
+        backgroundSize="cover"
         backgroundColor={backgroundColor}
-        minHeight={['220px', '220px', '290px']}
-        style={{ backgroundBlendMode: 'overlay' }}
-        display='flex'
-        alignItems='center'
-        justifyContent='center'
+        minHeight={["220px", "220px", "290px"]}
+        style={{ backgroundBlendMode: "overlay" }}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
       >
-        <MainHeading color='white' fontSize={['21px', '21px', '32px']}>
+        <MainHeading color="white" fontSize={["21px", "21px", "32px"]}>
           {content}
         </MainHeading>
       </Box>
@@ -109,13 +107,13 @@ export function IconText({ name, content, ...rest }) {
   return (
     <SimpleGrid
       {...rest}
-      textAlign={['left', 'left', 'left']}
-      columns={['1', '1', '1']}
-      maxWidth='300px'
+      textAlign={["left", "left", "left"]}
+      columns={["1", "1", "1"]}
+      maxWidth="300px"
       py={2}
     >
-      <Icon name={name} size={['20px', '20px', '25px']} textAlign='left' />
-      <Text py={4} color='#3AC7B1' fontSize={['14px', '18px', '21px']}>
+      <Icon name={name} size={["20px", "20px", "25px"]} textAlign="left" />
+      <Text py={4} color="#3AC7B1" fontSize={["14px", "18px", "21px"]}>
         {content}
       </Text>
     </SimpleGrid>
@@ -125,36 +123,36 @@ export function IconText({ name, content, ...rest }) {
 export function EventCard({ src, alt, title, date, time, ...rest }) {
   return (
     <PseudoBox
-      borderRadius='10px'
-      cursor='pointer'
+      borderRadius="10px"
+      cursor="pointer"
       _hover={{
-        padding: '10px',
-        borderRadius: '8px',
-        cursor: 'pointer',
-        transition: 'all 0.2s',
+        padding: "10px",
+        borderRadius: "8px",
+        cursor: "pointer",
+        transition: "all 0.2s",
       }}
       {...rest}
     >
       <Image
         src={src}
         alt={alt}
-        objectFit='cover'
-        borderTopLeftRadius='10px'
-        borderTopRightRadius='10px'
+        objectFit="cover"
+        borderTopLeftRadius="10px"
+        borderTopRightRadius="10px"
       />
       <Stack
-        padding='30px'
-        border='1px solid #C4C4C4'
-        borderBottomLeftRadius='10px'
-        borderBottomRightRadius='10px'
+        padding="30px"
+        border="1px solid #C4C4C4"
+        borderBottomLeftRadius="10px"
+        borderBottomRightRadius="10px"
       >
         <MainHeading
-          fontSize={['18px', '18px', '24px']}
-          textTransform='uppercase'
+          fontSize={["18px", "18px", "24px"]}
+          textTransform="uppercase"
         >
           {title}
         </MainHeading>
-        <SubHeading fontSize='16px' color='#3AC7B1' py={2}>
+        <SubHeading fontSize="16px" color="#3AC7B1" py={2}>
           {date}
         </SubHeading>
         <Text>{time}</Text>
@@ -165,10 +163,10 @@ export function EventCard({ src, alt, title, date, time, ...rest }) {
 
 export function EventIcon({ name, content, ...rest }) {
   return (
-    <Box textAlign='left' minW={['500px', '500px', '0px', '0px']}>
-      <Flex {...rest} alignItems='center' py={2}>
-        <Icon name={name} size='20px' color='#3AC7B1' />
-        <Text py={4} fontSize={['16px', '16px', '18px']} px={[2, 2, 4]}>
+    <Box textAlign="left" minW={["500px", "500px", "0px", "0px"]}>
+      <Flex {...rest} alignItems="center" py={2}>
+        <Icon name={name} size="20px" color="#3AC7B1" />
+        <Text py={4} fontSize={["16px", "16px", "18px"]} px={[2, 2, 4]}>
           {content}
         </Text>
       </Flex>
@@ -181,22 +179,22 @@ export function MessageCard({ src, topic, date, minister, day, ...rest }) {
     <PseudoBox
       {...rest}
       _hover={{
-        cursor: 'pointer',
+        cursor: "pointer",
       }}
     >
       <AspectRatioBox ratio={4 / 3}>
-        <Box as='iframe' title={topic} src={src} allowFullScreen />
+        <Box as="iframe" title={topic} src={src} allowFullScreen />
       </AspectRatioBox>
       <Box
-        padding='10px'
-        border='1px solid #C4C4C4'
-        borderBottomLeftRadius='5px'
-        borderBottomRightRadius='5px'
+        padding="10px"
+        border="1px solid #C4C4C4"
+        borderBottomLeftRadius="5px"
+        borderBottomRightRadius="5px"
       >
-        <MainHeading fontSize={['16px', '16px', '18px']} py={2}>
+        <MainHeading fontSize={["16px", "16px", "18px"]} py={2}>
           {topic}
         </MainHeading>
-        <SubHeading color='#3AC7B1'>{date}</SubHeading>
+        <SubHeading color="#3AC7B1">{date}</SubHeading>
 
         <Text>{minister}</Text>
         {/* <Text
@@ -229,13 +227,13 @@ function InputForm({
         label={label}
         name={name}
         type={type}
-        backgroundColor='white'
-        focusBorderColor='#3AC7B1'
-        errorBorderColor='crimson'
-        variant='filled'
+        backgroundColor="white"
+        focusBorderColor="#3AC7B1"
+        errorBorderColor="crimson"
+        variant="filled"
         {...rest}
       />
-      <FormErrorMessage fontFamily='body'>{error}</FormErrorMessage>
+      <FormErrorMessage fontFamily="body">{error}</FormErrorMessage>
     </FormControl>
   );
 }

@@ -56,6 +56,8 @@ function Sermons(props) {
     }
   }, [searchQuery]);
 
+  const showPagination = totalPages > 1;
+
   return (
     <Box maxWidth="100%">
       <Box
@@ -194,13 +196,20 @@ function Sermons(props) {
             ))}
           </SimpleGrid>
 
-          <Flex justifyContent="space-between">
+          <Flex
+            hidden={!showPagination}
+            justifyContent="space-between"
+            align="center"
+          >
             <Button
               onClick={() => router.push(`/sermons?page=${page - 1}`)}
               isDisabled={page <= 1}
             >
               Previous
             </Button>
+            <Text>
+              Page {page} / {totalPages}
+            </Text>
             <Button
               onClick={() => router.push(`/sermons?page=${page + 1}`)}
               isDisabled={page >= totalPages}
@@ -266,7 +275,7 @@ function Sermons(props) {
 
 export async function getServerSideProps(ctx) {
   const page = ctx.query?.page ?? 1;
-  const perPage = 3;
+  const perPage = 6;
 
   const start = +page === 1 ? 0 : (+page - 1) * perPage;
 

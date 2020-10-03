@@ -1,12 +1,11 @@
 const sendgrid = require("@sendgrid/mail");
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function (req, res) {
-  sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
-
   const { name, email, message } = req.body;
 
   const content = {
-    to: "folasadeagbaje@gmail.com",
+    to: "houseofgracerccgcc@gmail.com",
     from: "houseofgracerccgcc@gmail.com",
     subject: `New Message From - ${email}`,
     text: "and easy to do anywhere, even with Node.js",

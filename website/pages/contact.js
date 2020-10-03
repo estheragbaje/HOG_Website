@@ -14,8 +14,6 @@ function Contact() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-
-    // router.push("/thank-you");
   };
 
   return (

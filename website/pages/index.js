@@ -19,6 +19,7 @@ import SideSermonList from "../components/SideSermonList";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
 import useInterval from "@use-it/interval";
+
 /**
  * Put the slider images here
  */
@@ -27,6 +28,12 @@ const images = [
   "/assets/our_departments.jpeg",
   "/assets/about_us.png",
 ];
+
+const toDate = (date) => {
+  // ensure the date matches "DD-MM-YYYY"
+  const [dd, mm, yyyy] = date.split("-");
+  return new Date(`${mm}/${dd}/${yyyy}`);
+};
 
 function HomePage({ services, events, event, sermons }) {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -52,6 +59,9 @@ function HomePage({ services, events, event, sermons }) {
   }, intervalDuration);
 
   const x = -(100 / images.length) * (activeSlide - 1);
+
+  const sortedSermons = sermons.sort((a, b) => toDate(b.Date) - toDate(a.Date));
+  const recentSermon = sortedSermons[0];
 
   return (
     <Box maxWidth="100%">
@@ -128,12 +138,12 @@ function HomePage({ services, events, event, sermons }) {
           <AspectRatioBox ratio={16 / 9} flex="1">
             <Box
               as="iframe"
-              title="The Lord is our Shepherd"
-              src="https://www.youtube.com/embed/4rxyTQoCrKw"
+              title={recentSermon.Topic}
+              src={recentSermon.Video_url}
               allowFullScreen
             />
           </AspectRatioBox>
-          <SideSermonList sermons={sermons} />
+          <SideSermonList sermons={sortedSermons} />
         </SimpleGrid>
 
         <Box textAlign="center">
@@ -197,12 +207,7 @@ function HomePage({ services, events, event, sermons }) {
           paddingY={16}
           color="white"
         >
-          <Box
-            maxW="900px"
-            paddingX={["40px", "40px", "80px"]}
-
-            // px={['40px', '40px', '80px']}
-          >
+          <Box maxW="900px" paddingX={["40px", "40px", "80px"]}>
             <SubHeading color="#3AC7B1" fontSize="21px">
               Welcome Address
             </SubHeading>
@@ -404,20 +409,20 @@ function HomePage({ services, events, event, sermons }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
+  const servicesRes = await fetch(
     "https://hog-website.herokuapp.com/weekly-services/?_limit=3"
   );
-  const res2 = await fetch(
+  const eventsRes = await fetch(
     "https://hog-website.herokuapp.com/events/?_limit=4"
   );
 
-  const res3 = await fetch(
-    "https://hog-website.herokuapp.com/sermons/?_limit=4"
+  const sermonsRes = await fetch(
+    "https://hog-website.herokuapp.com/sermons/?_limit=4&_sort=updated_at:DESC"
   );
 
-  const services = await res.json();
-  const events = await res2.json();
-  const sermons = await res3.json();
+  const services = await servicesRes.json();
+  const events = await eventsRes.json();
+  const sermons = await sermonsRes.json();
 
   return {
     props: {

@@ -1,5 +1,4 @@
 /**@jsx jsx */
-import { jsx } from "@emotion/core";
 import {
   Box,
   Button,
@@ -14,6 +13,8 @@ import {
   Spinner,
   Text,
 } from "@chakra-ui/core";
+import useScript from "@charlietango/use-script";
+import { jsx } from "@emotion/core";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -22,7 +23,6 @@ import { MessageCard } from "../../components/Common";
 import { Footer } from "../../components/Footer";
 import MainHeading from "../../components/MainHeading";
 import SubHeading from "../../components/SubHeading";
-import useScript, { ScriptStatus } from "@charlietango/use-script";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -292,6 +292,7 @@ export async function getServerSideProps(ctx) {
   const sermonsResponse = await fetch(
     `${API_URL}/sermons?_limit=${perPage}&_start=${start}`
   );
+
   const sermons = await sermonsResponse.json();
 
   const countResponse = await fetch(`${API_URL}/sermons/count`);

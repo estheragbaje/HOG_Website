@@ -38,7 +38,6 @@ function Give({ departments }) {
 
       <Box
         paddingTop='80px'
-        // margin={['0 40px', '0 40px', '0 80px']}
         textAlign='center'
         bg='#F7F8F7'
         paddingX={['40px', '40px', '80px']}
@@ -48,7 +47,7 @@ function Give({ departments }) {
           marginBottom='28px'
           textTransform='uppercase'
         >
-          Give Tithes & Offerings Online
+          Give Tithes & Offerings
         </MainHeading>
         <Box margin='auto' textAlign='center'>
           <Flex
@@ -58,13 +57,16 @@ function Give({ departments }) {
             paddingY='80px'
           >
             <Box maxW='900px' fontSize='18px' textAlign='left'>
+              <MainHeading
+                fontSize={['16px', '18px', '24px']}
+                marginBottom='28px'
+                textTransform='uppercase'
+              >
+                1. Online Giving
+              </MainHeading>
               <Text>
                 You can make a recurring or one time giving.{' '}
-                <b>
-                  Your transaction will be processed through Tithe.ly OR
-                  Pushpay, a secure online giving platform.{' '}
-                </b>
-                during the Sunday service.
+                <b>Your transaction will be processed through Tithe.ly</b>.
                 <br />
                 <br />
                 There is zero obligation to give, but rather an open avenue of
@@ -91,6 +93,44 @@ function Give({ departments }) {
             <Image
               paddingLeft={['0px', '0px', '0px', '20px']}
               src='/assets/our_vision.jpeg'
+              alt='About us'
+              maxWidth='550px'
+              objectFit='cover'
+              flexShrink='0'
+              objectFit='cover'
+              minWidth='400px'
+              display={['none', 'block', 'block']}
+            />
+          </Flex>
+        </Box>
+      </Box>
+      <Box textAlign='center' bg='#F7F8F7' paddingX={['40px', '40px', '80px']}>
+        <Box margin='auto' textAlign='center'>
+          <Flex
+            direction={['column', 'column', 'column', 'row']}
+            // marginX={['40px', '40px', '80px']}
+            justifyContent='space-between'
+            paddingY='80px'
+          >
+            <Box maxW='900px' fontSize='18px' textAlign='left'>
+              <MainHeading
+                fontSize={['16px', '18px', '24px']}
+                marginBottom='28px'
+                textTransform='uppercase'
+              >
+                2. Via Sms
+              </MainHeading>
+              <Text>
+                You can make a one time giving via SMS.{' '}
+                <b>SMS the amount HOGCC to 45888 </b>.
+                <br />
+                <br />
+                For example to give $50, text $50 HOGCC to 45888
+              </Text>
+            </Box>
+            <Image
+              paddingLeft={['0px', '0px', '0px', '20px']}
+              src='/assets/sms.jpeg'
               alt='About us'
               maxWidth='550px'
               objectFit='cover'

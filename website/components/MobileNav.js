@@ -40,7 +40,7 @@ function MobileNav() {
             as={AiOutlineMenu}
             size='24px'
             color='teal.600'
-            marginRight='20px'
+            marginRight='30px'
           />
         </Button>
       </Flex>

@@ -351,54 +351,54 @@ function HomePage({ services, events, event, sermons }) {
             spacing={8}
             paddingBottom='20px'
           >
-            {/* <AspectRatioBox ratio={16 / 9}>
+            <AspectRatioBox ratio={16 / 9}>
               <Box
-                as="iframe"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.979823200833!2d-97.36485948493838!3d27.687018482800358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668f5cdf44848ed%3A0x5015a69c9848f5cb!2s2306%20Airline%20Rd%20%23110A%2C%20Corpus%20Christi%2C%20TX%2078414%2C%20USA!5e0!3m2!1sen!2sng!4v1588706338081!5m2!1sen!2sng"
-                alt="demo"
+                as='iframe'
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.979823200833!2d-97.36485948493838!3d27.687018482800358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668f5cdf44848ed%3A0x5015a69c9848f5cb!2s2306%20Airline%20Rd%20%23110A%2C%20Corpus%20Christi%2C%20TX%2078414%2C%20USA!5e0!3m2!1sen!2sng!4v1588706338081!5m2!1sen!2sng'
+                alt='demo'
               />
-            </AspectRatioBox> */}
-            {/* <Box>
-              <MainHeading fontSize="21px" paddingTop="20px">
+            </AspectRatioBox>
+            <Box>
+              <MainHeading fontSize='21px' paddingTop='20px'>
                 RCCG HOUSE OF GRACE
               </MainHeading>
-              <Text fontSize="20px">
+              <Text fontSize='20px'>
                 Spreading the Word of God to the ends of the earth with the aims
                 of leading individuals to Christ.
               </Text>
-              <Stack spacing={2} marginTop="10px">
+              <Stack spacing={2} marginTop='10px'>
                 <Flex
-                  alignItems="center"
-                  paddingTop="10px"
-                  fontSize={["14px", "18px", "21px"]}
+                  alignItems='center'
+                  paddingTop='10px'
+                  fontSize={['14px', '18px', '21px']}
                 >
-                  <Icon name="phone" color="#3AC7B1" />
-                  <Text paddingLeft={2} fontSize="18px">
+                  <Icon name='phone' color='#3AC7B1' />
+                  <Text paddingLeft={2} fontSize='18px'>
                     3617569889
                   </Text>
                 </Flex>
                 <Flex
-                  alignItems="flex-start"
-                  paddingTop="10px"
-                  fontSize={["14px", "18px", "21px"]}
+                  alignItems='flex-start'
+                  paddingTop='10px'
+                  fontSize={['14px', '18px', '21px']}
                 >
-                  <Box as={FaMapMarkerAlt} color="#3AC7B1" />
-                  <Text paddingLeft={2} fontSize="18px">
+                  <Box as={FaMapMarkerAlt} color='#3AC7B1' />
+                  <Text paddingLeft={2} fontSize='18px'>
                     2306 Airline Road, Unit 110A, Corpus Christi, TX 78414
                   </Text>
                 </Flex>
-                <Flex alignItems="center" paddingTop="10px">
-                  <Icon name="email" color="#3AC7B1" />
+                <Flex alignItems='center' paddingTop='10px'>
+                  <Icon name='email' color='#3AC7B1' />
                   <Text
                     paddingLeft={2}
-                    fontSize={["14px", "18px", "21px"]}
-                    fontSize="18px"
+                    fontSize={['14px', '18px', '21px']}
+                    fontSize='18px'
                   >
                     rccghogcorpuschristi@gmail.com
                   </Text>
                 </Flex>
               </Stack>
-            </Box> */}
+            </Box>
           </SimpleGrid>
         </Box>
       </Box>

@@ -14,6 +14,7 @@ import {
   MenuList,
   Icon,
   MenuItem,
+  Stack,
   Link as ChakraLink,
 } from '@chakra-ui/core';
 import Link from 'next/link';
@@ -26,7 +27,7 @@ function MobileNav() {
 
   return (
     <>
-      <Flex direction='row' justifyContent='space-between' alignItems='center'>
+      <Flex justifyContent='space-between' alignItems='center'>
         <Image
           src='/assets/rccg_logo.png'
           alt='logo'
@@ -40,7 +41,7 @@ function MobileNav() {
             as={AiOutlineMenu}
             size='24px'
             color='teal.600'
-            marginRight='30px'
+            marginRight='20px'
           />
         </Button>
       </Flex>

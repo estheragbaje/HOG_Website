@@ -185,6 +185,7 @@ export function MessageCard({ src, topic, date, minister, day, ...rest }) {
   return (
     <PseudoBox
       {...rest}
+      flex='1'
       _hover={{
         cursor: 'pointer',
       }}
@@ -197,22 +198,14 @@ export function MessageCard({ src, topic, date, minister, day, ...rest }) {
         border='1px solid #C4C4C4'
         borderBottomLeftRadius='5px'
         borderBottomRightRadius='5px'
+        height='160px'
       >
-        <MainHeading fontSize={['16px', '16px', '18px']} py={2}>
+        <MainHeading fontSize={['16px', '16px', '18px']} py={2} flex='1'>
           {topic}
         </MainHeading>
         <SubHeading color='#3AC7B1'>{date}</SubHeading>
 
         <Text>{minister}</Text>
-        {/* <Text
-            padding='5px'
-            fontSize='14px'
-            color='#7C7C7C'
-            border='1px solid #C4C4C4'
-            borderRadius='5px'
-          >
-            {day}
-          </Text> */}
       </Box>
     </PseudoBox>
   );

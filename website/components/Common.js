@@ -142,6 +142,8 @@ export function EventCard({ src, alt, title, date, time, ...rest }) {
         src={src}
         alt={alt}
         objectFit='cover'
+        height='300px'
+        width='100%'
         borderTopLeftRadius='10px'
         borderTopRightRadius='10px'
       />

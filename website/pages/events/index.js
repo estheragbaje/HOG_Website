@@ -59,7 +59,7 @@ function Events({ events }) {
             </Link>
           ))}
         </SimpleGrid>
-        <Box textAlign={['left', 'left', 'center']}>
+        <Box textAlign={['left', 'center', 'center']}>
           <Link href='/sermons '>
             <Button
               height={['44px', '44px', '55px']}

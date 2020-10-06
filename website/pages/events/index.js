@@ -1,11 +1,10 @@
-import React from 'react';
+import { Box, Button, SimpleGrid } from '@chakra-ui/core';
 import Link from 'next/link';
-import { Box, Flex, Image, Text, SimpleGrid, Button } from '@chakra-ui/core';
-import Navigation from '../../components/Navigation';
-import SubHeading from '../../components/SubHeading';
-import MainHeading from '../../components/MainHeading';
-import { Footer } from '../../components/Footer';
+import React from 'react';
 import { EventCard } from '../../components/Common';
+import { Footer } from '../../components/Footer';
+import MainHeading from '../../components/MainHeading';
+import SubHeading from '../../components/SubHeading';
 
 function Events({ events }) {
   return (
@@ -81,8 +80,6 @@ function Events({ events }) {
     </Box>
   );
 }
-
-// px={['16px', '16px', '0']}
 
 export async function getStaticProps() {
   const res = await fetch('https://hog-website.herokuapp.com/events/');

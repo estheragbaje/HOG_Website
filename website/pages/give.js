@@ -118,11 +118,11 @@ function Give({ departments }) {
                 marginBottom='28px'
                 textTransform='uppercase'
               >
-                2. Via Sms
+                2. Via Text
               </MainHeading>
               <Text>
-                You can make a one time giving via SMS.{' '}
-                <b>SMS the amount HOGCC to 45888 </b>.
+                You can make a one time giving via Text.{' '}
+                <b>Test the amount HOGCC to 45888 </b>.
                 <br />
                 <br />
                 For example to give $50, text $50 HOGCC to 45888

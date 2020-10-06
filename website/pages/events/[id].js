@@ -39,7 +39,6 @@ function EventDetails({ event, ...rest }) {
             margin='auto'
             justifyContent='space-between'
             alignItems='center'
-            // textAlign={['left', 'left', 'center']}
           >
             <EventIcon textAlign='left' name='calendar' content={event.Date} />
             <EventIcon name='time' content={event.Time} />

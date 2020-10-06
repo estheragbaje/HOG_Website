@@ -218,7 +218,7 @@ function Sermons(props) {
             align='center'
           >
             <Button
-              onClick={() => router.push(`/sermons?page=${page - 1}`)}
+              onClick={() => router.push(`/messages?page=${page - 1}`)}
               isDisabled={page <= 1}
             >
               Previous
@@ -227,7 +227,7 @@ function Sermons(props) {
               Page {page} / {totalPages}
             </Text>
             <Button
-              onClick={() => router.push(`/sermons?page=${page + 1}`)}
+              onClick={() => router.push(`/messages?page=${page + 1}`)}
               isDisabled={page >= totalPages}
             >
               Next

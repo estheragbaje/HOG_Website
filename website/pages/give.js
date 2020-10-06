@@ -122,7 +122,7 @@ function Give({ departments }) {
               </MainHeading>
               <Text>
                 You can make a one time giving via Text.{' '}
-                <b>Test the amount HOGCC to 45888 </b>.
+                <b>Text the amount HOGCC to 45888 </b>.
                 <br />
                 <br />
                 For example to give $50, text $50 HOGCC to 45888

@@ -25,8 +25,8 @@ import useInterval from '@use-it/interval';
  */
 const images = [
   '/assets/new_bg.jpg',
-  '/assets/our_departments.jpeg',
-  '/assets/about_us.png',
+  '/assets/church_photo.jpeg',
+  '/assets/church_photo2.jpeg',
 ];
 
 const toDate = (date) => {

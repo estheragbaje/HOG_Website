@@ -47,7 +47,7 @@ function Sermons(props) {
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const apiUrl = `${API_URL}/sermons?_q=${searchQuery}`;
+  const apiUrl = `${API_URL}/messages?_q=${searchQuery}`;
 
   const { data: searchResult, error } = useSWR(apiUrl, fetcher);
   const loading = !searchResult && !error;
@@ -178,13 +178,13 @@ function Sermons(props) {
           px={['12px', '12px', '0px']}
         >
           {searchResult?.length > 0 ? (
-            searchResult.map((sermon) => (
-              <Link href={`/sermons/${sermon.id}`}>
+            searchResult.map((message) => (
+              <Link href={`/messages/${message.id}`}>
                 <MessageCard
-                  src={sermon.Video_url}
-                  topic={sermon.Topic}
-                  date={sermon.Date}
-                  minister={sermon.Preacher}
+                  src={message.Video_url}
+                  topic={message.Topic}
+                  date={message.Date}
+                  minister={message.Preacher}
                 />
               </Link>
             ))
@@ -200,13 +200,13 @@ function Sermons(props) {
             py={5}
             px={['12px', '12px', '0px']}
           >
-            {sermons.map((sermon) => (
-              <Link href={`/sermons/${sermon.id}`}>
+            {sermons.map((message) => (
+              <Link href={`/messages/${message.id}`}>
                 <MessageCard
-                  src={sermon.Video_url}
-                  topic={sermon.Topic}
-                  date={sermon.Date}
-                  minister={sermon.Preacher}
+                  src={message.Video_url}
+                  topic={message.Topic}
+                  date={message.Date}
+                  minister={message.Preacher}
                   // day={sermon.Day}
                 />
               </Link>
@@ -219,7 +219,7 @@ function Sermons(props) {
             align='center'
           >
             <Button
-              onClick={() => router.push(`/sermons?page=${page - 1}`)}
+              onClick={() => router.push(`/messages?page=${page - 1}`)}
               isDisabled={page <= 1}
             >
               Previous
@@ -228,7 +228,7 @@ function Sermons(props) {
               Page {page} / {totalPages}
             </Text>
             <Button
-              onClick={() => router.push(`/sermons?page=${page + 1}`)}
+              onClick={() => router.push(`/messages?page=${page + 1}`)}
               isDisabled={page >= totalPages}
             >
               Next
@@ -297,12 +297,12 @@ export async function getServerSideProps(ctx) {
   const start = +page === 1 ? 0 : (+page - 1) * perPage;
 
   const sermonsResponse = await fetch(
-    `${API_URL}/sermons?_limit=${perPage}&_start=${start}`
+    `${API_URL}/messages?_limit=${perPage}&_start=${start}`
   );
 
   const sermons = await sermonsResponse.json();
 
-  const countResponse = await fetch(`${API_URL}/sermons/count`);
+  const countResponse = await fetch(`${API_URL}/messages/count`);
   const count = await countResponse.json();
 
   const totalPages = Math.ceil(count / perPage);

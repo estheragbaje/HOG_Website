@@ -86,10 +86,10 @@ export async function getServerSideProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
   const res = await fetch(
-    `https://hog-website.herokuapp.com/sermons/${params.id}`
+    `https://hog-website.herokuapp.com/messages/${params.id}`
   );
   const res2 = await fetch(
-    "https://hog-website.herokuapp.com/sermons/?_limit=3"
+    "https://hog-website.herokuapp.com/messages/?_limit=3"
   );
 
   const sermon = await res.json();

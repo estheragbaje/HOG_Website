@@ -416,7 +416,7 @@ export async function getStaticProps() {
   );
 
   const sermonsRes = await fetch(
-    'https://hog-website.herokuapp.com/sermons/?_limit=4&_sort=updated_at:DESC'
+    'https://hog-website.herokuapp.com/messages/?_limit=4&_sort=updated_at:DESC'
   );
 
   const services = await servicesRes.json();

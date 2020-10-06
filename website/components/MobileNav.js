@@ -118,7 +118,7 @@ function MobileNav() {
               textAlign='center'
               fontWeight='500'
             >
-              <Link href='/sermons'>
+              <Link href='/messages'>
                 <a>SERMONS</a>
               </Link>
             </MainHeading>

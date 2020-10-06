@@ -144,7 +144,7 @@ function DesktopNav() {
               </Menu>
 
               <NavLink href='/events'>EVENTS</NavLink>
-              <NavLink href='/sermons'>SERMONS</NavLink>
+              <NavLink href='/messages'>SERMONS</NavLink>
               <NavLink href='/services'>WEEKLY SERVICES</NavLink>
               <NavLink href='/give'>GIVE</NavLink>
               <NavLink href='/contact'>CONTACT</NavLink>

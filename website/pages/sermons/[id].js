@@ -29,27 +29,27 @@ function Sermon({ content, sermon, sermons, ...rest }) {
         <AspectRatioBox maxW="600px" margin="auto" ratio={4 / 3}>
           <Box
             as="iframe"
-            title={sermon.Topic}
-            src={sermon.Video_url}
+            title={message.Topic}
+            src={message.Video_url}
             allowFullScreen
           />
         </AspectRatioBox>
         <Box m={4}>
-          <Text textAlign="center">{sermon.Topic}</Text>
-          <Text textAlign="center">{sermon.Preacher}</Text>
+          <Text textAlign="center">{message.Topic}</Text>
+          <Text textAlign="center">{message.Preacher}</Text>
         </Box>
         <SubHeading
           color="#3AC7B1"
           fontSize={["18px", "18px", "21px", "21px"]}
           textAlign="center"
         >
-          Share sermon with friends
+          Share message with friends
         </SubHeading>
         <Flex alignItems="center" maxWidth="200px" margin="0 auto" left="50%">
           <Box margin="auto">
             <FacebookShareButton
-              url={sermon.Video_url}
-              quote={`Listen to: ${sermon.Topic} by ${sermon.Preacher}`}
+              url={message.Video_url}
+              quote={`Listen to: ${message.Topic} by ${message.Preacher}`}
               hashtags="sermon"
               title="Listen to this powerful message"
             >

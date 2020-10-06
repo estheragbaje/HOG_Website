@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "name": "Message"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Topic": {
+      "type": "string"
+    },
+    "Preacher": {
+      "type": "string"
+    },
+    "Video_url": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    }
+  }
+}

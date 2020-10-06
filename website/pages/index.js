@@ -113,7 +113,7 @@ function HomePage({ services, events, event, sermons }) {
             Worship with us Sundays at 9:30am
           </Text>
 
-          <Link href='/sermons'>
+          <Link href='/messages'>
             <Button
               height={['55px', '55px', '66px']}
               px={['20px', '20px', '30px']}
@@ -147,7 +147,7 @@ function HomePage({ services, events, event, sermons }) {
         </SimpleGrid>
 
         <Box textAlign='center'>
-          <Link href='/sermons'>
+          <Link href='/messages'>
             <Button
               height={['44px', '44px', '55px']}
               px={['20px', '20px', '30px']}

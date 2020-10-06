@@ -64,7 +64,7 @@ function Departments({ departments }) {
           <DepartmentList departments={departments} />
         </Box>
         <Box textAlign='center'>
-          <Link href='/sermons '>
+          <Link href='/messages '>
             <Button
               height={['44px', '44px', '55px']}
               px={['20px', '20px', '30px']}

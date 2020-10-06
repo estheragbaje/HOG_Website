@@ -11,14 +11,14 @@ function MessageList({ sermons, ...rest }) {
       px={['12px', '12px', '0px']}
       {...rest}
     >
-      {sermons.map((sermon) => {
+      {sermons.map((message) => {
         return (
           <MessageCard
-            key={sermon.id}
-            src={sermon.Video_url}
-            topic={sermon.Topic}
-            date={sermon.Date}
-            minister={sermon.Preacher}
+            key={message.id}
+            src={message.Video_url}
+            topic={message.Topic}
+            date={message.Date}
+            minister={message.Preacher}
           />
         );
       })}

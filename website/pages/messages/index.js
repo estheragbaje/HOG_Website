@@ -207,7 +207,6 @@ function Sermons(props) {
                   topic={message.Topic}
                   date={message.Date}
                   minister={message.Preacher}
-                  // day={sermon.Day}
                 />
               </Link>
             ))}

@@ -1,18 +1,18 @@
-import React from "react";
-import { Stack } from "@chakra-ui/core";
-import Link from "next/link";
-import SideSermon from "./SideSermon";
+import React from 'react';
+import { Stack } from '@chakra-ui/core';
+import Link from 'next/link';
+import SideSermon from './SideSermon';
 
 function SideSermonList({ sermons, isActive }) {
   return (
-    <Stack spacing={4} justifyContent="space-between">
-      {sermons.map((sermon) => {
+    <Stack spacing={4} justifyContent='space-between'>
+      {sermons.map((message) => {
         return (
-          <Link key={sermon.id} href={`/sermons/${sermon.id}`}>
+          <Link key={message.id} href={`/messages/${message.id}`}>
             <SideSermon
-              date={sermon.Date}
-              service="Sunday Service"
-              topic={sermon.Topic}
+              date={message.Date}
+              service='Sunday Service'
+              topic={message.Topic}
             />
           </Link>
         );

@@ -26,10 +26,6 @@
     "Date": {
       "type": "string",
       "required": true
-    },
-    "Day": {
-      "type": "string",
-      "required": true
     }
   }
 }

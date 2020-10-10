@@ -429,6 +429,7 @@ export async function getStaticProps() {
       events,
       sermons,
     },
+    revalidate: 1,
   };
 }
 

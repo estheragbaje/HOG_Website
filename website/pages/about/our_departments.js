@@ -94,6 +94,7 @@ export async function getStaticProps() {
     props: {
       departments,
     },
+    revalidate: 1,
   };
 }
 

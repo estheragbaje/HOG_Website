@@ -126,6 +126,7 @@ export async function getStaticProps() {
     props: {
       beliefs,
     },
+    revalidate: 1,
   };
 }
 

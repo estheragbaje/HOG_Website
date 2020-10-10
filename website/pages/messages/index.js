@@ -313,6 +313,7 @@ export async function getServerSideProps(ctx) {
       page: +page,
       totalPages,
     },
+    revalidate: 1,
   };
 }
 

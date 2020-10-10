@@ -125,6 +125,7 @@ export async function getStaticProps() {
     props: {
       services,
     },
+    revalidate: 1,
   };
 }
 

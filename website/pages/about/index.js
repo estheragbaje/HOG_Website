@@ -180,6 +180,7 @@ export async function getStaticProps() {
       abouts,
       departments,
     },
+    revalidate: 1,
   };
 }
 

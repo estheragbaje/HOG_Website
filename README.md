@@ -39,6 +39,3 @@ Login to the heroku admin site, Go to weekly services and edit and/or add conten
 
 ## How to Add more pages url the Site such as `/newurl`
 Go to the website directory, then pages directory and create a new page
-
-
-

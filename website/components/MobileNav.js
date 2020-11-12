@@ -16,6 +16,7 @@ import {
   MenuItem,
   Stack,
   Link as ChakraLink,
+  IconButton,
 } from '@chakra-ui/core';
 import Link from 'next/link';
 import React from 'react';
@@ -36,14 +37,14 @@ function MobileNav() {
           size='50px'
           objectFit='contain'
         />
-        <Button variantColor='white' onClick={onOpen}>
-          <Box
-            as={AiOutlineMenu}
-            size='24px'
-            color='teal.600'
-            marginRight='20px'
-          />
-        </Button>
+        <IconButton
+          size='lg'
+          fontSize='xl'
+          variant='ghost'
+          color='teal.600'
+          onClick={onOpen}
+          icon={AiOutlineMenu}
+        />
       </Flex>
       <Drawer placement='right' onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />

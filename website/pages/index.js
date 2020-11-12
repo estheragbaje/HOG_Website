@@ -358,45 +358,24 @@ function HomePage({ services, events, event, sermons }) {
                 alt='demo'
               />
             </AspectRatioBox>
-            <Box>
+            <Box wordBreak='break-word'>
               <MainHeading fontSize='21px' paddingTop='20px'>
                 RCCG HOUSE OF GRACE
               </MainHeading>
-              <Text fontSize='20px'>
+              <Text fontSize={['16px', '20px']}>
                 Spreading the Word of God to the ends of the earth with the aims
                 of leading individuals to Christ.
               </Text>
               <Stack spacing={2} marginTop='10px'>
-                <Flex
-                  alignItems='center'
-                  paddingTop='10px'
-                  fontSize={['14px', '18px', '21px']}
-                >
-                  <Icon name='phone' color='#3AC7B1' />
-                  <Text paddingLeft={2} fontSize='18px'>
-                    3617569889
-                  </Text>
-                </Flex>
-                <Flex
-                  alignItems='flex-start'
-                  paddingTop='10px'
-                  fontSize={['14px', '18px', '21px']}
-                >
-                  <Box as={FaMapMarkerAlt} color='#3AC7B1' />
-                  <Text paddingLeft={2} fontSize='18px'>
-                    2306 Airline Road, Unit 110A, Corpus Christi, TX 78414
-                  </Text>
-                </Flex>
-                <Flex alignItems='center' paddingTop='10px'>
-                  <Icon name='email' color='#3AC7B1' />
-                  <Text
-                    paddingLeft={2}
-                    fontSize={['14px', '18px', '21px']}
-                    fontSize='18px'
-                  >
-                    rccghogcorpuschristi@gmail.com
-                  </Text>
-                </Flex>
+                <ContactItem icon={<Icon name='phone' color='#3AC7B1' />}>
+                  3617569889
+                </ContactItem>
+                <ContactItem icon={<Box as={FaMapMarkerAlt} color='#3AC7B1' />}>
+                  2306 Airline Road, Unit 110A, Corpus Christi, TX 78414
+                </ContactItem>
+                <ContactItem icon={<Icon name='email' color='#3AC7B1' />}>
+                  rccghogcorpuschristi@gmail.com
+                </ContactItem>
               </Stack>
             </Box>
           </SimpleGrid>
@@ -404,6 +383,20 @@ function HomePage({ services, events, event, sermons }) {
       </Box>
       <Footer />
     </Box>
+  );
+}
+
+function ContactItem({ icon, children, ...rest }) {
+  return (
+    <Flex
+      alignItems='center'
+      paddingTop='10px'
+      fontSize={['14px', '18px', '21px']}
+      {...rest}
+    >
+      {icon}
+      <Text paddingLeft={2}>{children}</Text>
+    </Flex>
   );
 }
 

@@ -1,14 +1,19 @@
-/**@jsx jsx */
-import { jsx, css, keyframes } from '@emotion/core'
 import React from 'react';
-import { useMediaQuery } from 'react-responsive';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
+import { Box } from '@chakra-ui/core';
 
 function Navigation() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
-
-  return isTabletOrMobile ? <MobileNav /> : <DesktopNav />;
+  return (
+    <>
+      <Box as='span' display={{ base: 'inline', md: 'none' }}>
+        <MobileNav />
+      </Box>
+      <Box as='span' display={{ base: 'none', md: 'inline' }}>
+        <DesktopNav />
+      </Box>
+    </>
+  );
 }
 
 export default Navigation;

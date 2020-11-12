@@ -131,7 +131,6 @@ export function EventCard({ src, alt, title, date, time, ...rest }) {
       borderRadius='10px'
       cursor='pointer'
       _hover={{
-        padding: '10px',
         borderRadius: '8px',
         cursor: 'pointer',
         transition: 'all 0.2s',

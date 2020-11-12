@@ -39,7 +39,7 @@ function Events({ events }) {
           <MainHeading fontSize={['24px', '24px', '36px']}>JOIN US</MainHeading>
         </Box>
         <SimpleGrid
-          columns={['1', '1', '2']}
+          columns={['1', '1', '3']}
           margin='auto'
           spacing={16}
           margin={['0 40px', '0 40px', '0 80px']}

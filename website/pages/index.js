@@ -129,7 +129,12 @@ function HomePage({ services, events, event, sermons }) {
           </Link>
         </Box>
       </Box>
-      <Box py='80px' margin='auto' paddingX={['40px', '40px', '80px']}>
+      <Box
+        py='80px'
+        margin='auto'
+        paddingX={['40px', '40px', '80px']}
+        maxW='1600px'
+      >
         <MainHeading fontSize={['24px', '24px', '36px']} marginBottom='28px'>
           OUR LATEST SERMONS
         </MainHeading>
@@ -165,96 +170,104 @@ function HomePage({ services, events, event, sermons }) {
         </Box>
       </Box>
       <Box paddingY='80px' backgroundColor='#F7F8F7'>
-        <Box textAlign='center' paddingX={['40px', '40px', '80px']}>
-          <MainHeading fontSize={['24px', '24px', '36px']}>
-            JOIN OUR WEEKLY SERVICES
-          </MainHeading>
-        </Box>
-        <Box textAlign='center' paddingX={['40px', '40px', '80px']}>
-          <WeeklyServicesList services={services} />
+        <Box maxW='1600px' margin='auto'>
+          <Box textAlign='center' paddingX={['40px', '40px', '80px']}>
+            <MainHeading fontSize={['24px', '24px', '36px']}>
+              JOIN OUR WEEKLY SERVICES
+            </MainHeading>
+          </Box>
+          <Box textAlign='center' paddingX={['40px', '40px', '80px']}>
+            <WeeklyServicesList services={services} />
 
-          <Link href='/services '>
-            <Button
-              height={['44px', '44px', '55px']}
-              px={['20px', '20px', '30px']}
-              variant='outline'
-              _hover={{ bg: '#D0FFF8' }}
-              borderColor='#3AC7B1'
-              color='#3AC7B1'
-              _focus='teal.800'
-              fontSize={['16px', '16px', '21px']}
-              fontWeight='400'
-              marginBottom={4}
-              children='SEE ALL SERVICES'
-            />
-          </Link>
+            <Link href='/services '>
+              <Button
+                height={['44px', '44px', '55px']}
+                px={['20px', '20px', '30px']}
+                variant='outline'
+                _hover={{ bg: '#D0FFF8' }}
+                borderColor='#3AC7B1'
+                color='#3AC7B1'
+                _focus='teal.800'
+                fontSize={['16px', '16px', '21px']}
+                fontWeight='400'
+                marginBottom={4}
+                children='SEE ALL SERVICES'
+              />
+            </Link>
+          </Box>
         </Box>
       </Box>
 
-      <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
-        <Image
-          src='/assets/pastor_image.png'
-          alt='Pastor Segun Olowookere'
-          objectFit='cover'
-          minWidth='50%'
-          // minWidth='400px'
-          minHeight={['200px', '200px', '750px']}
-          display={['none', 'none', 'inline-block']}
-        />
-        <Box
-          backgroundColor='#61817C'
-          // maxWidth='100%'
-          paddingY={16}
-          color='white'
-          minWidth='50%'
+      <Box backgroundColor='#61817C'>
+        <Flex
+          direction={{ base: 'column', md: 'row', lg: 'row' }}
+          maxW='1600px'
+          margin='auto'
         >
-          <Box  paddingX={['40px', '40px', '80px']}>
-            <SubHeading color='#3AC7B1' fontSize='21px'>
-              Welcome Address
-            </SubHeading>
-            <MainHeading fontSize='24px' color='white' paddingBottom={4}>
-              WELCOME TO THE REDEEMED CHRISTIAN CHURCH OF GOD HOUSE OF GRACE,
-              CORPUS CHRISTI!
-            </MainHeading>
-            <Text py={4}>
-              We are so overwhelmed with Joy that God has brought you here. In
-              this church we believe that we will experience God’s Divine’s
-              Grace abundantly, and that prayer is the gateway to God.{' '}
-              <b>
-                Our congregation is filled with people eager to experience and
-                seek God in a way they have never done before.
-              </b>{' '}
-              Jesus touches us daily and our lives are being transformed.
-            </Text>
-            <Text py={4}>
-              We start off our day by committing our ways to the lord as a
-              church, and we continue to encourage ourselves throughout the week
-              with our{' '}
-              <b>
-                Tuesday Bible Study, Wednesday Hour with Jesus, and monthly
-                Friday Holy Ghost nights.
-              </b>{' '}
-              We promise that your life will never remain the same, and that our
-              church will help catapult your walk with Christ.
-            </Text>
-            <Text py={4}>
-              <b>
-                Our prayer for you is that God’s unmerited favor will reign in
-                your life and that of your family.
-              </b>{' '}
-              God Bless you, and Welcome to our Church.
-            </Text>
-            <MainHeading fontSize='24px' color='white' paddingTop={8}>
-              OLUSEGUN, OLOWOOKERE
-            </MainHeading>
-            <SubHeading color='white' paddingTop={2}>
-              Lead Pastor
-            </SubHeading>
+          <Image
+            src='/assets/pastor_image.png'
+            alt='Pastor Segun Olowookere'
+            objectFit='cover'
+            minWidth='50%'
+            // minWidth='400px'
+            minHeight={['200px', '200px', '750px']}
+            display={['none', 'none', 'inline-block']}
+          />
+          <Box
+            backgroundColor='#61817C'
+            // maxWidth='100%'
+            paddingY={16}
+            color='white'
+            minWidth='50%'
+          >
+            <Box paddingX={['40px', '40px', '80px']} maxW='1600px'>
+              <SubHeading color='#3AC7B1' fontSize='21px'>
+                Welcome Address
+              </SubHeading>
+              <MainHeading fontSize='24px' color='white' paddingBottom={4}>
+                WELCOME TO THE REDEEMED CHRISTIAN CHURCH OF GOD HOUSE OF GRACE,
+                CORPUS CHRISTI!
+              </MainHeading>
+              <Text py={4}>
+                We are so overwhelmed with Joy that God has brought you here. In
+                this church we believe that we will experience God’s Divine’s
+                Grace abundantly, and that prayer is the gateway to God.{' '}
+                <b>
+                  Our congregation is filled with people eager to experience and
+                  seek God in a way they have never done before.
+                </b>{' '}
+                Jesus touches us daily and our lives are being transformed.
+              </Text>
+              <Text py={4}>
+                We start off our day by committing our ways to the lord as a
+                church, and we continue to encourage ourselves throughout the
+                week with our{' '}
+                <b>
+                  Tuesday Bible Study, Wednesday Hour with Jesus, and monthly
+                  Friday Holy Ghost nights.
+                </b>{' '}
+                We promise that your life will never remain the same, and that
+                our church will help catapult your walk with Christ.
+              </Text>
+              <Text py={4}>
+                <b>
+                  Our prayer for you is that God’s unmerited favor will reign in
+                  your life and that of your family.
+                </b>{' '}
+                God Bless you, and Welcome to our Church.
+              </Text>
+              <MainHeading fontSize='24px' color='white' paddingTop={8}>
+                OLUSEGUN, OLOWOOKERE
+              </MainHeading>
+              <SubHeading color='white' paddingTop={2}>
+                Lead Pastor
+              </SubHeading>
+            </Box>
           </Box>
-        </Box>
-      </Flex>
+        </Flex>
+      </Box>
 
-      <Box>
+      <Box maxW='1600px' margin='auto'>
         <Box>
           <Box py='80px' paddingX={['40px', '40px', '80px']}>
             <MainHeading
@@ -267,61 +280,68 @@ function HomePage({ services, events, event, sermons }) {
           </Box>
         </Box>
       </Box>
-      <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
-        <Box
-          minWidth='50%'
-          backgroundColor='#61817C'
-          maxWidth='100%'
-          paddingY={16}
-          color='white'
+      <Box bg='#61817C'>
+        <Flex
+          direction={{ base: 'column', md: 'row', lg: 'row' }}
+          maxW='1600px'
+          margin='auto'
         >
-          <Box paddingX={['40px', '40px', '80px']}>
-            <MainHeading fontSize={['24px', '24px', '36px']}>
-              MORE ABOUT US
-            </MainHeading>
-            <Text py={4}>
-              RCCG House of Grace based in Corpus Christi Texas is a Parish of
-              the Redeemed Christian Church of God (RCCG).{' '}
-              <b>
-                Pastor E. A. Adeboye is the General Overseer of RCCG Worldwide,
-                and Pastor Olusegun Olowookere is the pioneer and senior pastor
-                of the Parish.
-              </b>
-            </Text>
-            <Text py={4}>
-              As a Bible believing, and God-fearing church,{' '}
-              <b>we teach and encourage a life of holiness.</b> House of Grace
-              has an appeal to all types of people, with a determination to
-              teach and impart people to excel in their various geographical
-              areas, stages of secular life and levels of spiritual development.
-            </Text>
-            <Link href='/about/what_we_believe'>
-              <Button
-                type='submit'
-                height={['44px', '44px', '55px']}
-                px={['20px', '20px', '30px']}
-                bg='#3AC7B1'
-                _hover={{ bg: '#1FBDA5' }}
-                _focus='teal.800'
-                fontSize={['16px', '16px', '21px']}
-                fontWeight='400'
-                color='white'
-                children='LEARN MORE'
-                my={10}
-              />
-            </Link>
+          <Box
+            minWidth='50%'
+            backgroundColor='#61817C'
+            maxWidth='100%'
+            paddingY={16}
+            color='white'
+          >
+            <Box paddingX={['40px', '40px', '80px']}>
+              <MainHeading fontSize={['24px', '24px', '36px']}>
+                MORE ABOUT US
+              </MainHeading>
+              <Text py={4}>
+                RCCG House of Grace based in Corpus Christi Texas is a Parish of
+                the Redeemed Christian Church of God (RCCG).{' '}
+                <b>
+                  Pastor E. A. Adeboye is the General Overseer of RCCG
+                  Worldwide, and Pastor Olusegun Olowookere is the pioneer and
+                  senior pastor of the Parish.
+                </b>
+              </Text>
+              <Text py={4}>
+                As a Bible believing, and God-fearing church,{' '}
+                <b>we teach and encourage a life of holiness.</b> House of Grace
+                has an appeal to all types of people, with a determination to
+                teach and impart people to excel in their various geographical
+                areas, stages of secular life and levels of spiritual
+                development.
+              </Text>
+              <Link href='/about/what_we_believe'>
+                <Button
+                  type='submit'
+                  height={['44px', '44px', '55px']}
+                  px={['20px', '20px', '30px']}
+                  bg='#3AC7B1'
+                  _hover={{ bg: '#1FBDA5' }}
+                  _focus='teal.800'
+                  fontSize={['16px', '16px', '21px']}
+                  fontWeight='400'
+                  color='white'
+                  children='LEARN MORE'
+                  my={10}
+                />
+              </Link>
+            </Box>
           </Box>
-        </Box>
-        <Image
-          src='/assets/about_us.png'
-          alt='About us'
-          objectFit='cover'
-          minW='50%'
-          // minWidth='400px'
-          minHeight={['200px', '200px', '750px']}
-          display={['none', 'none', 'inline-block']}
-        />
-      </Flex>
+          <Image
+            src='/assets/about_us.png'
+            alt='About us'
+            objectFit='cover'
+            minW='50%'
+            // minWidth='400px'
+            minHeight={['200px', '200px', '750px']}
+            display={['none', 'none', 'inline-block']}
+          />
+        </Flex>
+      </Box>
       <Box
         width='100%'
         // px={10}
@@ -333,8 +353,7 @@ function HomePage({ services, events, event, sermons }) {
         <Box
           margin='auto'
           paddingX={['40px', '40px', '40px', '80px']}
-
-          // maxWidth='1100px'
+          maxW='1600px'
         >
           {/* <SubHeading color='#3AC7B1' marginBottom='16px'>
             Where to find us

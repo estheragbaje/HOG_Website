@@ -111,7 +111,7 @@ export function FooterText({ ...rest }) {
         <Image
           src='/assets/rccg_logo.png'
           alt='logo'
-          size="60px"
+          size='60px'
           margin={['auto', 'auto', '0']}
         />
         <Text color='white' py={[3, 3, 4]}>
@@ -153,29 +153,31 @@ export function FooterText({ ...rest }) {
 
 export function Footer() {
   return (
-    <Box backgroundColor='#61817C' width='100%'>
-      <Box margin={['0 40px', '0 40px', '0 80px']} paddingTop='80px'>
-        <SubHeading color='white' marginBottom='16px'>
-          We would love to hear from you
-        </SubHeading>
-        <MainHeading
-          color='white'
-          fontSize='36px'
-          fontSize={['24px', '24px', '36px']}
-          py={4}
-        >
-          CONTACT US
-        </MainHeading>
-      </Box>
+    <Box backgroundColor='#61817C'>
+      <Box backgroundColor='#61817C' width='100%' maxW='1600px' margin='auto'>
+        <Box margin={['0 40px', '0 40px', '0 80px']} paddingTop='80px'>
+          <SubHeading color='white' marginBottom='16px'>
+            We would love to hear from you
+          </SubHeading>
+          <MainHeading
+            color='white'
+            fontSize='36px'
+            fontSize={['24px', '24px', '36px']}
+            py={4}
+          >
+            CONTACT US
+          </MainHeading>
+        </Box>
 
-      <SimpleGrid
-        columns={{ base: 1, md: '2', lg: 2 }}
-        spacing={[16, 16, 32]}
-        margin={['0 40px', '0 40px', '0 80px']}
-      >
-        <ContactForm paddingBottom={['0', '0', '40px']} />
-        <FooterText />
-      </SimpleGrid>
+        <SimpleGrid
+          columns={{ base: 1, md: '2', lg: 2 }}
+          spacing={[16, 16, 32]}
+          margin={['0 40px', '0 40px', '0 80px']}
+        >
+          <ContactForm paddingBottom={['0', '0', '40px']} />
+          <FooterText />
+        </SimpleGrid>
+      </Box>
       <Box
         backgroundColor='#56706C'
         textAlign='center'

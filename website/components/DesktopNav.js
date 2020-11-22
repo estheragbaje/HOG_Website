@@ -74,6 +74,8 @@ function DesktopNav() {
         zIndex={1}
         width='100%'
         backgroundColor='white'
+        maxW='1600px'
+        margin='auto'
       >
         <Box>
           <Flex

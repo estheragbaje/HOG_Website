@@ -196,18 +196,19 @@ function HomePage({ services, events, event, sermons }) {
           src='/assets/pastor_image.png'
           alt='Pastor Segun Olowookere'
           objectFit='cover'
-          minWidth='400px'
+          minWidth='50%'
+          // minWidth='400px'
           minHeight={['200px', '200px', '750px']}
           display={['none', 'none', 'inline-block']}
         />
         <Box
           backgroundColor='#61817C'
-          maxWidth='100%'
-          // px={10}
+          // maxWidth='100%'
           paddingY={16}
           color='white'
+          minWidth='50%'
         >
-          <Box maxW='900px' paddingX={['40px', '40px', '80px']}>
+          <Box  paddingX={['40px', '40px', '80px']}>
             <SubHeading color='#3AC7B1' fontSize='21px'>
               Welcome Address
             </SubHeading>
@@ -268,19 +269,13 @@ function HomePage({ services, events, event, sermons }) {
       </Box>
       <Flex direction={{ base: 'column', md: 'row', lg: 'row' }}>
         <Box
+          minWidth='50%'
           backgroundColor='#61817C'
           maxWidth='100%'
-          // px={10}
           paddingY={16}
           color='white'
         >
-          <Box
-            maxW='900px'
-            paddingX={['40px', '40px', '80px']}
-
-            // px={['40px', '40px', '80px']}
-          >
-            {/* <SubHeading>Get to know us better</SubHeading> */}
+          <Box paddingX={['40px', '40px', '80px']}>
             <MainHeading fontSize={['24px', '24px', '36px']}>
               MORE ABOUT US
             </MainHeading>
@@ -321,7 +316,8 @@ function HomePage({ services, events, event, sermons }) {
           src='/assets/about_us.png'
           alt='About us'
           objectFit='cover'
-          minWidth='400px'
+          minW='50%'
+          // minWidth='400px'
           minHeight={['200px', '200px', '750px']}
           display={['none', 'none', 'inline-block']}
         />

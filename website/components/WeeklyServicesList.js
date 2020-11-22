@@ -21,7 +21,7 @@ const servicesObj = {
 
 function WeeklyServicesList({ services, ...rest }) {
   return (
-    <SimpleGrid columns={[1, 1, 1, 3]} spacing={10} my={12} {...rest}>
+    <SimpleGrid columns={[1, 1, 1, 3]} spacing={10} my={12} {...rest} >
       {services.map((service) => {
         const values = servicesObj[service.Label];
         const Icon = values && values.icon;

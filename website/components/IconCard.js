@@ -34,11 +34,12 @@ function IconCard({
       backgroundColor='#fff'
       borderBottom='solid 6px'
       flexShrink='0'
-      // width="600px"
+      width='100%'
       textAlign='center'
       padding='30px'
       margin='0 auto'
       borderColor={borderColor}
+      flex={1}
       {...rest}
     >
       {icon}

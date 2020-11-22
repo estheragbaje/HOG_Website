@@ -33,7 +33,7 @@ function Events({ events }) {
         </Box>
       </Box>
 
-      <Box pt='80px'>
+      <Box pt='80px' maxW='1600px' margin='auto'>
         <Box textAlign='center' mx='auto'>
           <SubHeading color='#3AC7B1'>Upcoming Events</SubHeading>
           <MainHeading fontSize={['24px', '24px', '36px']}>JOIN US</MainHeading>

@@ -25,7 +25,7 @@ function EventDetails({ event, ...rest }) {
         </Box>
       </Box>
 
-      <Box pt='80px' px={12}>
+      <Box pt='80px' px={12} maxW='1600px' margin='auto'>
         <Box>{/* <Text>{info}</Text> */}</Box>
         <Box textAlign={['left', 'left', 'center']}>
           <Text>{event.Description}</Text>

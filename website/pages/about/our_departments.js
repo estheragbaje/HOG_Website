@@ -36,29 +36,23 @@ function Departments({ departments }) {
         </Box>
       </Box>
 
-      <Box
-        pt='80px'
-        // paddingX={['40px', '40px', '80px']}
-      >
-        <Box
-          textAlign='center'
-          // maxWidth='640px'
-          // mx='auto'
-          // // px={['16px', '16px', '0']}
-          // paddingX={['40px', '40px', '80px']}
-          margin='auto'
-          maxWidth='1100px'
-          marginX={['30px', '30px', '80px']}
-        >
-          <SubHeading color='#3AC7B1'>Get to know us better</SubHeading>
-          <MainHeading fontSize={['24px', '24px', '36px']}>
-            OUR DEPARTMENTS
-          </MainHeading>
-          <Text py={4}>
-            You are welcome to join any of the following departments as a worker
-            in RCCG House of Grace Parish. Simply ask any of our ushers to guide
-            you on what to do.
-          </Text>
+      <Box pt='80px'>
+        <Box maxW='1600px' margin='auto'>
+          <Box
+            textAlign='center'
+            margin='auto'
+            paddingX={['40px', '40px', '80px']}
+          >
+            <SubHeading color='#3AC7B1'>Get to know us better</SubHeading>
+            <MainHeading fontSize={['24px', '24px', '36px']}>
+              OUR DEPARTMENTS
+            </MainHeading>
+            <Text py={4}>
+              You are welcome to join any of the following departments as a
+              worker in RCCG House of Grace Parish. Simply ask any of our ushers
+              to guide you on what to do.
+            </Text>
+          </Box>
         </Box>
         <Box paddingX={['40px', '40px', '80px']}>
           <DepartmentList departments={departments} />

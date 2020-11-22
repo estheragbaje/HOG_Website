@@ -5,7 +5,7 @@ import { TextImage } from './Common';
 
 function DepartmentList({ departments }) {
   return (
-    <Box>
+    <Box maxW='1600px' margin='auto'>
       <SimpleGrid
         columns={[1, 1, 3]}
         spacing={10}

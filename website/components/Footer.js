@@ -106,8 +106,8 @@ export function ContactForm({ onSubmit, ...rest }) {
 
 export function FooterText({ ...rest }) {
   return (
-    <Box {...rest}>
-      <Box textAlign={['center', 'left', 'left']}>
+    <Box {...rest} >
+      <Box textAlign={['center', 'left', 'left']} maxW='1600px' margin='auto'>
         <Image
           src='/assets/rccg_logo.png'
           alt='logo'

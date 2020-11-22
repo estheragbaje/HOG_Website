@@ -87,7 +87,7 @@ function Sermons(props) {
       <Box
         py='80px'
         margin='auto'
-        maxWidth='1100px'
+        maxWidth='1600px'
         mx='auto'
         textAlign='left'
         paddingX={['40px', '40px', '80px']}
@@ -242,44 +242,49 @@ function Sermons(props) {
         backgroundColor='gray.600'
         style={{ backgroundBlendMode: 'overlay' }}
       >
-        <Box
-          py='80px'
-          margin={['0 40px', '0 40px', '0 80px']}
-          color='white'
-          maxWidth='500px'
-        >
-          <SubHeading color='#3AC7B1' marginBottom='16px'>
-            Get to know about our weekly activites
-          </SubHeading>
-          <MainHeading fontSize={['24px', '24px', '36px']} marginBottom='28px'>
-            OUR WEEKLY SERVICES{' '}
-          </MainHeading>
-          <Box>
-            <Text py={4}>
-              While going to a church meeting on a Sunday is helpful, we can
-              grow much deeper in the Christian life through regular fellowship
-              with other brethren.
-            </Text>
-            <Text py={4}>
-              While going to a church meeting on a Sunday is helpful, we can
-              grow much deeper in the Christian life through regular fellowship
-              with other brethren.
-            </Text>
-            <Link href='/services'>
-              <Button
-                type='submit'
-                height={['44px', '44px', '55px']}
-                px={['20px', '20px', '30px']}
-                bg='#3AC7B1'
-                _hover={{ bg: '#1FBDA5' }}
-                _focus='teal.800'
-                fontSize={['16px', '16px', '21px']}
-                fontWeight='400'
-                color='white'
-                children='VIEW SERVICES'
-                my={10}
-              />
-            </Link>
+        <Box maxW='1600px' margin='auto'>
+          <Box
+            py='80px'
+            margin={['0 40px', '0 40px', '0 80px']}
+            color='white'
+            maxWidth='500px'
+          >
+            <SubHeading color='#3AC7B1' marginBottom='16px'>
+              Get to know about our weekly activites
+            </SubHeading>
+            <MainHeading
+              fontSize={['24px', '24px', '36px']}
+              marginBottom='28px'
+            >
+              OUR WEEKLY SERVICES{' '}
+            </MainHeading>
+            <Box>
+              <Text py={4}>
+                While going to a church meeting on a Sunday is helpful, we can
+                grow much deeper in the Christian life through regular
+                fellowship with other brethren.
+              </Text>
+              <Text py={4}>
+                While going to a church meeting on a Sunday is helpful, we can
+                grow much deeper in the Christian life through regular
+                fellowship with other brethren.
+              </Text>
+              <Link href='/services'>
+                <Button
+                  type='submit'
+                  height={['44px', '44px', '55px']}
+                  px={['20px', '20px', '30px']}
+                  bg='#3AC7B1'
+                  _hover={{ bg: '#1FBDA5' }}
+                  _focus='teal.800'
+                  fontSize={['16px', '16px', '21px']}
+                  fontWeight='400'
+                  color='white'
+                  children='VIEW SERVICES'
+                  my={10}
+                />
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -313,7 +318,6 @@ export async function getServerSideProps(ctx) {
       page: +page,
       totalPages,
     },
-    revalidate: 1,
   };
 }
 

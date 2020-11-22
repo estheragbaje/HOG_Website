@@ -67,15 +67,17 @@ function Sermon({ content, sermon, sermons, message, ...rest }) {
           </Box>
         </Flex>
       </Box>
-      <Box m={[10, 10, 20]} margin='auto'>
-        <MainHeading
-          fontSize={['20px', '20px', '32px']}
-          textAlign='center'
-          py={4}
-        >
-          MORE MESSAGES
-        </MainHeading>
-        <MessageList sermons={sermons} />
+      <Box m={[10, 10, 20]}>
+        <Box maxW='1600px' margin='auto'>
+          <MainHeading
+            fontSize={['20px', '20px', '32px']}
+            textAlign='center'
+            py={4}
+          >
+            MORE MESSAGES
+          </MainHeading>
+          <MessageList sermons={sermons} />
+        </Box>
       </Box>
       <Footer />
     </Box>

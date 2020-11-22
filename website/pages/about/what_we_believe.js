@@ -36,65 +36,59 @@ function WhatWeBelieve({ beliefs }) {
           </MainHeading>
         </Box>
       </Box>
-      <Flex
-        direction={['column', 'column', 'column', 'row']}
-        marginX={['40px', '40px', '80px']}
-        justifyContent='space-between'
-        paddingY='80px'
-      >
-        {/* <Box
+      <Box maxW='1600px' margin='auto'>
+        <Flex
+          direction={['column', 'column', 'column', 'row']}
           marginX={['40px', '40px', '80px']}
-          // px={10}
-          paddingY={16}
-        > */}
-        <Box
-          maxW='900px'
-          // minW='300px'
-
-          // px={['40px', '40px', '80px']}
+          justifyContent='space-between'
+          paddingY='80px'
         >
-          <SubHeading color='#3AC7B1' marginBottom='16px'>
-            Get to know us better
-          </SubHeading>
-          <MainHeading fontSize={['24px', '24px', '36px']}>
-            WHAT WE BELIEVE
-          </MainHeading>
-          <Text py={4}>
-            We at RCCG House of Grace, get all of our beliefs directly from God,
-            and strongly believe that only God can be held as the standard of
-            what is moral and right.
-          </Text>
-          <Text py={4}>
-            We believe Word & Spirit were the basis for the church’s formation
-            on the day of Pentecost and, therefore, should be our foundation as
-            well.
-          </Text>
-          <Text py={4}>
-            We also believe that God stills speaks to us today. We can see this
-            in many ways, it might be through prophecy or revelation but we
-            always listen to what God might be saying to us. If we feel God has
-            spoken we will weigh it against scripture to see if it's inline with
-            God's word before we will let it guide us.
-          </Text>
-          {/* </Box> */}
-        </Box>
-        {/* <Box size={['24px', '24px', '50px']} flexShrink='0'></Box> */}
-        <Image
-          paddingLeft={['0px', '0px', '0px', '20px']}
-          src='/assets/about_us.png'
-          alt='About us'
-          maxWidth='550px'
-          objectFit='cover'
-          flexShrink='0'
-          // borderRadius='10px'
-          objectFit='cover'
-          minWidth='400px'
-          // minHeight={['200px', '200px', '750px']}
-          display={['none', 'block', 'block']}
-        />
-      </Flex>
+          <Box maxW='900px'>
+            <SubHeading color='#3AC7B1' marginBottom='16px'>
+              Get to know us better
+            </SubHeading>
+            <MainHeading fontSize={['24px', '24px', '36px']}>
+              WHAT WE BELIEVE
+            </MainHeading>
+            <Text py={4}>
+              We at RCCG House of Grace, get all of our beliefs directly from
+              God, and strongly believe that only God can be held as the
+              standard of what is moral and right.
+            </Text>
+            <Text py={4}>
+              We believe Word & Spirit were the basis for the church’s formation
+              on the day of Pentecost and, therefore, should be our foundation
+              as well.
+            </Text>
+            <Text py={4}>
+              We also believe that God stills speaks to us today. We can see
+              this in many ways, it might be through prophecy or revelation but
+              we always listen to what God might be saying to us. If we feel God
+              has spoken we will weigh it against scripture to see if it's
+              inline with God's word before we will let it guide us.
+            </Text>
+            {/* </Box> */}
+          </Box>
+          {/* <Box size={['24px', '24px', '50px']} flexShrink='0'></Box> */}
+          <Image
+            paddingLeft={['0px', '0px', '0px', '20px']}
+            src='/assets/about_us.png'
+            alt='About us'
+            maxWidth='550px'
+            objectFit='cover'
+            flexShrink='0'
+            // borderRadius='10px'
+            objectFit='cover'
+            minWidth='400px'
+            // minHeight={['200px', '200px', '750px']}
+            display={['none', 'block', 'block']}
+          />
+        </Flex>
+      </Box>
       <Box backgroundColor='#F7F8F7'>
-        <AccordionList beliefs={beliefs} />
+        <Box maxW='1600px' margin='auto'>
+          <AccordionList beliefs={beliefs} />
+        </Box>
         <Box textAlign='center'>
           <Link href='/services '>
             <Button

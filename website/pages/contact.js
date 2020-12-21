@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Stack } from '@chakra-ui/core';
+import { Alert, Box, SimpleGrid, Stack } from '@chakra-ui/core';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { IconText } from '../components/Common';
@@ -8,12 +8,18 @@ import SubHeading from '../components/SubHeading';
 
 function Contact() {
   const router = useRouter();
+  const [error, setError] = React.useState('');
   const handleSubmit = async (data) => {
-    await fetch('/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      router.push('/thank-you');
+    } catch (error) {
+      setError(error);
+    }
   };
 
   return (
@@ -50,6 +56,11 @@ function Contact() {
               WE’D LOVE TO HEAR FROM YOU
             </MainHeading>
             <Box py='80px'>
+              {error && (
+                <Alert variant='solid' status='error'>
+                  {error}
+                </Alert>
+              )}
               <SimpleGrid
                 columns={{ base: 1, md: '2', lg: 2 }}
                 spacing={[16, 16, 32]}
@@ -72,7 +83,7 @@ function Contact() {
           </Box>
         </Box>
       </Box>
-      <Box backgroundColor='#61817C' width='100%' margin="auto">
+      <Box backgroundColor='#61817C' width='100%' margin='auto'>
         <FooterText
           margin={['0 40px', '0 40px', '0 80px']}
           paddingY={['40px', '40px', '80px']}

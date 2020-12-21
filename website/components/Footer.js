@@ -106,7 +106,7 @@ export function ContactForm({ onSubmit, ...rest }) {
 
 export function FooterText({ ...rest }) {
   return (
-    <Box {...rest} >
+    <Box {...rest}>
       <Box textAlign={['center', 'left', 'left']} maxW='1600px' margin='auto'>
         <Image
           src='/assets/rccg_logo.png'
@@ -152,6 +152,17 @@ export function FooterText({ ...rest }) {
 }
 
 export function Footer() {
+  const handleSubmit = async (data) => {
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      router.push('/thank-you');
+    } catch {}
+  };
+
   return (
     <Box backgroundColor='#61817C'>
       <Box backgroundColor='#61817C' width='100%' maxW='1600px' margin='auto'>
@@ -174,7 +185,10 @@ export function Footer() {
           spacing={[16, 16, 32]}
           margin={['0 40px', '0 40px', '0 80px']}
         >
-          <ContactForm paddingBottom={['0', '0', '40px']} />
+          <ContactForm
+            onSubmit={handleSubmit}
+            paddingBottom={['0', '0', '40px']}
+          />
           <FooterText />
         </SimpleGrid>
       </Box>

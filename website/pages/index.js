@@ -205,17 +205,15 @@ function HomePage({ services, events, event, sermons }) {
           margin='auto'
         >
           <Image
-            src='/assets/pastor_image.png'
+            src='/assets/pastor.jpeg'
             alt='Pastor Segun Olowookere'
             objectFit='cover'
             minWidth='50%'
-            // minWidth='400px'
             minHeight={['200px', '200px', '750px']}
             display={['none', 'none', 'inline-block']}
           />
           <Box
             backgroundColor='#61817C'
-            // maxWidth='100%'
             paddingY={16}
             color='white'
             minWidth='50%'
@@ -336,7 +334,6 @@ function HomePage({ services, events, event, sermons }) {
             alt='About us'
             objectFit='cover'
             minW='50%'
-            // minWidth='400px'
             minHeight={['200px', '200px', '750px']}
             display={['none', 'none', 'inline-block']}
           />
@@ -344,10 +341,8 @@ function HomePage({ services, events, event, sermons }) {
       </Box>
       <Box
         width='100%'
-        // px={10}
         paddingTop={12}
         paddingBottom='20px'
-        // minW={['0', '0', '500px']}
         py='80px'
       >
         <Box
@@ -355,9 +350,7 @@ function HomePage({ services, events, event, sermons }) {
           paddingX={['40px', '40px', '40px', '80px']}
           maxW='1600px'
         >
-          {/* <SubHeading color='#3AC7B1' marginBottom='16px'>
-            Where to find us
-          </SubHeading> */}
+      
           <MainHeading fontSize={['24px', '24px', '36px']} marginBottom='28px'>
             WORSHIP WITH US
           </MainHeading>

@@ -420,7 +420,7 @@ export async function getStaticProps() {
     'https://hog-website.herokuapp.com/weekly-services/?_limit=3'
   );
   const eventsRes = await fetch(
-    'https://hog-website.herokuapp.com/events/?_limit=4'
+    'https://hog-website.herokuapp.com/events/?_limit=4&_sort=updated_at:DESC'
   );
 
   const sermonsRes = await fetch(

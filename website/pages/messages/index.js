@@ -301,7 +301,7 @@ export async function getServerSideProps(ctx) {
   const start = +page === 1 ? 0 : (+page - 1) * perPage;
 
   const sermonsResponse = await fetch(
-    `${API_URL}/messages?_limit=${perPage}&_start=${start}`
+    `${API_URL}/messages?_limit=${perPage}&_start=${start}&_sort=updated_at:DESC`
   );
 
   const sermons = await sermonsResponse.json();

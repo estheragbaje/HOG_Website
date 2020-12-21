@@ -5,8 +5,12 @@ import { EventCard } from '../../components/Common';
 import { Footer } from '../../components/Footer';
 import MainHeading from '../../components/MainHeading';
 import SubHeading from '../../components/SubHeading';
+import { toDate } from '../index';
 
 function Events({ events }) {
+  const sortedEvents = events.sort((a, b) => toDate(b.Date) - toDate(a.Date));
+  const recentEvent = sortedEvents[0];
+
   return (
     <Box maxWidth='100%'>
       <Box
@@ -82,7 +86,9 @@ function Events({ events }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://hog-website.herokuapp.com/events/');
+  const res = await fetch(
+    'https://hog-website.herokuapp.com/events/?_limit=6&_sort=updated_at:DESC'
+  );
   const events = await res.json();
 
   return {

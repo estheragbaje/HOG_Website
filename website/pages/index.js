@@ -29,7 +29,7 @@ const images = [
   '/assets/church_photo2.jpeg',
 ];
 
-const toDate = (date) => {
+export const toDate = (date) => {
   // ensure the date matches "DD-MM-YYYY"
   const [dd, mm, yyyy] = date.split('-');
   return new Date(`${mm}/${dd}/${yyyy}`);

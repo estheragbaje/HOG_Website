@@ -18,7 +18,7 @@ import SideSermonList from "../components/SideSermonList";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
 import useInterval from "@use-it/interval";
-import { GetApiProvider } from "../services/providers/api_provider";
+import { GetApiProvider } from "../services/providers/api-provider";
 import MainHeading from "../components/MainHeading";
 
 /**

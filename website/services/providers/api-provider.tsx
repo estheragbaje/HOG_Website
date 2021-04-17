@@ -1,32 +1,11 @@
 import axios from "axios";
 import { GetLogger } from "../../utils/log";
 import { Environment } from "../../utils/simple_environment";
-
-interface SermonMessageModel {
-	id: string;
-	Topic: string;
-	Preacher: string;
-	Video_url: string;
-	Date: string;
-}
-
-interface WeeklyServiceModel {
-	id: string;
-	Name: string;
-	Description: string;
-	Label: string;
-	StartTime: string;
-	StopTime: string;
-	Weekday: string;
-}
-
-interface ChurchEventModel {
-	id: string;
-}
-
-interface ChurchServiceModel {
-	id: string;
-}
+import {
+	SermonMessageModel,
+	ChurchEventModel,
+	WeeklyServiceModel,
+} from "./api-models";
 
 const logger = GetLogger(__filename);
 

@@ -14,7 +14,7 @@ interface ServicesProps {
 	services: WeeklyServiceModel[];
 }
 
-function Services({ services }) {
+function Services({ services }: ServicesProps) {
 	return (
 		<Box maxWidth="100%">
 			<Box

@@ -404,7 +404,10 @@ function ContactItem({ icon, children, ...rest }) {
 
 export async function getStaticProps() {
 	const provider = GetApiProvider();
-	const services = await provider.getWeeklyServices();
+	const services = await provider.getWeeklyServices({
+		limit: 4,
+		sort: "updated_at:DESC",
+	});
 	const events = await provider.getChurchEvents();
 	const sermons = await provider.getSermonMessages();
 

@@ -7,6 +7,12 @@ import MainHeading from "../components/MainHeading";
 import Navigation from "../components/Navigation";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
+import { WeeklyServiceModel } from "../services/providers/api-models";
+import { GetApiProvider } from "../services/providers/api-provider";
+
+interface ServicesProps {
+	services: WeeklyServiceModel[];
+}
 
 function Services({ services }) {
 	return (
@@ -96,7 +102,7 @@ function Services({ services }) {
 						alt="About us"
 						maxWidth="550px"
 						objectFit="cover"
-						flexShrink="0"
+						flexShrink={0}
 						// objectFit='cover'
 						minWidth="400px"
 						// minHeight={['200px', '200px', '750px']}
@@ -111,8 +117,8 @@ function Services({ services }) {
 }
 
 export async function getStaticProps() {
-	const res = await fetch("https://hog-website.herokuapp.com/weekly-services/");
-	const services = []; //await res.json();
+	const apiProvider = GetApiProvider();
+	const services = await apiProvider.getWeeklyServices();
 
 	return {
 		props: {

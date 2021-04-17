@@ -3,10 +3,10 @@ class Logger {
 	constructor(tag: string) {
 		this.tag = tag;
 	}
-	logInfo(key: string, value: any) {
+	logInfo(key: string, value?: any) {
 		console.log(`[${this.tag}:${key}]`, value);
 	}
-	logError(key: string, value: any) {
+	logError(key: string, value?: any) {
 		console.error(`[${this.tag}:${key}]`, value);
 	}
 }

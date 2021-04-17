@@ -9,6 +9,26 @@ import {
 
 const logger = GetLogger(__filename);
 
+interface ApiQueryParameters {
+	limit?: number;
+	sort?: any;
+}
+
+const FormUrlQueryParameters = (param: ApiQueryParameters) => {
+	if (!param) {
+		return "";
+	}
+	const res = [];
+	if (param.limit) {
+		res.push(`_limit:${param.limit}`);
+	}
+	if (param.sort) {
+		res.push(`_sort=${param.sort}`);
+	}
+	const result = res.join("&");
+	return res.length > 0 ? `?${result}` : "";
+};
+
 class ApiProvider {
 	static STATUS_OK: number = 200;
 
@@ -17,7 +37,9 @@ class ApiProvider {
 		this.baseUrl = baseUrl;
 	}
 
-	async getSermonMessages(): Promise<SermonMessageModel[]> {
+	async getSermonMessages(
+		param?: ApiQueryParameters
+	): Promise<SermonMessageModel[]> {
 		// TODO: remove this once messages api is working.
 		let sermons = [
 			{
@@ -30,7 +52,7 @@ class ApiProvider {
 		];
 		try {
 			const response = await axios.get(
-				`${this.baseUrl}/messages/?_limit=4&_sort=updated_at:DESC`
+				`${this.baseUrl}/messages/${FormUrlQueryParameters(param)}`
 			);
 			if (response.status == ApiProvider.STATUS_OK) {
 				const responseJson = (await response.data) as SermonMessageModel[];
@@ -42,12 +64,14 @@ class ApiProvider {
 		return sermons;
 	}
 
-	async getChurchEvents(): Promise<ChurchEventModel[]> {
+	async getChurchEvents(
+		param?: ApiQueryParameters
+	): Promise<ChurchEventModel[]> {
 		let churchEvents = [];
 
 		try {
 			const response = await axios.get(
-				`${this.baseUrl}/events/?_limit=4&_sort=updated_at:DESC`
+				`${this.baseUrl}/events/${FormUrlQueryParameters(param)}`
 			);
 
 			if (response.status == ApiProvider.STATUS_OK) {
@@ -60,19 +84,28 @@ class ApiProvider {
 		return churchEvents;
 	}
 
-	async getWeeklyServices(): Promise<WeeklyServiceModel[]> {
+	async getWeeklyServices(
+		param?: ApiQueryParameters
+	): Promise<WeeklyServiceModel[]> {
 		let weeklyServices = [];
 
 		try {
+			logger.logInfo("Fetching weekly services ");
+			const url = `${this.baseUrl}/weekly-services/${FormUrlQueryParameters(
+				param
+			)}`;
+			logger.logInfo("Url ", url);
 			const response = await axios.get(
-				`${this.baseUrl}/weekly-services/?_limit=4&_sort=updated_at:DESC`
+				`${this.baseUrl}/weekly-services/${FormUrlQueryParameters(param)}`
 			);
 			if (response.status == ApiProvider.STATUS_OK) {
 				const responseData = (await response.data) as WeeklyServiceModel[];
 				logger.logInfo("Response Json ", responseData);
 				weeklyServices = responseData;
 			}
-		} catch (e) {}
+		} catch (e) {
+			logger.logError("Error Occured", e);
+		}
 
 		return weeklyServices;
 	}

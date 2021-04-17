@@ -10,6 +10,6 @@ export class Environment {
 		if (Environment.isProduction()) {
 			return "https://hog-website.herokuapp.com";
 		}
-		let baseUrl = "http://localhost:1337";
+		return "http://localhost:1337";
 	}
 }

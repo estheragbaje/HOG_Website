@@ -28,43 +28,6 @@ interface ChurchServiceModel {
 	id: string;
 }
 
-const ForTest_Sermons = [
-	{
-		Topic: "Identity in Christ",
-		Video_url: "https://www.youtube.com/embed/_CdVcZ6JFDs",
-		Date: Date.now(),
-	},
-];
-
-// TODO: Ideally, the Url used should be gotten through the provider.
-// So for Test / Production, the only thing that would differ would be the url.
-// This url would be read from the environment variable.
-// TODO:
-// 1. Create a Local server to serve the data needed during the fetch.
-// 2. This Url should be read in from the environment variables. During the build,
-//    This would be used to replace the url.
-// 3.
-// const servicesRes = await fetch(
-// 	"https://hog-website.herokuapp.com/weekly-services/?_limit=3"
-// );
-// const eventsRes = await fetch(
-// 	"https://hog-website.herokuapp.com/events/?_limit=4&_sort=updated_at:DESC"
-// );
-
-// const sermonsRes = await fetch(
-// 	"https://hog-website.herokuapp.com/messages/?_limit=4&_sort=updated_at:DESC"
-// );
-// const servicesRes = await fetch(
-// 	"https://hog-website.herokuapp.com/weekly-services/?_limit=3"
-// );
-// const eventsRes = await fetch(
-// 	"https://hog-website.herokuapp.com/events/?_limit=4&_sort=updated_at:DESC"
-// );
-
-// const sermonsRes = await fetch(
-// 	"https://hog-website.herokuapp.com/messages/?_limit=4&_sort=updated_at:DESC"
-// );
-
 const logger = GetLogger(__filename);
 
 class ApiProvider {
@@ -76,7 +39,7 @@ class ApiProvider {
 	}
 
 	async getSermonMessages(): Promise<SermonMessageModel[]> {
-		// const requestInfo =
+		// TODO: remove this once messages api is working.
 		let sermons = [
 			{
 				id: "first",

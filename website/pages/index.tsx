@@ -352,11 +352,7 @@ function HomePage({ services, events, event, sermons }) {
 					<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
 						WORSHIP WITH US
 					</MainHeading>
-					<SimpleGrid
-						columns={["1", "1", "2"]}
-						spacing={8}
-						paddingBottom="20px"
-					>
+					<SimpleGrid columns={[1, 1, 2]} spacing={8} paddingBottom="20px">
 						<AspectRatioBox ratio={16 / 9}>
 							<Box
 								as="iframe"

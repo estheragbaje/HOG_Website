@@ -4,7 +4,7 @@ import { Heading } from "@chakra-ui/core";
 interface SubHeadingProps {
 	children: any;
 	fontSize?: any;
-	color: any;
+	color?: any;
 	[prop: string]: any;
 }
 

@@ -5,6 +5,7 @@ import {
 	SermonMessageModel,
 	ChurchEventModel,
 	WeeklyServiceModel,
+	ChurchDepartmentModel,
 } from "./api-models";
 
 const logger = GetLogger(__filename);
@@ -95,9 +96,7 @@ class ApiProvider {
 				param
 			)}`;
 			logger.logInfo("Url ", url);
-			const response = await axios.get(
-				`${this.baseUrl}/weekly-services/${FormUrlQueryParameters(param)}`
-			);
+			const response = await axios.get(url);
 			if (response.status == ApiProvider.STATUS_OK) {
 				const responseData = (await response.data) as WeeklyServiceModel[];
 				logger.logInfo("Response Json ", responseData);
@@ -108,6 +107,31 @@ class ApiProvider {
 		}
 
 		return weeklyServices;
+	}
+
+	async getDepartments(
+		param?: ApiQueryParameters
+	): Promise<ChurchDepartmentModel[]> {
+		// 'https://hog-website.herokuapp.com/departments/?_limit=3'
+		let departments = [];
+
+		try {
+			logger.logInfo("Fetching Departments");
+			const url = `${this.baseUrl}/departments/${FormUrlQueryParameters(
+				param
+			)}`;
+			logger.logInfo("Url ", url);
+			const response = await axios.get(url);
+			if (response.status == ApiProvider.STATUS_OK) {
+				const responseData = (await response.data) as WeeklyServiceModel[];
+				logger.logInfo("Response Json ", responseData);
+				departments = responseData;
+			}
+		} catch (e) {
+			logger.logError("Error Occured", e);
+		}
+
+		return departments;
 	}
 }
 

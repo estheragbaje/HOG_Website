@@ -23,3 +23,9 @@ export interface ChurchEventModel {
 export interface ChurchServiceModel {
 	id: string;
 }
+
+export interface ChurchDepartmentModel {
+	id: string;
+	Name: string;
+	Image?: string;
+}

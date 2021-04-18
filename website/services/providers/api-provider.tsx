@@ -6,6 +6,8 @@ import {
 	ChurchEventModel,
 	WeeklyServiceModel,
 	ChurchDepartmentModel,
+	AboutModel,
+	OurBeliefModel,
 } from "./api-models";
 
 const logger = GetLogger(__filename);
@@ -221,7 +223,7 @@ class ApiProvider {
 			logger.logInfo("Url ", url);
 			const response = await axios.get(url);
 			if (response.status == ApiProvider.STATUS_OK) {
-				const responseData = (await response.data) as WeeklyServiceModel[];
+				const responseData = (await response.data) as ChurchDepartmentModel[];
 				logger.logInfo("Response Json ", responseData);
 				departments = responseData;
 			}
@@ -230,6 +232,46 @@ class ApiProvider {
 		}
 
 		return departments;
+	}
+
+	async getAbouts(): Promise<AboutModel[]> {
+		let abouts = [];
+
+		try {
+			logger.logInfo("Fetching Abouts");
+			const url = `${this.baseUrl}/abouts/`;
+			logger.logInfo("Url ", url);
+			const response = await axios.get(url);
+			if (response.status == ApiProvider.STATUS_OK) {
+				const responseData = (await response.data) as AboutModel[];
+				logger.logInfo("Response Json ", responseData);
+				abouts = responseData;
+			}
+		} catch (e) {
+			logger.logError("Error Occured", e);
+		}
+
+		return abouts;
+	}
+
+	async getBeliefs(): Promise<OurBeliefModel[]> {
+		let beliefs = [];
+
+		try {
+			logger.logInfo("Fetching Abouts");
+			const url = `${this.baseUrl}/beliefs/`;
+			logger.logInfo("Url ", url);
+			const response = await axios.get(url);
+			if (response.status == ApiProvider.STATUS_OK) {
+				const responseData = (await response.data) as OurBeliefModel[];
+				logger.logInfo("Response Json ", responseData);
+				beliefs = responseData;
+			}
+		} catch (e) {
+			logger.logError("Error Occured", e);
+		}
+
+		return beliefs;
 	}
 }
 

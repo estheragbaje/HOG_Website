@@ -34,5 +34,18 @@ export interface ChurchServiceModel {
 export interface ChurchDepartmentModel {
 	id: string;
 	Name: string;
-	Image?: string;
+	Image?: any;
+}
+
+export interface AboutModel {
+	id: string;
+	Title: string;
+	Description: string;
+	Label: string;
+}
+
+export interface OurBeliefModel {
+	id: string;
+	Name: string;
+	Description: string;
 }

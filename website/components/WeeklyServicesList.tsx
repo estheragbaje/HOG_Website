@@ -10,6 +10,7 @@ import {
 	SpeakerIcon,
 } from "./Icons";
 import { TextImage } from "./Common";
+import { WeeklyServiceModel } from "../services/providers/api-models";
 
 const servicesObj = {
 	"sunday-service": { icon: ChurchIcon, borderColor: "#61817C" },
@@ -19,7 +20,12 @@ const servicesObj = {
 	"command-your-day": { icon: SpeakerIcon, borderColor: "#61817C" },
 };
 
-function WeeklyServicesList({ services, ...rest }) {
+interface WeeklyServicesListProps {
+	services: WeeklyServiceModel[];
+	[prop: string]: any;
+}
+
+function WeeklyServicesList({ services, ...rest }: WeeklyServicesListProps) {
 	return (
 		<SimpleGrid columns={[1, 1, 1, 3]} spacing={10} my={12} {...rest}>
 			{services.map((service) => {

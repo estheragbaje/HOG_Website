@@ -9,8 +9,8 @@ interface MiniNewsCardProps {
 	title?: any;
 	content?: any;
 	link?: any;
-	events: any;
-	event: any;
+	events?: any;
+	event?: any;
 	params?: any;
 	[prop: string]: any;
 }

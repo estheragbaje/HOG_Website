@@ -27,11 +27,12 @@ const HoverBox = ({ children, isActive }: HoverBoxProps) => {
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
 			// background="red"
-			padding="10px"
+			padding="5px"
 		>
 			<Text
 				color={isHover || isActive ? "teal.600" : "gray.600"}
 				fontWeight={isHover || isActive ? "medium" : "medium"}
+				fontSize="13px"
 			>
 				{children}
 			</Text>
@@ -127,9 +128,8 @@ function DesktopNav() {
 	};
 
 	return (
-		<Box>
+		<Box boxShadow="0 1px 4px rgba(23,25,27,0.05)">
 			<Box
-				boxShadow="0 1px 4px rgba(23,25,27,0.05)"
 				position="sticky"
 				top={0}
 				zIndex={1}
@@ -156,7 +156,7 @@ function DesktopNav() {
 						</a>
 						<Stack
 							isInline={true}
-							spacing="50px"
+							spacing="30px"
 							paddingRight="50px"
 							textAlign="center"
 							shouldWrapChildren
@@ -176,6 +176,7 @@ function DesktopNav() {
 							<NavLink href="/messages">SERMONS</NavLink>
 							<NavLink href="/services">WEEKLY SERVICES</NavLink>
 							<NavLink href="/give">GIVE</NavLink>
+							<NavLink href="/building-project"> BUILDING PROJECT </NavLink>
 							<NavLink href="/#contact">CONTACT</NavLink>
 						</Stack>
 					</Flex>

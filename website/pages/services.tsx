@@ -18,7 +18,7 @@ function Services({ services }: ServicesProps) {
 	return (
 		<Box maxWidth="100%">
 			<Box
-				backgroundImage="url(/assets/about_us_bg.jpg) "
+				backgroundImage="url(/assets/about_us_bg.jpg)"
 				backgroundSize="cover"
 				paddingY={["60px", "110px", "120px"]}
 				backgroundColor="gray.700"
@@ -51,7 +51,7 @@ function Services({ services }: ServicesProps) {
 					<SubHeading color="#3AC7B1" marginBottom="16px">
 						We are Passionate About Sharing the Gospel of Jesus
 					</SubHeading>
-					<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
+					<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="80px">
 						ATTEND OUR WEEKLY SERVICES
 					</MainHeading>
 					<WeeklyServicesList services={services} />

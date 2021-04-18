@@ -134,11 +134,11 @@ export function FooterText({ ...rest }) {
 			</Box>
 			<SimpleGrid
 				listStyleType="none"
-				columns={3}
+				columns={2}
 				color="white"
 				py={3}
 				mx={["auto", "auto", 0]}
-				paddingBottom={[8, 8, 0]}
+				paddingBottom={[0, 0, 0]}
 				textAlign={["center", "center", "left"]}
 				maxWidth="300px"
 			>
@@ -153,11 +153,15 @@ export function FooterText({ ...rest }) {
 					link="https://www.youtube.com/channel/UCXxVxc0iUgYaOvLWbsg0V-g"
 				/>
 			</SimpleGrid>
-			<Box paddingTop="10px">
-				<Text color="white" fontSize={["14px", "18px", "21px"]}>
+			<Box
+				paddingTop={["5px", "5px", "10px"]}
+				marginBottom="20px"
+				textAlign={["center", "left"]}
+			>
+				<Text color="white" fontSize={["14px", "18px", "18px"]}>
 					rccghogcorpuschristi@gmail.com
 				</Text>
-				<Text color="white" fontSize={["14px", "18px", "21px"]}>
+				<Text color="white" fontSize={["14px", "18px", "18px"]}>
 					(361)756-9889
 				</Text>
 			</Box>
@@ -179,7 +183,7 @@ export function Footer() {
 	};
 
 	return (
-		<Box backgroundColor="#61817C">
+		<Box backgroundColor="#61817C" width="100%">
 			<Box backgroundColor="#61817C" width="100%" maxW="1600px" margin="auto">
 				<Box margin={["0 40px", "0 40px", "0 80px"]} paddingTop="80px">
 					<SubHeading color="white" marginBottom="16px">
@@ -187,7 +191,7 @@ export function Footer() {
 					</SubHeading>
 					<MainHeading
 						color="white"
-						fontSize="36px"
+						// fontSize="36px"
 						fontSize={["24px", "24px", "36px"]}
 						py={4}
 					>
@@ -197,7 +201,7 @@ export function Footer() {
 
 				<SimpleGrid
 					columns={{ base: 1, md: 2, lg: 2 }}
-					spacing={[16, 16, 32]}
+					spacing={["10px", "12px", "60px"]}
 					margin={["0 40px", "0 40px", "0 80px"]}
 				>
 					<ContactForm

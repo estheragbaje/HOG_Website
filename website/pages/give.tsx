@@ -93,8 +93,7 @@ function Give() {
 								alt="About us"
 								maxWidth="550px"
 								objectFit="cover"
-								flexShrink="0"
-								objectFit="cover"
+								flexShrink={0}
 								minWidth="400px"
 								display={["none", "block", "block"]}
 							/>

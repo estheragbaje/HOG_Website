@@ -1,16 +1,7 @@
 import React from "react";
-import {
-	Box,
-	Image,
-	Text,
-	Link,
-	Stack,
-	SimpleGrid,
-	Flex,
-} from "@chakra-ui/core";
+import { Box, Image, Text, Link, SimpleGrid, Flex } from "@chakra-ui/core";
 import SubHeading from "./SubHeading";
 import MainHeading from "./MainHeading";
-import Events from "../pages/events";
 
 interface MiniNewsCardProps {
 	src?: string;

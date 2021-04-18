@@ -13,6 +13,7 @@ const logger = GetLogger(__filename);
 interface ApiQueryParameters {
 	limit?: number;
 	sort?: any;
+	start?: any;
 }
 
 const FormUrlQueryParameters = (param: ApiQueryParameters) => {
@@ -21,26 +22,30 @@ const FormUrlQueryParameters = (param: ApiQueryParameters) => {
 	}
 	const res = [];
 	if (param.limit) {
-		res.push(`_limit:${param.limit}`);
+		res.push(`_limit=${param.limit}`);
+	}
+	if (param.start) {
+		res.push(`_start=${param.start}`);
 	}
 	if (param.sort) {
 		res.push(`_sort=${param.sort}`);
 	}
+
 	const result = res.join("&");
 	return res.length > 0 ? `?${result}` : "";
 };
 
-class ApiProvider {
-	static STATUS_OK: number = 200;
-
+class SermonMessagesApiProvider {
 	baseUrl: string;
 	constructor(baseUrl: string) {
 		this.baseUrl = baseUrl;
 	}
 
-	async getSermonMessages(
-		param?: ApiQueryParameters
-	): Promise<SermonMessageModel[]> {
+	getUrl(): string {
+		return `${this.baseUrl}/messages`;
+	}
+
+	async getMessages(param?: ApiQueryParameters): Promise<SermonMessageModel[]> {
 		// TODO: remove this once messages api is working.
 		let sermons = [
 			{
@@ -53,7 +58,7 @@ class ApiProvider {
 		];
 		try {
 			const response = await axios.get(
-				`${this.baseUrl}/messages/${FormUrlQueryParameters(param)}`
+				`${this.getUrl()}/${FormUrlQueryParameters(param)}`
 			);
 			if (response.status == ApiProvider.STATUS_OK) {
 				const responseJson = (await response.data) as SermonMessageModel[];
@@ -65,9 +70,76 @@ class ApiProvider {
 		return sermons;
 	}
 
-	async getChurchEvents(
-		param?: ApiQueryParameters
-	): Promise<ChurchEventModel[]> {
+	async getMessage(messageId: string): Promise<SermonMessageModel> {
+		// TODO: remove this once messages api is working.
+		let sermon = {
+			id: "first",
+			Topic: "Identity in Christ",
+			Preacher: "Pst Olowokere",
+			Video_url: "https://www.youtube.com/embed/_CdVcZ6JFDs",
+			Date: "05-12-2021",
+		};
+
+		try {
+			const response = await axios.get(`${this.getUrl()}/${messageId}`);
+			if (response.status == ApiProvider.STATUS_OK) {
+				const responseJson = (await response.data) as SermonMessageModel;
+				logger.logInfo("Response Json ", responseJson);
+				sermon = responseJson;
+			}
+		} catch (e) {}
+
+		return sermon;
+	}
+
+	async getCount(): Promise<number> {
+		let count = 0;
+		try {
+			const response = await axios.get(`${this.getUrl()}/count`);
+			if (response.status == ApiProvider.STATUS_OK) {
+				const responseData = (await response.data) as number;
+				logger.logInfo("Response Json ", responseData);
+				count = responseData;
+			}
+		} catch (e) {}
+
+		return count;
+	}
+}
+
+class ChurchEventsApiProvider {
+	baseUrl: string;
+	constructor(baseUrl: string) {
+		this.baseUrl = baseUrl;
+	}
+
+	async getEvent(eventId: string): Promise<ChurchEventModel> {
+		let event: ChurchEventModel = {
+			id: "1",
+			Title: "Childrens Sunday",
+			Description:
+				"This is Childrens Day. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+			Date: "2020-05-26",
+			Time: "09:00:00.000",
+			Location: "Church Auditorium",
+			Link:
+				"https://res.cloudinary.com/house-of-grace/image/upload/v1593955457/visitation_ppd2py.jpg",
+		};
+
+		try {
+			const response = await axios.get(`${this.baseUrl}/events/${eventId}}`);
+
+			if (response.status == ApiProvider.STATUS_OK) {
+				const responseData = (await response.data) as ChurchEventModel;
+				logger.logInfo("Response Json ", responseData);
+				event = responseData;
+			}
+		} catch (e) {}
+
+		return event;
+	}
+
+	async getEvents(param?: ApiQueryParameters): Promise<ChurchEventModel[]> {
 		let churchEvents = [];
 
 		try {
@@ -83,6 +155,32 @@ class ApiProvider {
 		} catch (e) {}
 
 		return churchEvents;
+	}
+}
+
+class ApiProvider {
+	static STATUS_OK: number = 200;
+
+	private baseUrl: string;
+	private sermonMessageApiProvider: SermonMessagesApiProvider;
+	private churchEventsApiProvider: ChurchEventsApiProvider;
+
+	constructor(
+		baseUrl: string,
+		sermonMessageApiProvider: SermonMessagesApiProvider,
+		churchEventsApiProvider: ChurchEventsApiProvider
+	) {
+		this.baseUrl = baseUrl;
+		this.sermonMessageApiProvider = sermonMessageApiProvider;
+		this.churchEventsApiProvider = churchEventsApiProvider;
+	}
+
+	messages(): SermonMessagesApiProvider {
+		return this.sermonMessageApiProvider;
+	}
+
+	events(): ChurchEventsApiProvider {
+		return this.churchEventsApiProvider;
 	}
 
 	async getWeeklyServices(
@@ -136,5 +234,13 @@ class ApiProvider {
 }
 
 export const GetApiProvider = (): ApiProvider => {
-	return new ApiProvider(Environment.apiBaseUrl());
+	const baseUrl = Environment.apiBaseUrl();
+	const sermonMessageProvider = new SermonMessagesApiProvider(baseUrl);
+	const churchEventsApiProvider = new ChurchEventsApiProvider(baseUrl);
+
+	return new ApiProvider(
+		baseUrl,
+		sermonMessageProvider,
+		churchEventsApiProvider
+	);
 };

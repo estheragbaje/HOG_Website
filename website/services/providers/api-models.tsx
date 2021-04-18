@@ -18,6 +18,13 @@ export interface WeeklyServiceModel {
 
 export interface ChurchEventModel {
 	id: string;
+	Title: string;
+	Description: string;
+	Date: string;
+	Time: string;
+	Image?: any;
+	Location: string;
+	Link: string;
 }
 
 export interface ChurchServiceModel {

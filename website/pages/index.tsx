@@ -408,8 +408,14 @@ export async function getStaticProps() {
 		limit: 4,
 		sort: "updated_at:DESC",
 	});
-	const events = await provider.getChurchEvents();
-	const sermons = await provider.getSermonMessages();
+	const events = await provider.events().getEvents({
+		limit: 4,
+		sort: "updated_at:DESC",
+	});
+	const sermons = await provider.messages().getMessages({
+		limit: 4,
+		sort: "updated_at:DESC",
+	});
 
 	return {
 		props: {

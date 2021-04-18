@@ -173,7 +173,7 @@ function HomePage({ services, events, event, sermons }) {
 					</Link>
 				</Box>
 			</Box>
-			<Box paddingY="80px" backgroundColor="#F7F8F7">
+			<Box paddingTop="60px" backgroundColor="#F7F8F7" paddingBottom="60px">
 				<Box maxW="1600px" margin="auto">
 					<Box textAlign="center" paddingX={["40px", "40px", "80px"]}>
 						<MainHeading fontSize={["24px", "24px", "36px"]}>
@@ -383,7 +383,9 @@ function HomePage({ services, events, event, sermons }) {
 					</SimpleGrid>
 				</Box>
 			</Box>
-			<Footer />
+			<section id="contact">
+				<Footer />
+			</section>
 		</Box>
 	);
 }

@@ -110,18 +110,23 @@ export function TextImage({ src, alt, content, backgroundColor, ...rest }) {
 
 export function IconText({ name, content, ...rest }) {
 	return (
-		<SimpleGrid
-			{...rest}
-			textAlign={["left", "left", "left"]}
-			columns={[1, 1, 1]}
-			maxWidth="300px"
-			py={2}
-		>
-			<Icon name={name} size={["20px", "20px", "25px"]} textAlign="left" />
+		// <SimpleGrid
+		// 	{...rest}
+		// 	// textAlign={["left", "left", "left"]}
+		// 	columns={[1, 1, 1]}
+		// 	// maxWidth="300px"
+		// 	py={2}
+		// 	alignItems="center"
+		// >
+
+		// </SimpleGrid>
+
+		<Box padding="20px">
+			<Icon name={name} size={["20px", "20px", "25px"]} />
 			<Text py={4} color="#3AC7B1" fontSize={["14px", "18px", "21px"]}>
 				{content}
 			</Text>
-		</SimpleGrid>
+		</Box>
 	);
 }
 

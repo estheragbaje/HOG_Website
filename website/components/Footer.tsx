@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import * as yup from "yup";
+import { IconText } from "./Common";
 import { SocialLink } from "./Links";
 import MainHeading from "./MainHeading";
 import SubHeading from "./SubHeading";
@@ -79,6 +80,7 @@ export function ContactForm({ onSubmit, ...rest }) {
 							size="lg"
 							label="Message"
 							type="text"
+							minHeight="10em"
 							focusBorderColor="#3AC7B1"
 							errorBorderColor="crimson"
 							error={formik.errors.message}
@@ -116,10 +118,12 @@ export function FooterText({ ...rest }) {
 					size="60px"
 					margin={["auto", "auto", "0"]}
 				/>
+
 				<Text color="white" py={[3, 3, 4]}>
 					Welcome to the Redeemed Christian Church of God House of Grace, Corpus
 					Christi! We are so overwhelmed with Joy that God has brought you here.
 				</Text>
+
 				<MainHeading
 					color="white"
 					fontSize="24px"
@@ -149,6 +153,14 @@ export function FooterText({ ...rest }) {
 					link="https://www.youtube.com/channel/UCXxVxc0iUgYaOvLWbsg0V-g"
 				/>
 			</SimpleGrid>
+			<Box paddingTop="10px">
+				<Text color="white" fontSize={["14px", "18px", "21px"]}>
+					rccghogcorpuschristi@gmail.com
+				</Text>
+				<Text color="white" fontSize={["14px", "18px", "21px"]}>
+					(361)756-9889
+				</Text>
+			</Box>
 		</Box>
 	);
 }

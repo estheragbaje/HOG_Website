@@ -176,7 +176,7 @@ function DesktopNav() {
 							<NavLink href="/messages">SERMONS</NavLink>
 							<NavLink href="/services">WEEKLY SERVICES</NavLink>
 							<NavLink href="/give">GIVE</NavLink>
-							<NavLink href="/contact">CONTACT</NavLink>
+							<NavLink href="/#contact">CONTACT</NavLink>
 						</Stack>
 					</Flex>
 				</Box>

@@ -22,6 +22,7 @@ interface HoverBoxProps {
 }
 const HoverBox = ({ children, isActive }: HoverBoxProps) => {
 	const [isHover, setIsHover] = useState(false);
+	const footerColor = "#042a4a";
 	return (
 		<Box
 			onMouseEnter={() => setIsHover(true)}
@@ -30,15 +31,15 @@ const HoverBox = ({ children, isActive }: HoverBoxProps) => {
 			padding="5px"
 		>
 			<Text
-				color={isHover || isActive ? "teal.600" : "gray.600"}
-				fontWeight={isHover || isActive ? "medium" : "medium"}
+				color={isHover || isActive ? footerColor : "gray.600"}
+				fontWeight={isHover || isActive ? "bold" : "bold"}
 				fontSize="13px"
 			>
 				{children}
 			</Text>
 			<Box
 				height="2px"
-				background={isHover || isActive ? "teal" : "transparent"}
+				background={isHover || isActive ? footerColor : "transparent"}
 			/>
 		</Box>
 	);

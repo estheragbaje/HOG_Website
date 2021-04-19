@@ -182,9 +182,16 @@ export function Footer() {
 		} catch {}
 	};
 
+	const footerColor = "#042a4a"; //"#61817C"
+
 	return (
-		<Box backgroundColor="#61817C" width="100%">
-			<Box backgroundColor="#61817C" width="100%" maxW="1600px" margin="auto">
+		<Box backgroundColor={footerColor} width="100%">
+			<Box
+				backgroundColor={footerColor}
+				width="100%"
+				maxW="1600px"
+				margin="auto"
+			>
 				<Box margin={["0 40px", "0 40px", "0 80px"]} paddingTop="80px">
 					<SubHeading color="white" marginBottom="16px">
 						We would love to hear from you
@@ -212,7 +219,7 @@ export function Footer() {
 				</SimpleGrid>
 			</Box>
 			<Box
-				backgroundColor="#56706C"
+				backgroundColor={footerColor}
 				textAlign="center"
 				color="white"
 				fontSize="12px"

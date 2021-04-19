@@ -67,6 +67,8 @@ function HomePage({ services, events, event, sermons }) {
 	);
 	const recentSermon = sortedSermons[0];
 
+	const footerColor = "#042a4a";
+
 	return (
 		<Box maxWidth="100%">
 			<Box
@@ -202,7 +204,7 @@ function HomePage({ services, events, event, sermons }) {
 				</Box>
 			</Box>
 
-			<Box backgroundColor="#61817C">
+			<Box backgroundColor={footerColor}>
 				<Flex
 					direction={{ base: "column", md: "row", lg: "row" }}
 					maxW="1600px"
@@ -217,7 +219,7 @@ function HomePage({ services, events, event, sermons }) {
 						display={["none", "none", "inline-block"]}
 					/>
 					<Box
-						backgroundColor="#61817C"
+						backgroundColor={footerColor}
 						paddingY={16}
 						color="white"
 						minWidth="50%"
@@ -282,7 +284,7 @@ function HomePage({ services, events, event, sermons }) {
 					</Box>
 				</Box>
 			</Box>
-			<Box bg="#61817C">
+			<Box bg={footerColor}>
 				<Flex
 					direction={{ base: "column", md: "row", lg: "row" }}
 					maxW="1600px"
@@ -290,7 +292,7 @@ function HomePage({ services, events, event, sermons }) {
 				>
 					<Box
 						minWidth="50%"
-						backgroundColor="#61817C"
+						backgroundColor={footerColor}
 						maxWidth="100%"
 						paddingY={16}
 						color="white"

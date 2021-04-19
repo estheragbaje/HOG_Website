@@ -160,21 +160,45 @@ class ChurchEventsApiProvider {
 	}
 }
 
+class GiveApiProvider {
+	private giveUrl: string;
+	private buildingProjectGiveUrl: string;
+	constructor(giveUrl: string, buildingProjectGiveUrl: string) {
+		this.giveUrl = giveUrl;
+		this.buildingProjectGiveUrl = buildingProjectGiveUrl;
+	}
+
+	getGivingUrl(): string {
+		return this.giveUrl;
+	}
+
+	getBuildingProjectGiveUrl(): string {
+		return this.buildingProjectGiveUrl;
+	}
+}
+
 class ApiProvider {
 	static STATUS_OK: number = 200;
 
 	private baseUrl: string;
 	private sermonMessageApiProvider: SermonMessagesApiProvider;
 	private churchEventsApiProvider: ChurchEventsApiProvider;
+	private giveApiProvider: GiveApiProvider;
 
 	constructor(
 		baseUrl: string,
 		sermonMessageApiProvider: SermonMessagesApiProvider,
-		churchEventsApiProvider: ChurchEventsApiProvider
+		churchEventsApiProvider: ChurchEventsApiProvider,
+		giveApiProvider: GiveApiProvider
 	) {
 		this.baseUrl = baseUrl;
 		this.sermonMessageApiProvider = sermonMessageApiProvider;
 		this.churchEventsApiProvider = churchEventsApiProvider;
+		this.giveApiProvider = giveApiProvider;
+	}
+
+	give(): GiveApiProvider {
+		return this.giveApiProvider;
 	}
 
 	messages(): SermonMessagesApiProvider {
@@ -279,10 +303,14 @@ export const GetApiProvider = (): ApiProvider => {
 	const baseUrl = Environment.apiBaseUrl();
 	const sermonMessageProvider = new SermonMessagesApiProvider(baseUrl);
 	const churchEventsApiProvider = new ChurchEventsApiProvider(baseUrl);
-
+	const giveApiProvider = new GiveApiProvider(
+		"https://tithe.ly/give?c=2129309",
+		"https://app.sharefaith.com/app/giving/rccg2306160"
+	);
 	return new ApiProvider(
 		baseUrl,
 		sermonMessageProvider,
-		churchEventsApiProvider
+		churchEventsApiProvider,
+		giveApiProvider
 	);
 };

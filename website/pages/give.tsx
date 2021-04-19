@@ -4,8 +4,10 @@ import Link from "next/link";
 import SubHeading from "../components/SubHeading";
 import MainHeading from "../components/MainHeading";
 import { Footer } from "../components/Footer";
+import { GetApiProvider } from "../services/providers/api-provider";
 
 function Give() {
+	const apiProvider = GetApiProvider();
 	return (
 		<Box maxWidth="100%">
 			<Box
@@ -69,7 +71,7 @@ function Give() {
 									There is zero obligation to give, but rather an open avenue of
 									worship to connect fully with the heart of God.
 								</Text>
-								<Link href="https://tithe.ly/give?c=2129309">
+								<Link href={apiProvider.give().getGivingUrl()}>
 									<a target="_blank">
 										<Button
 											height={["44px", "44px", "55px"]}

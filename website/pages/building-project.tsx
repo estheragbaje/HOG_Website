@@ -2,6 +2,7 @@ import { Box, Button, Heading, Image, Text } from "@chakra-ui/core";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Footer } from "../components/Footer";
+import { GetApiProvider } from "../services/providers/api-provider";
 
 interface ParagraphTextProps {
 	children?: any;
@@ -22,9 +23,9 @@ const ParagraphText = ({ children, ...rest }: ParagraphTextProps) => {
 	);
 };
 
-const GiveButton = () => {
+const GiveButton = ({ href }: any) => {
 	return (
-		<Link href="https://app.sharefaith.com/app/giving/rccg2306160">
+		<Link href={href}>
 			<a target="_blank">
 				<Button
 					// height={["44px", "44px", "55px"]}
@@ -49,6 +50,8 @@ const GiveButton = () => {
 
 const BuildingProject = (props: any) => {
 	// handlers
+	const apiProvider = GetApiProvider();
+	const buildingProjectGiveUrl = apiProvider.give().getBuildingProjectGiveUrl();
 
 	return (
 		<Box
@@ -74,7 +77,7 @@ const BuildingProject = (props: any) => {
 
 				{/* Give CTA  */}
 				<Box width="100%" marginTop="50px" marginBottom="40px">
-					<GiveButton />
+					<GiveButton href={buildingProjectGiveUrl} />
 				</Box>
 
 				{/* Paragraph 1 */}
@@ -123,7 +126,7 @@ const BuildingProject = (props: any) => {
 
 				{/* Give CTA  */}
 				<Box width="100%" marginTop="40px" marginBottom="40px">
-					<GiveButton />
+					<GiveButton href={buildingProjectGiveUrl} />
 				</Box>
 			</Box>
 

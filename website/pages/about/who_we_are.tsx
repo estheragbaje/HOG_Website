@@ -9,50 +9,6 @@ import MainHeading from "../../components/MainHeading";
 import SubHeading from "../../components/SubHeading";
 import { GetApiProvider } from "../../services/providers/api-provider";
 
-const GetToKnowUsBetter = ({ departments }: any) => {
-	return (
-		<Box
-			py="80px"
-			margin="0 auto"
-			textAlign="center"
-			paddingX={["40px", "40px", "80px"]}
-			maxW="1600px"
-		>
-			<Box
-				textAlign="center"
-				maxWidth="640px"
-				mx="auto"
-				px={["16px", "16px", "0"]}
-			>
-				<SubHeading color="#3AC7B1" marginBottom="16px">
-					Get to know us better
-				</SubHeading>
-				<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
-					OUR DEPARTMENTS
-				</MainHeading>
-			</Box>
-			<DepartmentList departments={departments} />
-			<Box textAlign="center">
-				<Link href="/about/our_departments  ">
-					<Button
-						height={["44px", "44px", "55px"]}
-						px={["20px", "20px", "30px"]}
-						variant="outline"
-						_hover={{ bg: "#D0FFF8" }}
-						borderColor="#3AC7B1"
-						color="#3AC7B1"
-						_focus="teal.800"
-						fontSize={["16px", "16px", "21px"]}
-						fontWeight="400"
-						marginTop={20}
-						children="VIEW MORE DEPARTMENTS"
-					/>
-				</Link>
-			</Box>
-		</Box>
-	);
-};
-
 function WhoWeAre({ abouts, departments }) {
 	return (
 		<Box maxWidth="100%">
@@ -175,8 +131,6 @@ function WhoWeAre({ abouts, departments }) {
 					</Box>
 				</Box>
 			</Box>
-
-			<GetToKnowUsBetter departments={departments} />
 
 			<Footer />
 		</Box>

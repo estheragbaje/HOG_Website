@@ -291,6 +291,7 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 					</Box>
 				</Box>
 			</Box>
+
 			<Box bg={footerColor}>
 				<Flex
 					direction={{ base: "column", md: "row", lg: "row" }}
@@ -301,10 +302,11 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 						minWidth="50%"
 						backgroundColor={footerColor}
 						maxWidth="100%"
-						paddingY={16}
+						paddingTop={"80px"}
+						paddingBottom="80px"
 						color="white"
 					>
-						<Box paddingX={["40px", "40px", "80px"]}>
+						<Box paddingX={["40px", "40px", "100px"]}>
 							<MainHeading fontSize={["24px", "24px", "36px"]}>
 								MORE ABOUT US
 							</MainHeading>
@@ -328,30 +330,31 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 							<Link href="/about/what_we_believe">
 								<Button
 									type="submit"
-									height={["44px", "44px", "55px"]}
+									height={["44px", "44px", "50px"]}
 									px={["20px", "20px", "30px"]}
 									bg="#3AC7B1"
 									_hover={{ bg: "#1FBDA5" }}
 									_focus="teal.800"
-									fontSize={["16px", "16px", "21px"]}
+									fontSize={["16px", "16px", "18px"]}
 									fontWeight="400"
 									color="white"
 									children="LEARN MORE"
-									my={10}
+									marginTop={"30px"}
 								/>
 							</Link>
 						</Box>
 					</Box>
-					<Image
+					{/* <Image
 						src="/assets/about_us.png"
 						alt="About us"
 						objectFit="cover"
 						minW="50%"
 						minHeight={["200px", "200px", "750px"]}
 						display={["none", "none", "inline-block"]}
-					/>
+					/> */}
 				</Flex>
 			</Box>
+
 			<Box width="100%" paddingTop={12} paddingBottom="20px" py="80px">
 				<Box
 					margin="auto"

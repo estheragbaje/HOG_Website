@@ -177,7 +177,6 @@ function DesktopNav() {
 								submenuItemsList={[
 									{ href: "/about/who_we_are", text: "WHO WE ARE" },
 									{ href: "/about/what_we_believe", text: "WHAT WE BELIEVE" },
-									{ href: "/about/our_departments", text: "OUR DEPARTMENTS" },
 								]}
 							/>
 

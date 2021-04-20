@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/core";
 import React from "react";
 import { OurBeliefModel } from "../services/providers/api-models";
+import { Appearance } from "./Appearance";
 
 interface AccordionListProps {
 	beliefs: OurBeliefModel[];
@@ -22,10 +23,10 @@ function AccordionList({ beliefs }: AccordionListProps) {
 					{beliefs.map((belief) => (
 						<AccordionItem>
 							<AccordionHeader
-								bg="#7C9C97"
+								bg={Appearance.primaryColor} //"#7C9C97"
 								py={4}
 								color="white"
-								_hover={{ bg: "#5D7773" }}
+								_hover={{ bg: Appearance.activePrimaryColor }}
 							>
 								<Box flex="1" textAlign="left">
 									{belief.Name}

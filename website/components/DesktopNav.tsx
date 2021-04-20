@@ -15,8 +15,9 @@ import {
 import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { useState } from "react";
+import { Appearance } from "./Appearance";
 
-const footerColor = "#042a4a";
+const footerColor = Appearance.primaryColor;
 
 interface HoverBoxProps {
 	isActive: boolean;
@@ -96,23 +97,29 @@ const NavLinkWithDropDown = ({
 }: NavLinkWithDropDownProps) => {
 	return (
 		<Menu>
-			{({ onClose }) => (
-				<>
-					<MenuButton as={CustomDropDownButton} color="teal.500">
+			{({ isOpen, onClose }) => (
+				<Box onMouseLeave={onClose}>
+					<MenuButton
+						as={CustomDropDownButton}
+						color="teal.500"
+						variant="unstyled"
+						_focus={{}}
+
+						// onMouseEnter
+					>
 						<HoverBox isActive={isActive}>
 							ABOUT
 							<Icon name="chevron-down" />
 						</HoverBox>
 					</MenuButton>
 
-					<MenuList color="teal.600" zIndex={2}>
+					<MenuList color={footerColor} onClick={onClose}>
 						{submenuItemsList.map((el) => (
-							<SubmenuLink href={el.href} onClick={onClose}>
-								{el.text}
-							</SubmenuLink>
+							<SubmenuLink href={el.href}>{el.text}</SubmenuLink>
+							// <MenuItem>{el.text}</MenuItem>
 						))}
 					</MenuList>
-				</>
+				</Box>
 			)}
 		</Menu>
 	);

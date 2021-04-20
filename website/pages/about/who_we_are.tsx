@@ -13,7 +13,7 @@ function WhoWeAre({ abouts, departments }) {
 	return (
 		<Box maxWidth="100%">
 			<Box
-				backgroundImage="url(/assets/about_us_bg.jpg) "
+				backgroundImage="url(/assets/hero_about_us.jpg) "
 				backgroundSize="cover"
 				paddingY={["60px", "110px", "120px"]}
 				backgroundColor="gray.700"

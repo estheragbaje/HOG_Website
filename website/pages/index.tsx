@@ -25,6 +25,7 @@ import {
 	SermonMessageModel,
 	WeeklyServiceModel,
 } from "../services/providers/api-models";
+import { Appearance } from "../components/Appearance";
 
 /**
  * Put the slider images here
@@ -52,6 +53,8 @@ const BoxWithBackgroundImage = ({
 			background="orange"
 			backgroundImage="url(/assets/home_hero.jpg)"
 			backgroundSize="cover"
+			style={{ backgroundBlendMode: "overlay" }}
+			backgroundColor="gray.600"
 		>
 			{children}
 		</Box>
@@ -73,7 +76,7 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 	);
 	const recentSermon = sortedSermons[0];
 
-	const footerColor = "#042a4a";
+	const footerColor = Appearance.primaryColor;
 
 	return (
 		<Box maxWidth="100%">

@@ -41,10 +41,10 @@ function WhatWeBelieve({ beliefs }) {
 				<Flex
 					direction={["column", "column", "column", "row"]}
 					marginX={["40px", "40px", "80px"]}
-					justifyContent="space-between"
+					justifyContent="center"
 					paddingY="80px"
 				>
-					<Box maxW="900px">
+					<Box maxW="900px" textAlign="justify">
 						<SubHeading color="#3AC7B1" marginBottom="16px">
 							Get to know us better
 						</SubHeading>
@@ -71,9 +71,9 @@ function WhatWeBelieve({ beliefs }) {
 						{/* </Box> */}
 					</Box>
 					{/* <Box size={['24px', '24px', '50px']} flexShrink='0'></Box> */}
-					<Image
+					{/* <Image
 						paddingLeft={["0px", "0px", "0px", "20px"]}
-						src="/assets/about_us.png"
+						src="/assets/what_we_believe.png"
 						alt="About us"
 						maxWidth="550px"
 						objectFit="cover"
@@ -83,7 +83,7 @@ function WhatWeBelieve({ beliefs }) {
 						minWidth="400px"
 						// minHeight={['200px', '200px', '750px']}
 						display={["none", "block", "block"]}
-					/>
+					/> */}
 				</Flex>
 			</Box>
 			<Box backgroundColor="#F7F8F7">

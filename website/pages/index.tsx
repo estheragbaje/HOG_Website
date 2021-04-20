@@ -20,6 +20,11 @@ import WeeklyServicesList from "../components/WeeklyServicesList";
 import useInterval from "@use-it/interval";
 import { GetApiProvider } from "../services/providers/api-provider";
 import MainHeading from "../components/MainHeading";
+import {
+	ChurchEventModel,
+	SermonMessageModel,
+	WeeklyServiceModel,
+} from "../services/providers/api-models";
 
 /**
  * Put the slider images here
@@ -31,57 +36,37 @@ export const toDate = (date) => {
 	return new Date(`${mm}/${dd}/${yyyy}`);
 };
 
-interface HeroCarouselProps {
-	imageUrlList: string[];
+interface BoxWithBackgroundImageProps {
+	children: any;
+	backgroundImageSrc: string;
 	[prop: string]: any;
 }
-const HeroCarousel = ({ imageUrlList }: HeroCarouselProps) => {
-	const [activeSlide, setActiveSlide] = useState(1);
-	const [shouldTransition, setShouldTransition] = useState(true);
-	const intervalDuration = 5000;
-	const x = -(100 / imageUrlList.length) * (activeSlide - 1);
-
-	useInterval(() => {
-		setActiveSlide((current) => {
-			if (!shouldTransition) {
-				setShouldTransition(true);
-			}
-
-			let next = current + 1;
-
-			// loop back to image 1 once it reaches the end
-			if (next > imageUrlList.length) {
-				setShouldTransition(false);
-				next = 1;
-			}
-			return next;
-		});
-	}, intervalDuration);
+const BoxWithBackgroundImage = ({
+	children,
+	backgroundImageSrc,
+	...rest
+}: BoxWithBackgroundImageProps) => {
 	return (
-		<Flex
-			transform={`translateX(${x}%)`}
-			transition={shouldTransition ? "transform 200ms" : undefined}
-			top="0"
-			position="absolute"
-			w={`calc(100% * ${imageUrlList.length})`}
-			h="100%"
+		<Box
+			{...rest}
+			background="orange"
+			backgroundImage="url(/assets/home_hero.jpg)"
+			backgroundSize="cover"
 		>
-			{imageUrlList.map((image, index) => (
-				<Box
-					key={index}
-					width="100%"
-					height="100%"
-					backgroundImage={`url(/assets/our_vision.jpeg)`}
-					backgroundSize="cover"
-					style={{ backgroundBlendMode: "overlay" }}
-					backgroundColor="gray.600"
-				/>
-			))}
-		</Flex>
+			{children}
+		</Box>
 	);
 };
 
-function HomePage({ services, events, event, sermons }) {
+interface HomePageProps {
+	services: WeeklyServiceModel[];
+	events: ChurchEventModel[];
+	sermons: SermonMessageModel[];
+	event: any;
+	[prop: string]: any;
+}
+
+function HomePage({ services, events, event, sermons }: HomePageProps) {
 	const sortedSermons = sermons.sort(
 		(a, b) =>
 			toDate(b.Date).getMilliseconds() - toDate(a.Date).getMilliseconds()
@@ -93,55 +78,65 @@ function HomePage({ services, events, event, sermons }) {
 	return (
 		<Box maxWidth="100%">
 			<Box
+				// background="green"
 				width="100%"
 				overflowX="hidden"
 				position="relative"
-				paddingY={["60px", "110px", "145px"]}
+				// paddingY={["60px", "110px", "145px"]}
 			>
-				<HeroCarousel
-					imageUrlList={[
-						"/assets/new_bg.jpg",
-						"/assets/church_photo.jpeg",
-						"/assets/church_photo2.jpeg",
-					]}
-				/>
-				<Box
-					position="relative"
-					textAlign="center"
-					color="white"
-					paddingX={["40px", "40px", "80px"]}
-				>
-					<SubHeading
-						color="#3AC7B1"
-						fontSize={["18px", "18px", "26px", "26px"]}
-					>
-						Welcome to Redeemed Christian Church of God
-					</SubHeading>
-					<MainHeading
-						fontSize={["28px", "36px", "48px", "64px"]}
-						marginBottom="24px"
-					>
-						THE PLACE TO BE
-					</MainHeading>
-					<Text fontSize={["18px", "18px", "26px", "26px"]} marginBottom="60px">
-						Worship with us Sundays at 9:30am
-					</Text>
+				{/* <HeroCarousel
+					imageUrlList={["/assets/home_hero.jpg"]}
+					enableTransition={false}
+				/> */}
 
-					<Link href="/messages">
-						<Button
-							height={["55px", "55px", "66px"]}
-							px={["20px", "20px", "30px"]}
-							bg="#3AC7B1"
-							_hover={{ bg: "#1FBDA5" }}
-							_focus="teal.800"
-							fontSize={["16px", "16px", "21px"]}
-							fontWeight="400"
-							textTransform="uppercase"
+				{/* /assets/our_vision.jpeg */}
+				<BoxWithBackgroundImage
+					backgroundImageSrc="/assets/home_hero.jpg"
+					paddingTop="20px"
+				>
+					<Box
+						width="100%"
+						height="100%"
+						textAlign="center"
+						color="white"
+						paddingX={["40px", "40px", "80px"]}
+						paddingY={["60px", "110px", "145px"]}
+					>
+						<SubHeading
+							color="#3AC7B1"
+							fontSize={["18px", "18px", "26px", "26px"]}
 						>
-							Watch Sermons
-						</Button>
-					</Link>
-				</Box>
+							Welcome to Redeemed Christian Church of God
+						</SubHeading>
+						<MainHeading
+							fontSize={["28px", "36px", "48px", "64px"]}
+							marginBottom="24px"
+						>
+							THE PLACE TO BE
+						</MainHeading>
+						<Text
+							fontSize={["18px", "18px", "26px", "26px"]}
+							marginBottom="60px"
+						>
+							Worship with us Sundays at 9:30am
+						</Text>
+
+						<Link href="/messages">
+							<Button
+								height={["55px", "55px", "66px"]}
+								px={["20px", "20px", "30px"]}
+								bg="#3AC7B1"
+								_hover={{ bg: "#1FBDA5" }}
+								_focus="teal.800"
+								fontSize={["16px", "16px", "21px"]}
+								fontWeight="400"
+								textTransform="uppercase"
+							>
+								Watch Sermons
+							</Button>
+						</Link>
+					</Box>
+				</BoxWithBackgroundImage>
 			</Box>
 			<Box
 				py="80px"
@@ -281,10 +276,11 @@ function HomePage({ services, events, event, sermons }) {
 
 			<Box maxW="1600px" margin="auto">
 				<Box>
-					<Box py="80px" paddingX={["40px", "40px", "80px"]}>
+					<Box py="85px">
 						<MainHeading
 							fontSize={["24px", "24px", "36px"]}
 							marginBottom="28px"
+							textAlign="center"
 						>
 							THE LATEST NEWS
 						</MainHeading>

@@ -5,10 +5,17 @@ interface SubHeadingProps {
 	children: any;
 	fontSize?: any;
 	color?: any;
+	marginBottom?: any;
 	[prop: string]: any;
 }
 
-function SubHeading({ children, fontSize, color, ...rest }: SubHeadingProps) {
+function SubHeading({
+	children,
+	fontSize,
+	color,
+	marginBottom,
+	...rest
+}: SubHeadingProps) {
 	return (
 		<Heading
 			color={color}
@@ -16,7 +23,7 @@ function SubHeading({ children, fontSize, color, ...rest }: SubHeadingProps) {
 			fontSize={fontSize}
 			fontStyle="italic"
 			fontWeight="500"
-			marginBottom="24px"
+			marginBottom={marginBottom || "24px"}
 			{...rest}
 		>
 			{children}

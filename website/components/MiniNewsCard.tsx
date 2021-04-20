@@ -28,37 +28,49 @@ function MiniNewsCard({
 }: MiniNewsCardProps) {
 	const max_length = 80;
 	return (
-		<SimpleGrid columns={[1, 1, 1, 2]} {...rest} spacing={8} margin="auto">
-			{events.map((event) => (
-				<SimpleGrid key={event.id} columns={[1, 1, 2]} spacing={4}>
-					<Image
+		<Box paddingLeft={["0px", "50px"]}>
+			<SimpleGrid
+				maxWidth="900px"
+				// background="green"
+				columns={[1, 1, 1, 2]}
+				{...rest}
+				spacing={["30px", "80px"]}
+				margin="auto"
+				paddingX={["20px", "10px"]}
+			>
+				{events.map((event) => (
+					<SimpleGrid key={event.id} columns={[1, 1, 1]} spacing={0}>
+						{/* <Image
 						src={event.Image.url}
 						alt={event.Title}
 						objectFit="contain"
 						borderRadius="5px"
-					/>
-					<Box>
-						<SubHeading fontSize="14px" color="#3AC7B1">
-							{event.Date}
-						</SubHeading>
-						<MainHeading
-							fontSize="20px"
-							marginBottom={0}
-							textTransform="uppercase"
+					/> */}
+						<Box
+							width="100%"
+							maxWidth="400px"
+							// background="orange"
 						>
-							{event.Title}
-						</MainHeading>
-						{/* {Description? Description.slice(0, max_length)} */}
+							<SubHeading fontSize="14px" color="#3AC7B1" marginBottom="10px">
+								{event.Date}
+							</SubHeading>
+							<MainHeading fontSize="20px" textTransform="uppercase">
+								{event.Title}
+							</MainHeading>
+							{/* {Description? Description.slice(0, max_length)} */}
 
-						<Text>{event.Description.slice(0, max_length)}...</Text>
-						<Link href={`/events/${event.id}`} color="#3AC7B1">
-							READ MORE
-						</Link>
-					</Box>
-				</SimpleGrid>
-			))}
-			<Box></Box>
-		</SimpleGrid>
+							<Text>{event.Description.slice(0, max_length)}...</Text>
+							<Link href={`/events/${event.id}`} color="#3AC7B1">
+								<Text marginTop="5px" fontSize="15px">
+									READ MORE
+								</Text>
+							</Link>
+						</Box>
+					</SimpleGrid>
+				))}
+				<Box></Box>
+			</SimpleGrid>
+		</Box>
 	);
 }
 

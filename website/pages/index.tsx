@@ -24,11 +24,6 @@ import MainHeading from "../components/MainHeading";
 /**
  * Put the slider images here
  */
-const images = [
-	"/assets/new_bg.jpg",
-	"/assets/church_photo.jpeg",
-	"/assets/church_photo2.jpeg",
-];
 
 export const toDate = (date) => {
 	// ensure the date matches "DD-MM-YYYY"
@@ -36,11 +31,15 @@ export const toDate = (date) => {
 	return new Date(`${mm}/${dd}/${yyyy}`);
 };
 
-function HomePage({ services, events, event, sermons }) {
+interface HeroCarouselProps {
+	imageUrlList: string[];
+	[prop: string]: any;
+}
+const HeroCarousel = ({ imageUrlList }: HeroCarouselProps) => {
 	const [activeSlide, setActiveSlide] = useState(1);
 	const [shouldTransition, setShouldTransition] = useState(true);
-
 	const intervalDuration = 5000;
+	const x = -(100 / imageUrlList.length) * (activeSlide - 1);
 
 	useInterval(() => {
 		setActiveSlide((current) => {
@@ -51,16 +50,38 @@ function HomePage({ services, events, event, sermons }) {
 			let next = current + 1;
 
 			// loop back to image 1 once it reaches the end
-			if (next > images.length) {
+			if (next > imageUrlList.length) {
 				setShouldTransition(false);
 				next = 1;
 			}
 			return next;
 		});
 	}, intervalDuration);
+	return (
+		<Flex
+			transform={`translateX(${x}%)`}
+			transition={shouldTransition ? "transform 200ms" : undefined}
+			top="0"
+			position="absolute"
+			w={`calc(100% * ${imageUrlList.length})`}
+			h="100%"
+		>
+			{imageUrlList.map((image, index) => (
+				<Box
+					key={index}
+					width="100%"
+					height="100%"
+					backgroundImage={`url(/assets/our_vision.jpeg)`}
+					backgroundSize="cover"
+					style={{ backgroundBlendMode: "overlay" }}
+					backgroundColor="gray.600"
+				/>
+			))}
+		</Flex>
+	);
+};
 
-	const x = -(100 / images.length) * (activeSlide - 1);
-
+function HomePage({ services, events, event, sermons }) {
 	const sortedSermons = sermons.sort(
 		(a, b) =>
 			toDate(b.Date).getMilliseconds() - toDate(a.Date).getMilliseconds()
@@ -77,26 +98,13 @@ function HomePage({ services, events, event, sermons }) {
 				position="relative"
 				paddingY={["60px", "110px", "145px"]}
 			>
-				<Flex
-					transform={`translateX(${x}%)`}
-					transition={shouldTransition ? "transform 200ms" : undefined}
-					top="0"
-					position="absolute"
-					w={`calc(100% * ${images.length})`}
-					h="100%"
-				>
-					{images.map((image, index) => (
-						<Box
-							key={index}
-							width="100%"
-							height="100%"
-							backgroundImage={`url(${image})`}
-							backgroundSize="cover"
-							style={{ backgroundBlendMode: "overlay" }}
-							backgroundColor="gray.600"
-						/>
-					))}
-				</Flex>
+				<HeroCarousel
+					imageUrlList={[
+						"/assets/new_bg.jpg",
+						"/assets/church_photo.jpeg",
+						"/assets/church_photo2.jpeg",
+					]}
+				/>
 				<Box
 					position="relative"
 					textAlign="center"

@@ -16,13 +16,14 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { useState } from "react";
 
+const footerColor = "#042a4a";
+
 interface HoverBoxProps {
 	isActive: boolean;
 	children: any;
 }
 const HoverBox = ({ children, isActive }: HoverBoxProps) => {
 	const [isHover, setIsHover] = useState(false);
-	const footerColor = "#042a4a";
 	return (
 		<Box
 			onMouseEnter={() => setIsHover(true)}

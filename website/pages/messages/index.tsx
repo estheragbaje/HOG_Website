@@ -42,6 +42,56 @@ const useUpdateEffect = (effect, dependencies = []) => {
 	}, dependencies);
 };
 
+const OurWeeklyServices = () => {
+	return (
+		<Box
+			backgroundImage="url(/assets/weekly_services.jpg) "
+			backgroundSize="cover"
+			backgroundColor="gray.600"
+			style={{ backgroundBlendMode: "overlay" }}
+		>
+			<Box maxW="1600px" margin="auto">
+				<Box
+					py="80px"
+					margin={["0 40px", "0 40px", "0 80px"]}
+					color="white"
+					maxWidth="500px"
+				>
+					<SubHeading color="#3AC7B1" marginBottom="16px">
+						Get to know about our weekly activites
+					</SubHeading>
+					<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
+						OUR WEEKLY SERVICES{" "}
+					</MainHeading>
+					<Box>
+						<Text py={4}>
+							While going to a church meeting on a Sunday is helpful, we can
+							grow much deeper in the Christian life through regular fellowship
+							with other brethren.
+						</Text>
+
+						<Link href="/services">
+							<Button
+								type="submit"
+								height={["44px", "44px", "55px"]}
+								px={["20px", "20px", "30px"]}
+								bg="#3AC7B1"
+								_hover={{ bg: "#1FBDA5" }}
+								_focus="teal.800"
+								fontSize={["16px", "16px", "21px"]}
+								fontWeight="400"
+								color="white"
+								children="VIEW SERVICES"
+								my={10}
+							/>
+						</Link>
+					</Box>
+				</Box>
+			</Box>
+		</Box>
+	);
+};
+
 interface SermonsProps {
 	sermons: SermonMessageModel[];
 	page: number;
@@ -247,54 +297,7 @@ function Sermons(props: SermonsProps) {
 				</Box>
 			</Box>
 
-			<Box
-				backgroundImage="url(/assets/weekly_services.jpg) "
-				backgroundSize="cover"
-				backgroundColor="gray.600"
-				style={{ backgroundBlendMode: "overlay" }}
-			>
-				<Box maxW="1600px" margin="auto">
-					<Box
-						py="80px"
-						margin={["0 40px", "0 40px", "0 80px"]}
-						color="white"
-						maxWidth="500px"
-					>
-						<SubHeading color="#3AC7B1" marginBottom="16px">
-							Get to know about our weekly activites
-						</SubHeading>
-						<MainHeading
-							fontSize={["24px", "24px", "36px"]}
-							marginBottom="28px"
-						>
-							OUR WEEKLY SERVICES{" "}
-						</MainHeading>
-						<Box>
-							<Text py={4}>
-								While going to a church meeting on a Sunday is helpful, we can
-								grow much deeper in the Christian life through regular
-								fellowship with other brethren.
-							</Text>
-
-							<Link href="/services">
-								<Button
-									type="submit"
-									height={["44px", "44px", "55px"]}
-									px={["20px", "20px", "30px"]}
-									bg="#3AC7B1"
-									_hover={{ bg: "#1FBDA5" }}
-									_focus="teal.800"
-									fontSize={["16px", "16px", "21px"]}
-									fontWeight="400"
-									color="white"
-									children="VIEW SERVICES"
-									my={10}
-								/>
-							</Link>
-						</Box>
-					</Box>
-				</Box>
-			</Box>
+			<OurWeeklyServices />
 			<Footer />
 		</Box>
 	);

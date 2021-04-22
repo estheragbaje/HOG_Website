@@ -143,7 +143,7 @@ function Sermons(props: SermonsProps) {
 							fontSize={["24px", "24px", "36px"]}
 							marginBottom="28px"
 						>
-							VIEW MESSAGES
+							MESSAGES
 						</MainHeading>
 					</Box>
 

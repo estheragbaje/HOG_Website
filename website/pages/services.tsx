@@ -95,19 +95,6 @@ function Services({ services }: ServicesProps) {
 							/>
 						</Link>
 					</Box>
-					{/* <Box size={['24px', '24px', '50px']} flexShrink='0'></Box> */}
-					<Image
-						paddingLeft={["0px", "0px", "0px", "20px"]}
-						src="/assets/about_us.png"
-						alt="About us"
-						maxWidth="550px"
-						objectFit="cover"
-						flexShrink={0}
-						// objectFit='cover'
-						minWidth="400px"
-						// minHeight={['200px', '200px', '750px']}
-						display={["none", "none", "none", "inline-block"]}
-					/>
 				</Flex>
 			</Box>
 

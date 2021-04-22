@@ -395,9 +395,8 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 					</SimpleGrid>
 				</Box>
 			</Box>
-			<section id="contact">
-				<Footer />
-			</section>
+
+			<Footer />
 		</Box>
 	);
 }

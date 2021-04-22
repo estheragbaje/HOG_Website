@@ -185,7 +185,7 @@ function DesktopNav() {
 							<NavLink href="/services">WEEKLY SERVICES</NavLink>
 							<NavLink href="/give">GIVE</NavLink>
 							<NavLink href="/building-project"> BUILDING PROJECT </NavLink>
-							<NavLink href="/#contact">CONTACT</NavLink>
+							<NavLink href={`${pathname}#contact`}>CONTACT</NavLink>
 						</Stack>
 					</Flex>
 				</Box>

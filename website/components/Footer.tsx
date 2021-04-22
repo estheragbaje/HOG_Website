@@ -49,14 +49,14 @@ export function ContactForm({ onSubmit, ...rest }) {
 		<form onSubmit={formik.handleSubmit}>
 			<Box {...rest}>
 				<Box minWidth="45%" margin="auto">
-					<Stack spacing={4}>
+					<Stack spacing={3}>
 						<Input
 							placeholder="Name"
 							label="Name"
 							type="text"
 							size="lg"
 							focusBorderColor="#3AC7B1"
-							paddingY={8}
+							paddingY={5}
 							error={formik.errors.name}
 							errorBorderColor="crimson"
 							{...nameProps}
@@ -69,7 +69,7 @@ export function ContactForm({ onSubmit, ...rest }) {
 							label="Email"
 							type="email"
 							focusBorderColor="#3AC7B1"
-							paddingY={8}
+							paddingY={5}
 							errorBorderColor="crimson"
 							error={formik.errors.email}
 							{...emailProps}
@@ -110,62 +110,65 @@ export function ContactForm({ onSubmit, ...rest }) {
 
 export function FooterText({ ...rest }) {
 	return (
-		<Box {...rest}>
-			<Box textAlign={["center", "left", "left"]} maxW="1600px" margin="auto">
-				<Image
-					src="/assets/rccg_logo.png"
-					alt="logo"
-					size="60px"
-					margin={["auto", "auto", "0"]}
-				/>
+		<section id="contact">
+			<Box {...rest}>
+				<Box textAlign={["center", "left", "left"]} maxW="1600px" margin="auto">
+					<Image
+						src="/assets/rccg_logo.png"
+						alt="logo"
+						size="60px"
+						margin={["auto", "auto", "0"]}
+					/>
 
-				<Text color="white" py={[3, 3, 4]}>
-					Welcome to the Redeemed Christian Church of God House of Grace, Corpus
-					Christi! We are so overwhelmed with Joy that God has brought you here.
-				</Text>
+					<Text color="white" py={[3, 3, 4]}>
+						Welcome to the Redeemed Christian Church of God House of Grace,
+						Corpus Christi! We are so overwhelmed with Joy that God has brought
+						you here.
+					</Text>
 
-				<MainHeading
+					<MainHeading
+						color="white"
+						fontSize="24px"
+						display={["none", "none", "block"]}
+					>
+						CONNECT WITH US
+					</MainHeading>
+				</Box>
+				<SimpleGrid
+					listStyleType="none"
+					columns={2}
 					color="white"
-					fontSize="24px"
-					display={["none", "none", "block"]}
+					py={3}
+					mx={["auto", "auto", 0]}
+					paddingBottom={[0, 0, 0]}
+					textAlign={["center", "center", "left"]}
+					maxWidth="300px"
 				>
-					CONNECT WITH US
-				</MainHeading>
+					<SocialLink
+						icon={FaFacebook}
+						label="facebook"
+						link="https://www.facebook.com/RCCGCORPUS"
+					/>
+					<SocialLink
+						icon={FaYoutube}
+						label="instagram"
+						link="https://www.youtube.com/channel/UCXxVxc0iUgYaOvLWbsg0V-g"
+					/>
+				</SimpleGrid>
+				<Box
+					paddingTop={["5px", "5px", "10px"]}
+					marginBottom="20px"
+					textAlign={["center", "left"]}
+				>
+					<Text color="white" fontSize={["14px", "18px", "18px"]}>
+						rccghogcorpuschristi@gmail.com
+					</Text>
+					<Text color="white" fontSize={["14px", "18px", "18px"]}>
+						(361)756-9889
+					</Text>
+				</Box>
 			</Box>
-			<SimpleGrid
-				listStyleType="none"
-				columns={2}
-				color="white"
-				py={3}
-				mx={["auto", "auto", 0]}
-				paddingBottom={[0, 0, 0]}
-				textAlign={["center", "center", "left"]}
-				maxWidth="300px"
-			>
-				<SocialLink
-					icon={FaFacebook}
-					label="facebook"
-					link="https://www.facebook.com/RCCGCORPUS"
-				/>
-				<SocialLink
-					icon={FaYoutube}
-					label="instagram"
-					link="https://www.youtube.com/channel/UCXxVxc0iUgYaOvLWbsg0V-g"
-				/>
-			</SimpleGrid>
-			<Box
-				paddingTop={["5px", "5px", "10px"]}
-				marginBottom="20px"
-				textAlign={["center", "left"]}
-			>
-				<Text color="white" fontSize={["14px", "18px", "18px"]}>
-					rccghogcorpuschristi@gmail.com
-				</Text>
-				<Text color="white" fontSize={["14px", "18px", "18px"]}>
-					(361)756-9889
-				</Text>
-			</Box>
-		</Box>
+		</section>
 	);
 }
 

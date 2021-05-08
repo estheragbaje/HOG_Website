@@ -9,5 +9,9 @@
     "deploy:backend": "git subtree push --prefix backend heroku master",
     "start:backend": "cd backend && yarn develop",
     "start:frontend": "cd website && yarn dev"
+  },
+  "dependencies": {
+    "pg": "^8.6.0",
+    "pg-connection-string": "^2.5.0"
   }
 }

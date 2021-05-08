@@ -7,6 +7,7 @@
 
 module.exports = {
   async contactus(ctx) {
-    console.log("APi was hit");
+    console.log("APi was hit", ctx.request.body);
+    ctx.response.send("Here");
   },
 };

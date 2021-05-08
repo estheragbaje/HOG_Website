@@ -59,9 +59,9 @@ class SermonMessagesApiProvider {
 			},
 		];
 		try {
-			const response = await axios.get(
-				`${this.getUrl()}/${FormUrlQueryParameters(param)}`
-			);
+			const url = `${this.getUrl()}/${FormUrlQueryParameters(param)}`;
+			logger.logInfo("url", url);
+			const response = await axios.get(url);
 			if (response.status == ApiProvider.STATUS_OK) {
 				const responseJson = (await response.data) as SermonMessageModel[];
 				logger.logInfo("Response Json ", responseJson);
@@ -193,7 +193,7 @@ class ContactUsApiProvider {
 		// TODO (tobe): send contactInformation to /api/send-email
 		return new Promise(async (resolve, reject) => {
 			try {
-				logger.logInfo("Sending Information");
+				logger.logInfo("Sending Information", request);
 				const url = `${this.baseUrl}/contactus`;
 				logger.logInfo("Url ", url);
 				const response = await axios.post(url, request);

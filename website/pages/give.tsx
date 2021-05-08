@@ -118,11 +118,10 @@ function Give() {
 										2. Via Text
 									</MainHeading>
 									<Text>
-										You can make a one time giving via Text.{" "}
-										<b>Text the amount HOGCC to 45888 </b>.
+										You can make a one time giving by
+										<b> texting the amount HOGCC to 45888 </b>
 										<br />
-										<br />
-										For example to give $50, text $50 HOGCC to 45888
+										For example to give $10, text $10 HOGCC to 45888
 									</Text>
 								</Box>
 								<Image

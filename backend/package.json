@@ -12,6 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
+    "node-fetch": "^2.6.1",
     "pg": "8.2.1",
     "sqlite3": "latest",
     "strapi": "3.0.5",

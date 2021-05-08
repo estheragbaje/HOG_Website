@@ -202,6 +202,11 @@ class ContactUsApiProvider {
 					// logger.logInfo("Response Json ", responseData);
 					// departments = responseData;
 				}
+				logger.logInfo("Email respone ", response.data);
+				const data = response.data;
+				if (data.status !== "ok") {
+					throw new Error("Email not sent");
+				}
 			} catch (e) {
 				logger.logError("Error Occured", e);
 				reject(e);

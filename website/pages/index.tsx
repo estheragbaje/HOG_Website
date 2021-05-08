@@ -124,63 +124,30 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 							Worship with us Sundays at 9:30am
 						</Text>
 
-						<Link href="/messages">
-							<Button
-								height={["55px", "55px", "66px"]}
-								px={["20px", "20px", "30px"]}
-								bg="#3AC7B1"
-								_hover={{ bg: "#1FBDA5" }}
-								_focus="teal.800"
-								fontSize={["16px", "16px", "21px"]}
-								fontWeight="400"
-								textTransform="uppercase"
-							>
-								Watch Sermons
-							</Button>
-						</Link>
-					</Box>
-				</BoxWithBackgroundImage>
-			</Box>
-			<Box
-				py="80px"
-				margin="auto"
-				paddingX={["40px", "40px", "80px"]}
-				maxW="1600px"
-			>
-				<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="28px">
-					OUR LATEST SERMONS
-				</MainHeading>
-
-				<SimpleGrid columns={[1, 1, 2]} spacing={8}>
-					<AspectRatioBox ratio={16 / 9} flex="1">
-						<Box
-							as="iframe"
-							title={recentSermon.Topic}
-							src={recentSermon.Video_url}
-							allowFullScreen
-						/>
-					</AspectRatioBox>
-					<SideSermonList sermons={sortedSermons} />
-				</SimpleGrid>
-
-				<Box textAlign="center">
-					<Link href="/messages">
+						{/* <Link href=> */}
 						<Button
-							height={["44px", "44px", "55px"]}
+							height={["55px", "55px", "66px"]}
 							px={["20px", "20px", "30px"]}
-							variant="outline"
-							_hover={{ bg: "#D0FFF8" }}
-							borderColor="#3AC7B1"
-							color="#3AC7B1"
+							bg="#3AC7B1"
+							_hover={{ bg: "#1FBDA5" }}
 							_focus="teal.800"
 							fontSize={["16px", "16px", "21px"]}
 							fontWeight="400"
-							marginTop={20}
-							children="VIEW MORE SERMONS"
-						/>
-					</Link>
-				</Box>
+							textTransform="uppercase"
+							onClick={() =>
+								window.open(
+									"https://www.youtube.com/channel/UCXxVxc0iUgYaOvLWbsg0V-g/videos",
+									"_blank"
+								)
+							}
+						>
+							Watch our Services
+						</Button>
+						{/* </Link> */}
+					</Box>
+				</BoxWithBackgroundImage>
 			</Box>
+
 			<Box paddingTop="60px" backgroundColor="#F7F8F7" paddingBottom="60px">
 				<Box maxW="1600px" margin="auto">
 					<Box textAlign="center" paddingX={["40px", "40px", "80px"]}>

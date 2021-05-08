@@ -183,7 +183,6 @@ function DesktopNav() {
 							/>
 
 							<NavLink href="/events">EVENTS</NavLink>
-							<NavLink href="/messages">SERMONS</NavLink>
 							<NavLink href="/services">WEEKLY SERVICES</NavLink>
 							<NavLink href="/give">GIVE</NavLink>
 							<NavLink href="/building-project"> BUILDING PROJECT </NavLink>

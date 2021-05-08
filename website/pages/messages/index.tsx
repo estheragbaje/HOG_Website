@@ -70,7 +70,7 @@ function Sermons(props: SermonsProps) {
 	const showPagination = totalPages > 1;
 
 	// TODO: what does this do?
-	const [ready] = useScript("https://www.vidlive.co/embed/2844/embed.js");
+	const ready = useScript("https://www.vidlive.co/embed/2844/embed.js");
 
 	return (
 		<Box maxWidth="100%">

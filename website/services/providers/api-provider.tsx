@@ -177,6 +177,40 @@ class GiveApiProvider {
 	}
 }
 
+export interface ContactUsFormData {
+	name: string;
+	email: string;
+	message: string;
+}
+
+class ContactUsApiProvider {
+	private baseUrl: string;
+	constructor(baseUrl: string) {
+		this.baseUrl = baseUrl;
+	}
+
+	sendContactInformation(request: ContactUsFormData): Promise<boolean> {
+		// TODO (tobe): send contactInformation to /api/send-email
+		return new Promise(async (resolve, reject) => {
+			try {
+				logger.logInfo("Sending Information");
+				const url = `${this.baseUrl}/contactus`;
+				logger.logInfo("Url ", url);
+				const response = await axios.post(url, request);
+				if (response.status == ApiProvider.STATUS_OK) {
+					// const responseData = (await response.data) as ChurchDepartmentModel[];
+					// logger.logInfo("Response Json ", responseData);
+					// departments = responseData;
+				}
+			} catch (e) {
+				logger.logError("Error Occured", e);
+				reject(e);
+			}
+			resolve(true);
+		});
+	}
+}
+
 class ApiProvider {
 	static STATUS_OK: number = 200;
 
@@ -184,17 +218,24 @@ class ApiProvider {
 	private sermonMessageApiProvider: SermonMessagesApiProvider;
 	private churchEventsApiProvider: ChurchEventsApiProvider;
 	private giveApiProvider: GiveApiProvider;
+	private contactUsApiProvider: ContactUsApiProvider;
 
 	constructor(
 		baseUrl: string,
 		sermonMessageApiProvider: SermonMessagesApiProvider,
 		churchEventsApiProvider: ChurchEventsApiProvider,
-		giveApiProvider: GiveApiProvider
+		giveApiProvider: GiveApiProvider,
+		contactUsApiProvider: ContactUsApiProvider
 	) {
 		this.baseUrl = baseUrl;
 		this.sermonMessageApiProvider = sermonMessageApiProvider;
 		this.churchEventsApiProvider = churchEventsApiProvider;
 		this.giveApiProvider = giveApiProvider;
+		this.contactUsApiProvider = contactUsApiProvider;
+	}
+
+	contactUs(): ContactUsApiProvider {
+		return this.contactUsApiProvider;
 	}
 
 	give(): GiveApiProvider {
@@ -303,6 +344,7 @@ export const GetApiProvider = (): ApiProvider => {
 	const baseUrl = Environment.apiBaseUrl();
 	const sermonMessageProvider = new SermonMessagesApiProvider(baseUrl);
 	const churchEventsApiProvider = new ChurchEventsApiProvider(baseUrl);
+	const contactUsApiProvider = new ContactUsApiProvider(baseUrl);
 	const giveApiProvider = new GiveApiProvider(
 		"https://tithe.ly/give?c=2129309",
 		"https://app.sharefaith.com/app/giving/rccg2306160"
@@ -311,6 +353,7 @@ export const GetApiProvider = (): ApiProvider => {
 		baseUrl,
 		sermonMessageProvider,
 		churchEventsApiProvider,
-		giveApiProvider
+		giveApiProvider,
+		contactUsApiProvider
 	);
 };

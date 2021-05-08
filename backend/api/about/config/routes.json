@@ -47,6 +47,11 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/contactus",
+      "handler": "about.contactus"
     }
   ]
 }

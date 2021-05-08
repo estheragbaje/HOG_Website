@@ -1,112 +1,13 @@
-import {
-	Box,
-	Button,
-	Image,
-	Input,
-	SimpleGrid,
-	Stack,
-	Text,
-	Textarea,
-} from "@chakra-ui/core";
-import { useFormik } from "formik";
-import Link from "next/link";
+import { Box, Image, Link, SimpleGrid, Text } from "@chakra-ui/core";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
-import * as yup from "yup";
-import { IconText } from "./Common";
+import { FullModal } from "./FullModal";
 import { SocialLink } from "./Links";
 import MainHeading from "./MainHeading";
+import ThankYou from "./thank-you";
+import { ContactForm } from "./ContactForm";
 import SubHeading from "./SubHeading";
-
-const initialValues = {
-	name: "",
-	email: "",
-	message: "",
-};
-
-const validationSchema = yup.object().shape({
-	name: yup.string().required("Please enter your name"),
-	email: yup.string().email().required("Please enter your email"),
-	message: yup
-		.string()
-		.required("Please enter a message")
-		.min(2, "Message must be at least 2 characters"),
-});
-
-export function ContactForm({ onSubmit, ...rest }) {
-	const formik = useFormik({
-		initialValues,
-		validationSchema,
-		onSubmit,
-	});
-
-	const nameProps = formik.getFieldProps("name");
-	const emailProps = formik.getFieldProps("email");
-	const messageProps = formik.getFieldProps("message");
-
-	return (
-		<form onSubmit={formik.handleSubmit}>
-			<Box {...rest}>
-				<Box minWidth="45%" margin="auto">
-					<Stack spacing={3}>
-						<Input
-							placeholder="Name"
-							label="Name"
-							type="text"
-							size="lg"
-							focusBorderColor="#3AC7B1"
-							paddingY={5}
-							error={formik.errors.name}
-							errorBorderColor="crimson"
-							{...nameProps}
-						/>
-
-						<Input
-							placeholder="Email"
-							size="lg"
-							aria-label="Email"
-							label="Email"
-							type="email"
-							focusBorderColor="#3AC7B1"
-							paddingY={5}
-							errorBorderColor="crimson"
-							error={formik.errors.email}
-							{...emailProps}
-						/>
-
-						<Textarea
-							placeholder="Message"
-							size="lg"
-							label="Message"
-							type="text"
-							minHeight="10em"
-							focusBorderColor="#3AC7B1"
-							errorBorderColor="crimson"
-							error={formik.errors.message}
-							{...messageProps}
-						/>
-					</Stack>
-
-					<Button
-						type="submit"
-						height={["44px", "44px", "55px"]}
-						px={["20px", "20px", "30px"]}
-						bg="#3AC7B1"
-						_hover={{ bg: "#1FBDA5" }}
-						_focus="teal.800"
-						fontSize={["16px", "16px", "21px"]}
-						fontWeight="400"
-						color="white"
-						disabled={!(formik.isValid && formik.dirty)}
-						children="SEND"
-						my={10}
-					/>
-				</Box>
-			</Box>
-		</form>
-	);
-}
 
 export function FooterText({ ...rest }) {
 	return (
@@ -172,69 +73,86 @@ export function FooterText({ ...rest }) {
 	);
 }
 
+interface ThankYouModalProps {
+	isOpen: boolean;
+	onClose: () => void;
+}
+const ThankYouModal = ({ isOpen, onClose }: ThankYouModalProps) => {
+	return (
+		<FullModal isOpen={isOpen} onClose={onClose}>
+			<ThankYou onContinue={onClose} />
+		</FullModal>
+	);
+};
+
 export function Footer() {
+	// State
+	const [uiStateIsSubmitting, setUiStateIsSubmitting] = useState(false);
+	const [uiStateShowThankYouModal, setUiStateShowThankYouModal] = useState(
+		false
+	);
+
 	const router = useRouter();
-	const handleSubmit = async (data) => {
-		try {
-			await fetch("/api/send-email", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(data),
-			});
-			router.push("/thank-you");
-		} catch {}
-	};
 
 	const footerColor = "#042a4a"; //"#61817C"
 
 	return (
-		<Box backgroundColor={footerColor} width="100%">
-			<Box
-				backgroundColor={footerColor}
-				width="100%"
-				maxW="1600px"
-				margin="auto"
-			>
-				<Box margin={["0 40px", "0 40px", "0 80px"]} paddingTop="80px">
-					<SubHeading color="white" marginBottom="16px">
-						We would love to hear from you
-					</SubHeading>
-					<MainHeading
-						color="white"
-						// fontSize="36px"
-						fontSize={["24px", "24px", "36px"]}
-						py={4}
-					>
-						CONTACT US
-					</MainHeading>
-				</Box>
-
-				<SimpleGrid
-					columns={{ base: 1, md: 2, lg: 2 }}
-					spacing={["10px", "12px", "60px"]}
-					margin={["0 40px", "0 40px", "0 80px"]}
+		<>
+			<ThankYouModal
+				isOpen={uiStateShowThankYouModal}
+				onClose={() => setUiStateShowThankYouModal(false)}
+			/>
+			<Box backgroundColor={footerColor} width="100%">
+				<Box
+					backgroundColor={footerColor}
+					width="100%"
+					maxW="1600px"
+					margin="auto"
 				>
-					<ContactForm
-						onSubmit={handleSubmit}
-						paddingBottom={["0", "0", "40px"]}
-					/>
-					<FooterText />
-				</SimpleGrid>
+					<Box margin={["0 40px", "0 40px", "0 80px"]} paddingTop="80px">
+						<SubHeading color="white" marginBottom="16px">
+							We would love to hear from you
+						</SubHeading>
+						<MainHeading
+							color="white"
+							// fontSize="36px"
+							fontSize={["24px", "24px", "36px"]}
+							py={4}
+						>
+							CONTACT US
+						</MainHeading>
+					</Box>
+
+					<SimpleGrid
+						columns={{ base: 1, md: 2, lg: 2 }}
+						spacing={["10px", "12px", "60px"]}
+						margin={["0 40px", "0 40px", "0 80px"]}
+					>
+						<ContactForm
+							onFormSumbissionSuccessful={() => {
+								setUiStateShowThankYouModal(true);
+							}}
+							onFormSubmissionFailed={() => {}}
+							paddingBottom={["0", "0", "40px"]}
+						/>
+						<FooterText />
+					</SimpleGrid>
+				</Box>
+				<Box
+					backgroundColor={footerColor}
+					textAlign="center"
+					color="white"
+					fontSize="12px"
+					py={6}
+				>
+					<SubHeading marginBottom="0px" paddingX={["40px", "40px", "80px"]}>
+						© 2020 RCCG House of Grace, Texas | ️{" "}
+						<Link href="https://twitter.com/_estheragbaje" target="_blank">
+							Designed and Developed by Esther Agbaje
+						</Link>
+					</SubHeading>
+				</Box>
 			</Box>
-			<Box
-				backgroundColor={footerColor}
-				textAlign="center"
-				color="white"
-				fontSize="12px"
-				py={6}
-			>
-				<SubHeading marginBottom="0px" paddingX={["40px", "40px", "80px"]}>
-					© 2020 RCCG House of Grace, Texas | ️{" "}
-					<Link href="https://twitter.com/_estheragbaje" target="_blank">
-						Designed and Developed by Esther Agbaje
-					</Link>
-				</SubHeading>
-			</Box>
-		</Box>
+		</>
 	);
 }

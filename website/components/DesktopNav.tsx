@@ -114,8 +114,10 @@ const NavLinkWithDropDown = ({
 					</MenuButton>
 
 					<MenuList color={footerColor} onClick={onClose}>
-						{submenuItemsList.map((el) => (
-							<SubmenuLink href={el.href}>{el.text}</SubmenuLink>
+						{submenuItemsList.map((el, index) => (
+							<SubmenuLink key={index} href={el.href}>
+								{el.text}
+							</SubmenuLink>
 							// <MenuItem>{el.text}</MenuItem>
 						))}
 					</MenuList>

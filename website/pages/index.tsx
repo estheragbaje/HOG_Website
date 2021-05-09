@@ -14,10 +14,8 @@ import React, { useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Footer } from "../components/Footer";
 import MiniNewsCard from "../components/MiniNewsCard";
-import SideSermonList from "../components/SideSermonList";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
-import useInterval from "@use-it/interval";
 import { GetApiProvider } from "../services/providers/api-provider";
 import MainHeading from "../components/MainHeading";
 import {
@@ -241,84 +239,6 @@ function HomePage({ services, events, event, sermons }: HomePageProps) {
 							</SubHeading>
 						</Box>
 					</Box>
-				</Flex>
-			</Box>
-
-			<Box maxW="1600px" margin="auto">
-				<Box>
-					<Box py="85px">
-						<MainHeading
-							fontSize={["24px", "24px", "36px"]}
-							marginBottom="28px"
-							textAlign="center"
-						>
-							THE LATEST NEWS
-						</MainHeading>
-						<MiniNewsCard paddingTop="20px" events={events} event={event} />
-					</Box>
-				</Box>
-			</Box>
-
-			<Box bg={footerColor}>
-				<Flex
-					direction={{ base: "column", md: "row", lg: "row" }}
-					maxW="1600px"
-					margin="auto"
-				>
-					<Box
-						minWidth="50%"
-						backgroundColor={footerColor}
-						maxWidth="100%"
-						paddingTop={"80px"}
-						paddingBottom="80px"
-						color="white"
-					>
-						<Box paddingX={["40px", "40px", "100px"]}>
-							<MainHeading fontSize={["24px", "24px", "36px"]}>
-								MORE ABOUT US
-							</MainHeading>
-							<Text py={4}>
-								RCCG House of Grace based in Corpus Christi Texas is a Parish of
-								the Redeemed Christian Church of God (RCCG).{" "}
-								<b>
-									Pastor E. A. Adeboye is the General Overseer of RCCG
-									Worldwide, and Pastor Olusegun Olowookere is the pioneer and
-									senior pastor of the Parish.
-								</b>
-							</Text>
-							<Text py={4}>
-								As a Bible believing, and God-fearing church,{" "}
-								<b>we teach and encourage a life of holiness.</b> House of Grace
-								has an appeal to all types of people, with a determination to
-								teach and impart people to excel in their various geographical
-								areas, stages of secular life and levels of spiritual
-								development.
-							</Text>
-							<Link href="/about/what_we_believe">
-								<Button
-									type="submit"
-									height={["44px", "44px", "50px"]}
-									px={["20px", "20px", "30px"]}
-									bg="#3AC7B1"
-									_hover={{ bg: "#1FBDA5" }}
-									_focus="teal.800"
-									fontSize={["16px", "16px", "18px"]}
-									fontWeight="400"
-									color="white"
-									children="LEARN MORE"
-									marginTop={"30px"}
-								/>
-							</Link>
-						</Box>
-					</Box>
-					{/* <Image
-						src="/assets/about_us.png"
-						alt="About us"
-						objectFit="cover"
-						minW="50%"
-						minHeight={["200px", "200px", "750px"]}
-						display={["none", "none", "inline-block"]}
-					/> */}
 				</Flex>
 			</Box>
 

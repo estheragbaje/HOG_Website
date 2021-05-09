@@ -8,7 +8,7 @@ export class Environment {
 		// These Urls should come from environment variables so that at build time
 		// they are rendered rather than use if/else logic.
 		if (Environment.isProduction()) {
-			return "https://hog-website.herokuapp.com";
+			return "https://rccghouseofgracecc2.herokuapp.com";
 		}
 		return "http://localhost:8000";
 	}

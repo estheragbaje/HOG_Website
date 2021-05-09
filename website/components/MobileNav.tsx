@@ -50,7 +50,8 @@ function MobileNav() {
 					aria-label="menu"
 					size="lg"
 					fontSize="xl"
-					variant="ghost"
+					variant="link"
+					_focus={{ borderColor: "white" }}
 					color="teal.600"
 					onClick={onOpen}
 					icon={AiOutlineMenu}
@@ -75,6 +76,7 @@ function MobileNav() {
 							// borderBottomWidth="1px"
 							textAlign="center"
 							fontWeight="500"
+							_focus={{ borderColor: "white" }}
 						>
 							<Link href="/">
 								<a>HOME</a>

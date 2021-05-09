@@ -1,7 +1,6 @@
 // define a route handler for the default home page
 import express from "express";
 import { GetLogger } from "./logger";
-import axios from "axios";
 import { GetWeeklyServices } from "./modules/weekly-services";
 import { GetAbouts } from "./modules/abouts";
 import { GetBeliefs } from "./modules/beliefs";
@@ -10,26 +9,26 @@ const app = express();
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-const port = 8000; // default port to listen
+const port = process.env.PORT || 8000; // default port to listen
 
 const logger = GetLogger("Index");
 
 // define a route handler for the default home page
 app.get("/", (req, res) => {
-	res.send("Hello world Yes!");
+	res.send("Boom Boom!!");
 });
 
 // Weekly Services
 app.get("/weekly-services", (req, res) => {
-	let weekly_servives = GetWeeklyServices();
+	let weeklyservives = GetWeeklyServices();
 	const query = req.query;
 
 	if (query && query._limit) {
-		const limit: number = parseInt(query._limit.toString());
-		weekly_servives = weekly_servives.slice(0, limit);
+		const limit: number = parseInt(query._limit.toString(), 10);
+		weeklyservives = weeklyservives.slice(0, limit);
 	}
 
-	res.send(weekly_servives);
+	res.send(weeklyservives);
 });
 
 // abouts

@@ -42,16 +42,19 @@ function Services({ services }: ServicesProps) {
 			</Box>
 
 			<Box
-				py="80px"
+				py={["40px", "80px"]}
 				textAlign="center"
 				paddingX={["40px", "40px", "80px"]}
 				bg="#F7F8F7"
 			>
 				<Box maxW="1600px" margin="auto">
-					<SubHeading color="#3AC7B1" marginBottom="16px">
+					<SubHeading color="#3AC7B1" marginBottom={["18px", "16px"]}>
 						We are Passionate About Sharing the Gospel of Jesus
 					</SubHeading>
-					<MainHeading fontSize={["24px", "24px", "36px"]} marginBottom="80px">
+					<MainHeading
+						fontSize={["24px", "24px", "36px"]}
+						marginBottom={["40px", "80px"]}
+					>
 						ATTEND OUR WEEKLY SERVICES
 					</MainHeading>
 					<WeeklyServicesList services={services} />

@@ -3,6 +3,8 @@ import express from "express";
 import { GetLogger } from "./logger";
 import axios from "axios";
 import { GetWeeklyServices } from "./modules/weekly-services";
+import { GetAbouts } from "./modules/abouts";
+import { GetBeliefs } from "./modules/beliefs";
 
 const app = express();
 app.use(express.json()); // for parsing application/json
@@ -22,6 +24,17 @@ app.get("/weekly-services", (req, res) => {
 	res.send(GetWeeklyServices());
 });
 
+// abouts
+app.get("/abouts", (req, res) => {
+	res.send(GetAbouts());
+});
+
+// beliefs
+app.get("/beliefs", (req, res) => {
+	res.send(GetBeliefs());
+});
+
+//
 // app.post("/api/sniplighter/submission", async (req, res) => {
 // 	// start a pipeline execution
 // 	console.log("req ", req.body);

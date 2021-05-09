@@ -14,7 +14,7 @@ const ParagraphText = ({ children, ...rest }: ParagraphTextProps) => {
 			fontWeight="medium"
 			opacity={0.7}
 			textAlign="justify"
-			fontSize="15px"
+			fontSize={["13px", "15px"]}
 			lineHeight="2em"
 			{...rest}
 		>
@@ -66,11 +66,11 @@ const BuildingProject = (props: any) => {
 		>
 			<Box
 				// background="red"
-				marginTop="80px"
+				marginTop={["40px", "80px"]}
 				maxWidth="800px"
 				marginBottom="50px"
-				marginRight="50px"
-				marginLeft="50px"
+				marginRight={["30px", "50px"]}
+				marginLeft={["30px", "50px"]}
 			>
 				{/* Banner Image */}
 				<Image src="/assets/building_project.jpeg" />
@@ -125,7 +125,7 @@ const BuildingProject = (props: any) => {
 				</ParagraphText>
 
 				{/* Give CTA  */}
-				<Box width="100%" marginTop="40px" marginBottom="40px">
+				<Box width="100%" marginTop="40px" marginBottom={["20px", "40px"]}>
 					<GiveButton href={buildingProjectGiveUrl} />
 				</Box>
 			</Box>

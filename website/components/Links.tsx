@@ -12,6 +12,7 @@ export function HoverLink({ link, label, ...props }) {
 		<PseudoBox
 			as="a"
 			display="inline-block"
+			// @ts-ignore
 			href={link}
 			target="__blank"
 			rel="nofollow noopener noreferrer"

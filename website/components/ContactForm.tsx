@@ -1,7 +1,6 @@
 import { Box, Button, Image, Input, Stack, Textarea } from "@chakra-ui/core";
 import { useFormik } from "formik";
 import React, { useState } from "react";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
 import * as yup from "yup";
 import {
 	ContactUsFormData,
@@ -73,8 +72,10 @@ export const ContactForm = ({
 			<Box {...rest}>
 				<Box minWidth="45%" margin="auto">
 					<Stack spacing={3}>
+						{/* // @ts-ignore */}
 						<Input
 							placeholder="Name"
+							// @ts-ignore
 							label="Name"
 							type="text"
 							size="lg"
@@ -89,6 +90,7 @@ export const ContactForm = ({
 							placeholder="Email"
 							size="lg"
 							aria-label="Email"
+							// @ts-ignore
 							label="Email"
 							type="email"
 							focusBorderColor="#3AC7B1"
@@ -101,6 +103,7 @@ export const ContactForm = ({
 						<Textarea
 							placeholder="Message"
 							size="lg"
+							// @ts-ignore
 							label="Message"
 							type="text"
 							minHeight="10em"
@@ -118,6 +121,7 @@ export const ContactForm = ({
 						px={["20px", "20px", "30px"]}
 						bg="#3AC7B1"
 						_hover={{ bg: "#1FBDA5" }}
+						// @ts-ignore
 						_focus="teal.800"
 						fontSize={["16px", "16px", "21px"]}
 						fontWeight="400"

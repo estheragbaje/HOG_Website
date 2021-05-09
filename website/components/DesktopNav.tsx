@@ -102,6 +102,7 @@ const NavLinkWithDropDown = ({
 					<MenuButton
 						as={CustomDropDownButton}
 						color="teal.500"
+						// @ts-ignore
 						variant="unstyled"
 						_focus={{}}
 

@@ -36,6 +36,7 @@ function ThankYou({ onContinue }: ThankYouProps) {
 					<Button
 						bg="#3AC7B1"
 						_hover={{ bg: "#1FBDA5" }}
+						// @ts-ignore
 						_focus="teal.800"
 						onClick={onContinue}
 					>

@@ -13,6 +13,7 @@ function LatestNewsList({ src, ...rest }: LatestNewsListProps) {
 			<SimpleGrid
 				columns={[1, 1, 2]}
 				spacing={[10, 10, 20]}
+				// @ts-ignore
 				direction={["column", "column", "row"]}
 			>
 				<MiniNewsCard

@@ -58,6 +58,7 @@ const OnlineGiving = () => {
 						_hover={{ bg: "#61CE70" }}
 						borderColor="#61CE70"
 						background="#61CE70"
+						// @ts-ignore
 						_focus="#61CE70"
 						color="white"
 						// _focus="teal.800"

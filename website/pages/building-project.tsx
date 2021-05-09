@@ -37,6 +37,7 @@ const GiveButton = ({ href }: any) => {
 					borderColor="#61CE70"
 					background="#61CE70"
 					// color="#3AC7B1"
+					// @ts-ignore
 					_focus="#61CE70"
 					// fontSize={["16px", "16px", "21px"]}
 					fontSize="15px"

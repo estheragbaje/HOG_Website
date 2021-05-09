@@ -99,6 +99,7 @@ function WhatWeBelieve({ beliefs }) {
 							_hover={{ bg: "#D0FFF8" }}
 							borderColor="#3AC7B1"
 							color="#3AC7B1"
+							// @ts-ignore
 							_focus="teal.800"
 							fontSize={["16px", "16px", "21px"]}
 							fontWeight="400"

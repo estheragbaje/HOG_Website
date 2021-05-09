@@ -20,10 +20,15 @@ function MyApp({ Component, pageProps }) {
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
 					media="print"
+					// @ts-ignore
 					onLoad="this.media='all'"
 				/>
 			</NextHead>
-			<ThemeProvider theme={myTheme}>
+
+			<ThemeProvider
+				// @ts-ignore
+				theme={myTheme}
+			>
 				<CSSReset />
 				<Navigation />
 				<Component width="100%" margin="auto" {...pageProps} />

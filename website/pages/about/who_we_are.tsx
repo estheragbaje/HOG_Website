@@ -119,6 +119,7 @@ function WhoWeAre({ abouts, departments }) {
 									px={["20px", "20px", "30px"]}
 									bg="#3AC7B1"
 									_hover={{ bg: "#1FBDA5" }}
+									// @ts-ignore
 									_focus="teal.800"
 									fontSize={["16px", "16px", "21px"]}
 									fontWeight="400"

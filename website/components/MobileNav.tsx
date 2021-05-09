@@ -138,7 +138,7 @@ function MobileNav() {
 								<a>BUILDING PROJECT</a>
 							</Link>
 						</MainHeading>
-						<MainHeading
+						{/* <MainHeading
 							py={4}
 							borderBottomWidth="1px"
 							textAlign="center"
@@ -147,7 +147,7 @@ function MobileNav() {
 							<Link href={`${pathname}#contact`}>
 								<a>CONTACT</a>
 							</Link>
-						</MainHeading>
+						</MainHeading> */}
 					</DrawerBody>
 				</DrawerContent>
 			</Drawer>

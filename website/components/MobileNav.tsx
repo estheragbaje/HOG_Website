@@ -98,9 +98,6 @@ function MobileNav() {
 									<MenuItem as="a" href="/about/what_we_believe">
 										WHAT WE BELIEVE
 									</MenuItem>
-									<MenuItem as="a" href="/about/our_departments">
-										OUR DEPARTMENTS
-									</MenuItem>
 								</MenuList>
 							</Menu>
 						</MainHeading>

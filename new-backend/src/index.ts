@@ -21,7 +21,15 @@ app.get("/", (req, res) => {
 
 // Weekly Services
 app.get("/weekly-services", (req, res) => {
-	res.send(GetWeeklyServices());
+	let weekly_servives = GetWeeklyServices();
+	const query = req.query;
+
+	if (query && query._limit) {
+		const limit: number = parseInt(query._limit.toString());
+		weekly_servives = weekly_servives.slice(0, limit);
+	}
+
+	res.send(weekly_servives);
 });
 
 // abouts

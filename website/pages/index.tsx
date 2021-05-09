@@ -61,19 +61,10 @@ const BoxWithBackgroundImage = ({
 
 interface HomePageProps {
 	services: WeeklyServiceModel[];
-	events: ChurchEventModel[];
-	sermons: SermonMessageModel[];
-	event: any;
 	[prop: string]: any;
 }
 
-function HomePage({ services, events, event, sermons }: HomePageProps) {
-	const sortedSermons = sermons.sort(
-		(a, b) =>
-			toDate(b.Date).getMilliseconds() - toDate(a.Date).getMilliseconds()
-	);
-	const recentSermon = sortedSermons[0];
-
+function HomePage({ services }: HomePageProps) {
 	const footerColor = Appearance.primaryColor;
 
 	return (
@@ -305,23 +296,13 @@ function ContactItem({ icon, children, ...rest }) {
 export async function getStaticProps() {
 	const provider = GetApiProvider();
 	const services = await provider.getWeeklyServices({
-		limit: 4,
-		sort: "updated_at:DESC",
-	});
-	const events = await provider.events().getEvents({
-		limit: 4,
-		sort: "updated_at:DESC",
-	});
-	const sermons = await provider.messages().getMessages({
-		limit: 4,
+		limit: 3,
 		sort: "updated_at:DESC",
 	});
 
 	return {
 		props: {
 			services,
-			events,
-			sermons,
 		},
 		revalidate: 1,
 	};

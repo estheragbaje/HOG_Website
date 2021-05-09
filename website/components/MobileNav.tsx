@@ -93,12 +93,12 @@ function MobileNav() {
 									<AccordionPanel pb={4} bg="white">
 										<Flex direction="column">
 											<Box>
-												<Link href="/services">
+												<Link href="/about/who_we_are">
 													<a>WHO WE ARE</a>
 												</Link>
 											</Box>
 											<Box marginTop="20px">
-												<Link href="/services">
+												<Link href="/about/what_we_believe">
 													<a>WHAT WE BELIEVE</a>
 												</Link>
 											</Box>

@@ -26,7 +26,13 @@ interface AboutUsListProps {
 
 function AboutUsList({ abouts, ...rest }: AboutUsListProps) {
 	return (
-		<SimpleGrid columns={[1, 1, 3]} spacing={20} my={12} mx={12} {...rest}>
+		<SimpleGrid
+			columns={[1, 1, 3]}
+			spacing={["40px"]}
+			my={["10px", "50px"]}
+			mx={["20px", "50px"]}
+			{...rest}
+		>
 			{abouts.map((about) => {
 				const values = aboutObj[about.Label];
 				const Icon = values && values.icon;
@@ -40,6 +46,7 @@ function AboutUsList({ abouts, ...rest }: AboutUsListProps) {
 						subheading={about.Title}
 						content={about.Description}
 						borderColor={values && values.borderColor}
+						descriptionTextAlign="justify"
 					/>
 				);
 			})}

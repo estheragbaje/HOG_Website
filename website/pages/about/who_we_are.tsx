@@ -36,8 +36,8 @@ function WhoWeAre({ abouts, departments }) {
 				</Box>
 			</Box>
 
-			<Box py="80px" textAlign="center" bg="#F7F8F7">
-				<Box maxW="1600px" margin="auto">
+			<Box py={["40px", "80px"]} textAlign="center" bg="#F7F8F7">
+				<Box maxW={["1600px"]} margin="auto">
 					<SubHeading color="#3AC7B1" marginBottom="16px">
 						Get to know us better
 					</SubHeading>
@@ -47,7 +47,7 @@ function WhoWeAre({ abouts, departments }) {
 					<AboutUsList abouts={abouts} />
 				</Box>
 			</Box>
-			<Box margin="auto" p="80px" maxW="1600px">
+			<Box margin="auto" p={["25px", "80px"]} maxW="1600px">
 				<FlexCard
 					heading="OUR VISION"
 					src="/assets/our_vision.jpeg"

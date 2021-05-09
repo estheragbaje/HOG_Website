@@ -27,6 +27,7 @@ function IconCard({
 	subheading,
 	content,
 	borderColor = "green.600",
+	descriptionTextAlign = "center",
 	...rest
 }: any) {
 	return (
@@ -54,7 +55,9 @@ function IconCard({
 			<SubHeading color="#3AC7B1" marginBottom="0" marginTop="10px">
 				{subheading}
 			</SubHeading>
-			<Text marginTop="16px">{content}</Text>
+			<Text marginTop="16px" textAlign={descriptionTextAlign}>
+				{content}
+			</Text>
 		</Box>
 	);
 }

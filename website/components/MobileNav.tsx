@@ -17,15 +17,24 @@ import {
 	Stack,
 	Link as ChakraLink,
 	IconButton,
+	Accordion,
+	AccordionHeader,
+	AccordionIcon,
+	AccordionItem,
+	AccordionPanel,
 } from "@chakra-ui/core";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { Appearance } from "./Appearance";
 import MainHeading from "./MainHeading";
 
 function MobileNav() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-
+	const { pathname } = useRouter();
+	console.log("pathname", pathname);
+	// const pathname = "";
 	return (
 		<>
 			<Flex justifyContent="space-between" alignItems="center">
@@ -63,7 +72,7 @@ function MobileNav() {
 					<DrawerBody color="teal.600">
 						<MainHeading
 							py={4}
-							borderBottomWidth="1px"
+							// borderBottomWidth="1px"
 							textAlign="center"
 							fontWeight="500"
 						>
@@ -71,55 +80,32 @@ function MobileNav() {
 								<a>HOME</a>
 							</Link>
 						</MainHeading>
-						<MainHeading
-							py={4}
-							borderBottomWidth="1px"
-							textAlign="center"
-							fontWeight="500"
-						>
-							<Menu>
-								<MenuButton
-									transition="all 0.2s"
-									rounded="md"
-									_hover={{ bg: "transparent" }}
-									_expanded={{ bg: "red.200" }}
-									_focus={{ outline: 0, boxShadow: "outline" }}
-									rightIcon="chevron-down"
-									as="a"
-								>
-									ABOUT
-									<Icon name="chevron-down" />
-								</MenuButton>
 
-								<MenuList _hover={{ bg: "teal.500" }} color="black">
-									<MenuItem as="a" href="/about/who_we_are">
-										WHO WE ARE
-									</MenuItem>
-									<MenuItem as="a" href="/about/what_we_believe">
-										WHAT WE BELIEVE
-									</MenuItem>
-								</MenuList>
-							</Menu>
-						</MainHeading>
-						<MainHeading
-							py={4}
-							borderBottomWidth="1px"
-							textAlign="center"
-							fontWeight="500"
-						>
-							<Link href="/events">
-								<a>EVENTS</a>
-							</Link>
-						</MainHeading>
-						<MainHeading
-							py={4}
-							borderBottomWidth="1px"
-							textAlign="center"
-							fontWeight="500"
-						>
-							<Link href="/messages">
-								<a>SERMONS</a>
-							</Link>
+						<MainHeading fontWeight="500" textAlign="center">
+							<Accordion defaultIndex={[0]} allowMultiple>
+								<AccordionItem>
+									<AccordionHeader py={4}>
+										<Box flex="1" fontWeight="500">
+											ABOUT
+										</Box>
+										<AccordionIcon />
+									</AccordionHeader>
+									<AccordionPanel pb={4} bg="white">
+										<Flex direction="column">
+											<Box>
+												<Link href="/services">
+													<a>WHO WE ARE</a>
+												</Link>
+											</Box>
+											<Box marginTop="20px">
+												<Link href="/services">
+													<a>WHAT WE BELIEVE</a>
+												</Link>
+											</Box>
+										</Flex>
+									</AccordionPanel>
+								</AccordionItem>
+							</Accordion>
 						</MainHeading>
 						<MainHeading
 							py={4}
@@ -148,7 +134,17 @@ function MobileNav() {
 							textAlign="center"
 							fontWeight="500"
 						>
-							<Link href="/contact">
+							<Link href="/building-project">
+								<a>BUILDING PROJECT</a>
+							</Link>
+						</MainHeading>
+						<MainHeading
+							py={4}
+							borderBottomWidth="1px"
+							textAlign="center"
+							fontWeight="500"
+						>
+							<Link href={`${pathname}#contact`}>
 								<a>CONTACT</a>
 							</Link>
 						</MainHeading>

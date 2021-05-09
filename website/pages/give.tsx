@@ -14,14 +14,20 @@ import MainHeading from "../components/MainHeading";
 import { Footer } from "../components/Footer";
 import { GetApiProvider } from "../services/providers/api-provider";
 
-const CommonFontSize = "19px";
+const CommonFontSize = ["17px", "19px"];
 
 const OnlineGiving = () => {
 	const apiProvider = GetApiProvider();
 	return (
-		<Box fontSize="18px" textAlign="left" height="100%" width="100%">
+		<Box
+			fontSize="18px"
+			textAlign="left"
+			height="100%"
+			width="100%"
+			// background="red"
+		>
 			<MainHeading
-				fontSize={["16px", "18px", "24px"]}
+				fontSize={["18px", "18px", "24px"]}
 				marginBottom="25px"
 				textTransform="uppercase"
 			>
@@ -70,7 +76,7 @@ const TextGiving = () => {
 	return (
 		<Box textAlign="left" width="100%">
 			<MainHeading
-				fontSize={["16px", "18px", "24px"]}
+				fontSize={["18px", "18px", "24px"]}
 				marginBottom="24px"
 				textTransform="uppercase"
 			>
@@ -118,30 +124,30 @@ function Give() {
 			</Box>
 
 			<Box
-				paddingTop="80px"
+				paddingTop={["30px", "80px"]}
 				bg="#F7F8F7"
-				paddingX={["40px", "40px", "80px"]}
-				paddingBottom="80px"
+				paddingX={["20px", "40px", "80px"]}
+				paddingBottom={["30px", "80px"]}
 			>
-				<MainHeading
-					fontSize={["24px", "24px", "36px"]}
-					marginBottom="40px"
+				{/* <MainHeading
+					fontSize={["18px", "24px", "36px"]}
+					marginBottom={["40px"]}
 					textTransform="uppercase"
 					textAlign="center"
 				>
 					Give Tithes & Offerings
-				</MainHeading>
+				</MainHeading> */}
 				<Flex
-					maxW="700px"
+					maxW={["700px"]}
 					flexDirection="column"
-					padding="20px"
+					padding={["15px", "20px"]}
 					textAlign="justify"
 					// background="red"
 					margin="auto"
 				>
 					<OnlineGiving />
 
-					<Box marginTop="80px">
+					<Box marginTop={["50px", "80px"]}>
 						<TextGiving />
 					</Box>
 				</Flex>

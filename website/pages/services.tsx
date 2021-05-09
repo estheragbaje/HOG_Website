@@ -58,46 +58,6 @@ function Services({ services }: ServicesProps) {
 				</Box>
 			</Box>
 
-			<Box maxW="1600px" margin="auto">
-				<Flex
-					direction={["column", "column", "column", "row"]}
-					marginX={["40px", "40px", "80px"]}
-					justifyContent="space-between"
-					paddingY="80px"
-				>
-					<Box maxW="900px">
-						<SubHeading color="#3AC7B1" marginBottom="16px">
-							Get to know about upcoming events
-						</SubHeading>
-						<MainHeading fontSize={["24px", "24px", "36px"]}>
-							ATTEND OUR EVENTS
-						</MainHeading>
-						<Text py={4}>
-							At RCCG House of Grace, we organise and host events that would not
-							only strengthen your spiritual lives but also make you relevant
-							and a blessing to the society.
-						</Text>
-						<Text py={4}>We would love you to join us at the next events.</Text>
-
-						<Link href="/events ">
-							<Button
-								height={["44px", "44px", "55px"]}
-								px={["20px", "20px", "30px"]}
-								variant="outline"
-								_hover={{ bg: "#D0FFF8" }}
-								borderColor="#3AC7B1"
-								color="#3AC7B1"
-								_focus="teal.800"
-								fontSize={["16px", "16px", "21px"]}
-								fontWeight="400"
-								marginTop={20}
-								children="VIEW ALL EVENTS"
-							/>
-						</Link>
-					</Box>
-				</Flex>
-			</Box>
-
 			<Footer />
 		</Box>
 	);

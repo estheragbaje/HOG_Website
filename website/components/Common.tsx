@@ -75,7 +75,7 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
 					{children}
 				</Text>
 			</Box>
-			<Box size={["24px", "24px", "50px"]} flexShrink="0"></Box>
+			<Box size={["24px", "24px", "50px"]} flexShrink={0}></Box>
 			<Image
 				src={src}
 				alt={alt}
@@ -122,7 +122,7 @@ export function IconText({ name, content, ...rest }) {
 		// </SimpleGrid>
 
 		<Box padding="20px">
-			<Icon name={name} size={["20px", "20px", "25px"]} />
+			<Icon name={name} size={"20px"} />
 			<Text py={4} color="#3AC7B1" fontSize={["14px", "18px", "21px"]}>
 				{content}
 			</Text>
@@ -186,7 +186,7 @@ export function EventIcon({ name, content, ...rest }) {
 }
 
 interface MessageCardProps {
-	src: string;
+	src: any;
 	topic: string;
 	date: string;
 	minister: string;
@@ -209,7 +209,7 @@ export function MessageCard({
 			}}
 		>
 			<AspectRatioBox ratio={4 / 3}>
-				<Box as="iframe" title={topic} src={src} allowFullScreen />
+				{/* <Box as="iframe" title={topic} src={src} allowFullScreen /> */}
 			</AspectRatioBox>
 			<Box
 				padding="10px"
@@ -251,7 +251,7 @@ function InputForm({
 		<FormControl isInvalid={isInvalid} paddingY={2}>
 			<Input
 				placeholder={placeholder}
-				label={label}
+				// label={label}
 				name={name}
 				type={type}
 				backgroundColor="white"

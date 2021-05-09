@@ -146,10 +146,7 @@ export function Footer() {
 					py={6}
 				>
 					<SubHeading marginBottom="0px" paddingX={["40px", "40px", "80px"]}>
-						© 2020 RCCG House of Grace, Texas | ️{" "}
-						<Link href="https://twitter.com/_estheragbaje" target="_blank">
-							Designed and Developed by Esther Agbaje
-						</Link>
+						© 2021 RCCG House of Grace, Texas
 					</SubHeading>
 				</Box>
 			</Box>

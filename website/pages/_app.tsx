@@ -1,7 +1,7 @@
-import React from "react";
-import { ThemeProvider, CSSReset, theme } from "@chakra-ui/core";
-import Navigation from "../components/Navigation";
+import { ChakraProvider, CSSReset, theme, ThemeProvider } from "@chakra-ui/react";
 import NextHead from "next/head";
+import React from "react";
+import Navigation from "../components/Navigation";
 
 const myTheme = {
 	...theme,
@@ -31,7 +31,10 @@ function MyApp({ Component, pageProps }) {
 			>
 				<CSSReset />
 				<Navigation />
+        <ChakraProvider>
 				<Component width="100%" margin="auto" {...pageProps} />
+
+        </ChakraProvider>
 			</ThemeProvider>
 		</>
 	);

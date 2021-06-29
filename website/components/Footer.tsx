@@ -1,13 +1,13 @@
-import { Box, Image, Link, SimpleGrid, Text } from "@chakra-ui/core";
+import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { ContactForm } from "./ContactForm";
 import { FullModal } from "./FullModal";
 import { SocialLink } from "./Links";
 import MainHeading from "./MainHeading";
-import ThankYou from "./thank-you";
-import { ContactForm } from "./ContactForm";
 import SubHeading from "./SubHeading";
+import ThankYou from "./thank-you";
 
 export function FooterText({ ...rest }) {
 	return (
@@ -17,7 +17,8 @@ export function FooterText({ ...rest }) {
 					<Image
 						src="/assets/rccg_logo.png"
 						alt="logo"
-						size="60px"
+						size="40px"
+            maxW="60px"
 						margin={["auto", "auto", "0"]}
 					/>
 

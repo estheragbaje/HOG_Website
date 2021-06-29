@@ -1,19 +1,17 @@
 import {
-	AspectRatioBox,
-	Box,
-	Button,
-	Flex,
-	FormControl,
-	FormErrorMessage,
-	Heading,
-	Icon,
-	Image,
-	Input,
-	PseudoBox,
-	SimpleGrid,
-	Stack,
-	Text,
-} from "@chakra-ui/core";
+
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  Heading,
+  Icon,
+  Image,
+  Input,
+  Stack,
+  Text
+} from "@chakra-ui/react";
 import React from "react";
 import { BiCalendar } from "react-icons/bi";
 import MainHeading from "./MainHeading";

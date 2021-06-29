@@ -1,5 +1,5 @@
+import { Box, Heading, Text } from "@chakra-ui/react";
 import React from "react";
-import { Icon, Heading, Box, Text } from "@chakra-ui/core";
 import SubHeading from "./SubHeading";
 
 const CupSvg = (props: any) => (

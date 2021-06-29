@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Stack, Icon, SimpleGrid } from "@chakra-ui/core";
+import { SimpleGrid } from "@chakra-ui/react";
+import React from "react";
+import { WeeklyServiceModel } from "../services/providers/api-models";
 import IconCard from "./IconCard";
 import {
-	CupIcon,
-	BibleIcon,
-	ImageIcon,
-	ChurchIcon,
-	SpeakerIcon,
+  BibleIcon, ChurchIcon, CupIcon, ImageIcon, SpeakerIcon
 } from "./Icons";
-import { TextImage } from "./Common";
-import { WeeklyServiceModel } from "../services/providers/api-models";
 
 const servicesObj = {
 	"sunday-service": { icon: ChurchIcon, borderColor: "#61817C" },

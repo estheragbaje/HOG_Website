@@ -1,5 +1,5 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import { PseudoBox, Box } from "@chakra-ui/core";
 
 interface HoverLinkProps {
 	link: string;
@@ -9,7 +9,7 @@ interface HoverLinkProps {
 
 export function HoverLink({ link, label, ...props }) {
 	return (
-		<PseudoBox
+		<Box
 			as="a"
 			display="inline-block"
 			// @ts-ignore

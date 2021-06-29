@@ -1,15 +1,6 @@
 import {
-	useDisclosure,
-	Button,
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalCloseButton,
-	ModalBody,
-	ModalFooter,
-	Box,
-} from "@chakra-ui/core";
+  Box, Modal, ModalContent, ModalOverlay
+} from "@chakra-ui/react";
 import React from "react";
 
 interface FullModalProps {

@@ -1,14 +1,14 @@
-import { SimpleGrid } from "@chakra-ui/core";
+import { SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import { AboutModel } from "../services/providers/api-models";
 import IconCard from "./IconCard";
 import {
-	ChurchIcon,
-	ImpactIcon,
-	InceptionIcon,
-	LocationIcon,
-	OutreachIcon,
-	StandIcon,
+  ChurchIcon,
+  ImpactIcon,
+  InceptionIcon,
+  LocationIcon,
+  OutreachIcon,
+  StandIcon
 } from "./Icons";
 
 const aboutObj = {

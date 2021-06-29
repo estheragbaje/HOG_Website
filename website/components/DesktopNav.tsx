@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuList, Stack,
   Text
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -124,6 +124,25 @@ const NavLinkWithDropDown = ({
 	);
 };
 
+interface NavLogoProps {
+  href: string; 
+}
+const NavLogo = (props: NavLogoProps) => {
+  const maxSize="60px"
+  return (
+    <a href={props.href} >
+      <Image
+        src="/assets/rccg_logo.png"
+        alt="logo"
+        maxWidth={maxSize}
+        maxH={maxSize}
+        size={["40px", "60px"]}
+        // objectFit="cover"
+      />
+    </a>
+  )
+}
+
 function DesktopNav() {
 	const { pathname } = useRouter();
 
@@ -136,36 +155,30 @@ function DesktopNav() {
 	};
 
 	return (
-		<Box boxShadow="0 1px 4px rgba(23,25,27,0.05)">
+		// <Box boxShadow="0 1px 4px rgba(23,25,27,0.05)">
 			<Box
+        // background="red"
 				position="sticky"
 				top={0}
 				zIndex={1}
 				width="100%"
 				backgroundColor="white"
 				maxW="1600px"
-				margin="auto"
+        paddingLeft="40px"
+        paddingRight="40px"
+        paddingTop="20px"
+        paddingBottom="20px"
 			>
-				<Box>
 					<Flex
 						justifyContent="space-between"
 						alignItems="center"
-						padding={4}
-						color="white"
+						// padding={4}
+						// background="green"
 					>
-						<a href="/">
-							<Image
-								src="/assets/rccg_logo.png"
-								alt="logo"
-								marginLeft="20px"
-								size={["40px", "60px"]}
-								objectFit="cover"
-							/>
-						</a>
+						<NavLogo href="/" /> 
 						<Stack
 							isInline={true}
 							spacing="30px"
-							paddingRight="50px"
 							textAlign="center"
 							shouldWrapChildren
 						>
@@ -186,8 +199,8 @@ function DesktopNav() {
 						</Stack>
 					</Flex>
 				</Box>
-			</Box>
-		</Box>
+		
+		// </Box>
 	);
 }
 

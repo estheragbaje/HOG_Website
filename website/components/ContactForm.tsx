@@ -1,10 +1,10 @@
-import { Box, Button, Image, Input, Stack, Textarea } from "@chakra-ui/core";
+import { Box, Button, Input, Stack, Textarea } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as yup from "yup";
 import {
-	ContactUsFormData,
-	GetApiProvider,
+  ContactUsFormData,
+  GetApiProvider
 } from "../services/providers/api-provider";
 
 const initialValues = {

@@ -1,15 +1,11 @@
 import {
-	Accordion,
-	AccordionHeader,
-	AccordionIcon,
-	AccordionItem,
-	AccordionPanel,
-	Box,
-	Text,
-} from "@chakra-ui/core";
+  Accordion, AccordionItem,
+  AccordionPanel,
+  Box,
+  Text
+} from "@chakra-ui/react";
 import React from "react";
 import { OurBeliefModel } from "../services/providers/api-models";
-import { Appearance } from "./Appearance";
 
 interface AccordionListProps {
 	beliefs: OurBeliefModel[];
@@ -22,7 +18,7 @@ function AccordionList({ beliefs }: AccordionListProps) {
 				<Accordion defaultIndex={[0]} allowMultiple>
 					{beliefs.map((belief) => (
 						<AccordionItem>
-							<AccordionHeader
+							{/* <AccordionHeader
 								bg={Appearance.primaryColor} //"#7C9C97"
 								py={4}
 								color="white"
@@ -32,7 +28,7 @@ function AccordionList({ beliefs }: AccordionListProps) {
 									{belief.Name}
 								</Box>
 								<AccordionIcon />
-							</AccordionHeader>
+							</AccordionHeader> */}
 							<AccordionPanel pb={4} bg="white">
 								<Text py={4}>{belief.Description}</Text>
 							</AccordionPanel>

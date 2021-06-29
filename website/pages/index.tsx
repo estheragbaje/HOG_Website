@@ -1,29 +1,25 @@
 import {
-	AspectRatioBox,
-	Box,
-	Button,
-	Flex,
-	Icon,
-	Image,
-	SimpleGrid,
-	Stack,
-	Text,
-} from "@chakra-ui/core";
+  Box,
+  Button,
+  Flex,
+  Icon,
+  Image,
+  SimpleGrid,
+  Stack,
+  Text
+} from "@chakra-ui/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Appearance } from "../components/Appearance";
 import { Footer } from "../components/Footer";
-import MiniNewsCard from "../components/MiniNewsCard";
+import MainHeading from "../components/MainHeading";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
-import { GetApiProvider } from "../services/providers/api-provider";
-import MainHeading from "../components/MainHeading";
 import {
-	ChurchEventModel,
-	SermonMessageModel,
-	WeeklyServiceModel,
+  WeeklyServiceModel
 } from "../services/providers/api-models";
-import { Appearance } from "../components/Appearance";
+import { GetApiProvider } from "../services/providers/api-provider";
 
 /**
  * Put the slider images here
@@ -245,14 +241,16 @@ function HomePage({ services }: HomePageProps) {
 						WORSHIP WITH US
 					</MainHeading>
 					<SimpleGrid columns={[1, 1, 2]} spacing={8} paddingBottom="20px">
-						<AspectRatioBox ratio={16 / 9}>
+						<Box width="100%" height="100%">
 							<Box
 								as="iframe"
 								// @ts-ignore
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.979823200833!2d-97.36485948493838!3d27.687018482800358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668f5cdf44848ed%3A0x5015a69c9848f5cb!2s2306%20Airline%20Rd%20%23110A%2C%20Corpus%20Christi%2C%20TX%2078414%2C%20USA!5e0!3m2!1sen!2sng!4v1588706338081!5m2!1sen!2sng"
 								alt="demo"
+                width="100%"
+                height="100%"
 							/>
-						</AspectRatioBox>
+						</Box>
 						<Box wordBreak="break-word">
 							<MainHeading fontSize="21px" paddingTop="20px">
 								RCCG HOUSE OF GRACE

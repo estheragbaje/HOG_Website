@@ -1,7 +1,6 @@
-import { ChakraProvider, CSSReset, theme, ThemeProvider } from "@chakra-ui/react";
-import NextHead from "next/head";
+import { ChakraProvider, theme } from "@chakra-ui/react";
+// import NextHead from "next/head";
 import React from "react";
-import Navigation from "../components/Navigation";
 
 const myTheme = {
 	...theme,
@@ -14,29 +13,36 @@ const myTheme = {
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<>
-			<NextHead>
-				<link
-					rel="stylesheet"
-					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-					media="print"
-					// @ts-ignore
-					onLoad="this.media='all'"
-				/>
-			</NextHead>
-
-			<ThemeProvider
+			// {/* <NextHead>
+			// 	<link
+			// 		rel="stylesheet"
+			// 		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+			// 		media="print"
+			// 		// @ts-ignore
+			// 		onLoad="this.media='all'"
+			// 	/>
+			// </NextHead> */}
+				// <CSSReset />
+        <ChakraProvider>
+        {/* <ThemeProvider
 				// @ts-ignore
 				theme={myTheme}
-			>
-				<CSSReset />
-				<Navigation />
-        <ChakraProvider>
-				<Component width="100%" margin="auto" {...pageProps} />
+			> */}
+          {/* <Box 
+            width="100%" 
+            height="100vh" 
+            display="flex" 
+            flexDirection="column"
+            background="green" >
+            <Navigation />
+            <Box width="100%" height="100%" display="flex" flexDirection="row">
+         
+            </Box>
+          </Box> */}
+
+          <Component {...pageProps} /> 
 
         </ChakraProvider>
-			</ThemeProvider>
-		</>
 	);
 }
 

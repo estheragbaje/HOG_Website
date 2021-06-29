@@ -14,6 +14,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { Appearance } from "../components/Appearance";
 import { Footer } from "../components/Footer";
 import MainHeading from "../components/MainHeading";
+import { PageLayout } from "../components/PageLayout";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
 import {
@@ -64,6 +65,9 @@ function HomePage({ services }: HomePageProps) {
 	const footerColor = Appearance.primaryColor;
 
 	return (
+    <PageLayout>
+
+  
 		<Box maxWidth="100%">
 			<Box
 				// background="green"
@@ -277,7 +281,9 @@ function HomePage({ services }: HomePageProps) {
 
 			<Footer />
 		</Box>
-	);
+	
+    </PageLayout>
+  );
 }
 
 function ContactItem({ icon, children, ...rest }) {

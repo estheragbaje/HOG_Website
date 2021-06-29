@@ -1,8 +1,6 @@
 import {
   Box, Flex,
-  Icon,
-  Image,
-  Menu,
+  Icon, Menu,
   MenuButton,
   MenuItem,
   MenuList, Stack,
@@ -12,6 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Appearance } from "./Appearance";
+import { NavLogo } from "./NavLogo";
 
 const footerColor = Appearance.primaryColor;
 
@@ -124,24 +123,7 @@ const NavLinkWithDropDown = ({
 	);
 };
 
-interface NavLogoProps {
-  href: string; 
-}
-const NavLogo = (props: NavLogoProps) => {
-  const maxSize="60px"
-  return (
-    <a href={props.href} >
-      <Image
-        src="/assets/rccg_logo.png"
-        alt="logo"
-        maxWidth={maxSize}
-        maxH={maxSize}
-        size={["40px", "60px"]}
-        // objectFit="cover"
-      />
-    </a>
-  )
-}
+
 
 function DesktopNav() {
 	const { pathname } = useRouter();

@@ -1,19 +1,16 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
-import { Box } from '@chakra-ui/core';
+// import { useMediaQuery } from "@chakra-ui/react"
 
 function Navigation() {
-  return (
-    <>
-      <Box as='span' display={{ base: 'inline', md: 'none' }}>
-        <MobileNav />
-      </Box>
-      <Box as='span' display={{ base: 'none', md: 'inline' }}>
-        <DesktopNav />
-      </Box>
-    </>
-  );
+  const isMobileView = useMediaQuery({query: `(max-width: 790px)`})
+  if (isMobileView){
+    return <MobileNav />
+  }else{
+    return <DesktopNav /> 
+  }
 }
 
 export default Navigation;

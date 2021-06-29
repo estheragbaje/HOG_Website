@@ -1,19 +1,15 @@
 import {
-	Box,
-	Button,
-	Flex,
-	Icon,
-	Image,
-	Menu,
-	MenuButton,
-	MenuItem,
-	MenuList,
-	PseudoBox,
-	Stack,
-	Text,
+  Box, Flex,
+  Icon,
+  Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList, Stack,
+  Text
 } from "@chakra-ui/core";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Appearance } from "./Appearance";
 
@@ -162,7 +158,7 @@ function DesktopNav() {
 								src="/assets/rccg_logo.png"
 								alt="logo"
 								marginLeft="20px"
-								size="60px"
+								size={["40px", "60px"]}
 								objectFit="cover"
 							/>
 						</a>

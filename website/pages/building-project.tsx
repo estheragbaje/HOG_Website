@@ -1,6 +1,6 @@
-import { Box, Button, Heading, Image, Text } from "@chakra-ui/core";
+import { Box, Button, Heading, Image, SimpleGrid, Text } from "@chakra-ui/core";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { Footer } from "../components/Footer";
 import { GetApiProvider } from "../services/providers/api-provider";
 
@@ -28,8 +28,6 @@ const GiveButton = ({ href }: any) => {
 		<Link href={href}>
 			<a target="_blank">
 				<Button
-					// height={["44px", "44px", "55px"]}
-					// px={["20px", "20px", "30px"]}
 					color="white"
 					padding="20px"
 					variant="outline"
@@ -39,7 +37,6 @@ const GiveButton = ({ href }: any) => {
 					// color="#3AC7B1"
 					// @ts-ignore
 					_focus="#61CE70"
-					// fontSize={["16px", "16px", "21px"]}
 					fontSize="15px"
 					fontWeight="bold"
 					children="Give towards our building project"
@@ -48,6 +45,66 @@ const GiveButton = ({ href }: any) => {
 		</Link>
 	);
 };
+
+interface IconLinkProps {
+  iconSrc: string; 
+  href: string; 
+  [propname: string]: any; 
+}
+
+const IconLink = (props: IconLinkProps) => {
+  return ( 
+    <Link href={props.href}> 
+    	<a target="_blank">
+      <Box 
+        // background="red" 
+        maxW="140px" 
+        maxHeight="80px" 
+        flexDirection="row" 
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Image src={props.iconSrc} height="80px" maxW="130px" /> 
+      </Box>
+      </a>
+    </Link>
+  
+   
+  );
+}
+
+const GoFundMeLink = () => {
+  return (
+    <IconLink 
+    href = "https://gofund.me/ea369f9d"
+    iconSrc="/assets/go_fund_me_logo2.png" />
+  )
+}
+
+interface GivingOptionsProps {
+  buildingProjectGiveUrl: string; 
+}
+
+const GivingOptions = (props: GivingOptionsProps) => {
+  return ( 
+    <Box 
+    // background="blue"
+    display="flex" 
+    flexDirection="row" 
+    alignItems="center"
+    justifyContent="flex-start">  
+      <SimpleGrid columns={[1,2]} spacing={["5px", "30px"]} alignItems="center"> 
+        <Box width="100%" marginTop="40px" marginBottom={["20px", "40px"]}>
+					<GiveButton href={props.buildingProjectGiveUrl} />
+				</Box>
+        {/* GoFundMe */}
+        <GoFundMeLink /> 
+      </SimpleGrid>
+     
+    </Box>
+  )
+}
 
 const BuildingProject = (props: any) => {
 	// handlers
@@ -126,9 +183,10 @@ const BuildingProject = (props: any) => {
 				</ParagraphText>
 
 				{/* Give CTA  */}
-				<Box width="100%" marginTop="40px" marginBottom={["20px", "40px"]}>
-					<GiveButton href={buildingProjectGiveUrl} />
-				</Box>
+        
+				<GivingOptions 
+        buildingProjectGiveUrl={buildingProjectGiveUrl}
+        /> 
 			</Box>
 
 			<Footer />
@@ -137,19 +195,6 @@ const BuildingProject = (props: any) => {
 };
 
 export async function getStaticProps() {
-	// const provider = GetApiProvider();
-	// const services = await provider.getWeeklyServices({
-	// 	limit: 4,
-	// 	sort: "updated_at:DESC",
-	// });
-	// const events = await provider.events().getEvents({
-	// 	limit: 4,
-	// 	sort: "updated_at:DESC",
-	// });
-	// const sermons = await provider.messages().getMessages({
-	// 	limit: 4,
-	// 	sort: "updated_at:DESC",
-	// });
 
 	return {
 		props: {},

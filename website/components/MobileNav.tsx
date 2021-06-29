@@ -1,33 +1,19 @@
 import {
-	Box,
-	Button,
-	Drawer,
-	DrawerBody,
-	DrawerContent,
-	DrawerHeader,
-	DrawerOverlay,
-	Image,
-	useDisclosure,
-	Flex,
-	Menu,
-	MenuButton,
-	MenuList,
-	Icon,
-	MenuItem,
-	Stack,
-	Link as ChakraLink,
-	IconButton,
-	Accordion,
-	AccordionHeader,
-	AccordionIcon,
-	AccordionItem,
-	AccordionPanel,
+  Accordion,
+  AccordionHeader,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel, Box, Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay, Flex, IconButton, Image,
+  useDisclosure
 } from "@chakra-ui/core";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { Appearance } from "./Appearance";
 import MainHeading from "./MainHeading";
 
 function MobileNav() {
@@ -37,11 +23,17 @@ function MobileNav() {
 	// const pathname = "";
 	return (
 		<>
-			<Flex justifyContent="space-between" alignItems="center">
+			<Flex 
+      justifyContent="space-between" 
+      alignItems="center" 
+      marginTop="20px"
+      marginRight="15px"
+      marginLeft="20px"
+      >
 				<Image
 					src="/assets/rccg_logo.png"
 					alt="logo"
-					marginLeft="20px"
+					// marginLeft="20px"
 					py={2}
 					size="50px"
 					objectFit="contain"

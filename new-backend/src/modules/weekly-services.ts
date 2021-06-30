@@ -27,7 +27,7 @@ export const GetWeeklyServices = () => {
 			id: 3,
 			Name: "An hour with Jesus",
 			Description:
-				"This is a prayer tele-conference\nCall Number : **6417153294**\nAccess code: **1031451#**\n",
+				"This is a prayer tele-conference\nCall Number: (641)715-3294\nAccess code: **1031451#**\n",
 			Label: "with-jesus",
 			StartTime: "11:00pm",
 			StopTime: "12:00am",
@@ -51,7 +51,7 @@ export const GetWeeklyServices = () => {
 			id: 5,
 			Name: "Command your day",
 			Description:
-				"This is a prayer tele-conference\nCall Number : **6417153294 **\nAccess code: **1031451#**\n",
+				"This is a prayer tele-conference\nCall Number: (641)715-3294 \nAccess code: **1031451#**\n",
 			Label: "command-your-day",
 			StartTime: "6:00am",
 			StopTime: "6:30am",

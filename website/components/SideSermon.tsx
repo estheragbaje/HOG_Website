@@ -1,5 +1,5 @@
+import { Box, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { Text, Stack, Box, Flex, PseudoBox } from "@chakra-ui/core";
 import { BigDate } from "./Common";
 
 interface SideSermonProps {
@@ -12,7 +12,7 @@ interface SideSermonProps {
 
 function SideSermon({ service, topic, date, month, ...rest }: SideSermonProps) {
 	return (
-		<PseudoBox
+		<Box
 			bg="gray.50"
 			border="solid 1px"
 			borderColor="gray.200"
@@ -35,7 +35,7 @@ function SideSermon({ service, topic, date, month, ...rest }: SideSermonProps) {
 					<Text fontWeight="600">{topic}</Text>
 				</Stack>
 			</Stack>
-		</PseudoBox>
+		</Box>
 	);
 }
 

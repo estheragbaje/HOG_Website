@@ -1,7 +1,7 @@
+import { SimpleGrid } from "@chakra-ui/react";
 import React from "react";
-import { SimpleGrid } from "@chakra-ui/core";
-import { MessageCard } from "./Common";
 import { SermonMessageModel } from "../services/providers/api-models";
+import { MessageCard } from "./Common";
 
 interface MessageListProps {
 	sermons: SermonMessageModel[];

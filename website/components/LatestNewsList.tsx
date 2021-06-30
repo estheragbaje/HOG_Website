@@ -1,6 +1,6 @@
+import { Box, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import MiniNewsCard from "./MiniNewsCard";
-import { SimpleGrid, Box, Stack } from "@chakra-ui/core";
 
 interface LatestNewsListProps {
 	src: string;

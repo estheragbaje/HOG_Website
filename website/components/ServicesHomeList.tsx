@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Stack, Icon, SimpleGrid } from "@chakra-ui/core";
+import { SimpleGrid } from "@chakra-ui/react";
+import React from "react";
 import IconCard from "./IconCard";
-import { CupIcon, BibleIcon, ImageIcon } from "./Icons";
+import { BibleIcon, CupIcon, ImageIcon } from "./Icons";
 
 function ServicesHomeList({ ...rest }) {
 	return (

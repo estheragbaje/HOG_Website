@@ -250,6 +250,7 @@ function HomePage({ services }: HomePageProps) {
 								as="iframe"
 								// @ts-ignore
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.979823200833!2d-97.36485948493838!3d27.687018482800358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668f5cdf44848ed%3A0x5015a69c9848f5cb!2s2306%20Airline%20Rd%20%23110A%2C%20Corpus%20Christi%2C%20TX%2078414%2C%20USA!5e0!3m2!1sen!2sng!4v1588706338081!5m2!1sen!2sng"
+                // @ts-ignore
 								alt="demo"
                 width="100%"
                 height="100%"

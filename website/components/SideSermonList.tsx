@@ -1,8 +1,8 @@
-import React from "react";
-import { Stack } from "@chakra-ui/core";
+import { Stack } from "@chakra-ui/react";
 import Link from "next/link";
-import SideSermon from "./SideSermon";
+import React from "react";
 import { SermonMessageModel } from "../services/providers/api-models";
+import SideSermon from "./SideSermon";
 
 interface SideSermonListProps {
 	sermons: SermonMessageModel[];

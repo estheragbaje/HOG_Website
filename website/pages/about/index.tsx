@@ -1,13 +1,12 @@
-import React from "react";
-import { Box, Text, Image, Flex, SimpleGrid, Button } from "@chakra-ui/core";
+import { Box, Button, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import Navigation from "../../components/Navigation";
-import SubHeading from "../../components/SubHeading";
-import MainHeading from "../../components/MainHeading";
-import { Footer } from "../../components/Footer";
+import React from "react";
 import AboutUsList from "../../components/AboutUsList";
-import { FlexCard, CustomButton, TextImage } from "../../components/Common";
+import { FlexCard } from "../../components/Common";
 import DepartmentList from "../../components/DepartmentList";
+import { Footer } from "../../components/Footer";
+import MainHeading from "../../components/MainHeading";
+import SubHeading from "../../components/SubHeading";
 import { GetApiProvider } from "../../services/providers/api-provider";
 
 function About({ abouts, departments }) {

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { SimpleGrid, Box } from "@chakra-ui/core";
+import { Box, SimpleGrid } from "@chakra-ui/react";
+import React from "react";
 import { TextImage } from "./Common";
 
 function DepartmentList({ departments }) {

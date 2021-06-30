@@ -1,6 +1,6 @@
 /**@jsx jsx */
+import { Box } from "@chakra-ui/react";
 import { jsx } from "@emotion/core";
-import { Box } from "@chakra-ui/core";
 import { Footer } from "../components/Footer";
 import SubHeading from "../components/SubHeading";
 

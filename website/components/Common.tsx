@@ -65,7 +65,7 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
 			paddingY="40px"
 			{...rest}
 		>
-			<Box minW="300px">
+			<Box minW="300px" >
 				<MainHeading color="#3AC7B1" fontSize={["24px", "24px", "28px"]}>
 					{heading}
 				</MainHeading>
@@ -73,7 +73,14 @@ export function FlexCard({ src, alt, heading, children, ...rest }) {
 					{children}
 				</Text>
 			</Box>
-			<Box size={["24px", "24px", "50px"]} flexShrink={0}></Box>
+			<Box 
+        // size={["24px", "24px", "50px"]} 
+        width="50px" 
+        // height="24px"
+        height="100%"
+        flexShrink={0} 
+        background="green"
+        ></Box>
 			<Image
 				src={src}
 				alt={alt}

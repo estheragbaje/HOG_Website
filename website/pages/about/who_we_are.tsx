@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import AboutUsList from "../../components/AboutUsList";
@@ -48,7 +48,16 @@ function WhoWeAre({ abouts, departments }) {
 					<AboutUsList abouts={abouts} />
 				</Box>
 			</Box>
-			<Box margin="auto" p={["25px", "80px"]} maxW="1600px">
+			<Stack 
+        margin="auto" 
+        direction="column"
+        paddingTop="40px"
+        paddingBottom="40px"
+        paddingLeft="60px"
+        paddingRight="60px"
+        maxW="1600px" 
+        // background="green"
+        >
 				<FlexCard
 					heading="OUR VISION"
 					src="/assets/our_vision.jpeg"
@@ -68,7 +77,7 @@ function WhoWeAre({ abouts, departments }) {
 					alt="our vision"
 					direction={["column", "column", "row-reverse"]}
 					paddingTop={0}
-					paddingBottom={80}
+					// paddingBottom={80}
 				>
 					Spreading the Word of God to the ends of the earth with the aims of
 					leading individuals to Christ, and{" "}
@@ -78,7 +87,7 @@ function WhoWeAre({ abouts, departments }) {
 					</b>
 					. Making people to get the best from their God.
 				</FlexCard>
-			</Box>
+			</Stack>
 
 			<Box
 				backgroundImage="url(/assets/what_we_believe.jpeg) "

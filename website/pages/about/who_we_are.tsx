@@ -53,8 +53,8 @@ function WhoWeAre({ abouts, departments }) {
         direction="column"
         paddingTop="40px"
         paddingBottom="40px"
-        paddingLeft="60px"
-        paddingRight="60px"
+        paddingLeft={["30px", "60px"]}
+        paddingRight={["30px", "60px"]}
         maxW="1600px" 
         // background="green"
         >
@@ -62,6 +62,7 @@ function WhoWeAre({ abouts, departments }) {
 					heading="OUR VISION"
 					src="/assets/our_vision.jpeg"
 					alt="our vision"
+          direction={["column", "column", "row"]}
 				>
 					RCCG has a vision to{" "}
 					<b>

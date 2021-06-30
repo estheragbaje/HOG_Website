@@ -1,16 +1,15 @@
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
-  Box, Flex,
-  Icon, Menu,
+  Box, Image, Menu,
   MenuButton,
   MenuItem,
-  MenuList, Stack,
+  MenuList, Spacer, Stack,
   Text
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Appearance } from "./Appearance";
-import { NavLogo } from "./NavLogo";
 
 const footerColor = Appearance.primaryColor;
 
@@ -73,10 +72,6 @@ function SubmenuLink({ href, children, ...rest }) {
 	);
 }
 
-const CustomDropDownButton = ({ ...rest }: any) => {
-	return <Box variant="unstyled" {...rest} />;
-};
-
 interface SubmenuItem {
 	href: string;
 	text: string;
@@ -91,35 +86,23 @@ const NavLinkWithDropDown = ({
 	submenuItemsList,
 }: NavLinkWithDropDownProps) => {
 	return (
-		<Menu>
-			{({ isOpen, onClose }) => (
-				<Box onMouseLeave={onClose}>
-					<MenuButton
-						as={CustomDropDownButton}
-						color="teal.500"
-						// @ts-ignore
-						variant="unstyled"
-						_focus={{}}
-
-						// onMouseEnter
-					>
-						<HoverBox isActive={isActive}>
-							ABOUT
-							<Icon name="chevron-down" />
-						</HoverBox>
-					</MenuButton>
-
-					<MenuList color={footerColor} onClick={onClose}>
-						{submenuItemsList.map((el, index) => (
+    <Menu>
+      <MenuButton  rightIcon={<ChevronDownIcon />} >
+        <HoverBox isActive={isActive}>
+          ABOUT US
+        </HoverBox>
+      </MenuButton>
+      
+      <MenuList>
+      {submenuItemsList.map((el, index) => (
 							<SubmenuLink key={index} href={el.href}>
 								{el.text}
 							</SubmenuLink>
 							// <MenuItem>{el.text}</MenuItem>
 						))}
-					</MenuList>
-				</Box>
-			)}
-		</Menu>
+      </MenuList>
+    </Menu>
+		
 	);
 };
 
@@ -128,61 +111,60 @@ const NavLinkWithDropDown = ({
 function DesktopNav() {
 	const { pathname } = useRouter();
 
-	const hoverStyle = {
-		bg: "teal.600",
-		color: "white",
-		borderRadius: "8px",
-		cursor: "pointer",
-		transition: "all 0.2s",
-	};
+	// const hoverStyle = {
+	// 	bg: "teal.600",
+	// 	color: "white",
+	// 	borderRadius: "8px",
+	// 	cursor: "pointer",
+	// 	transition: "all 0.2s",
+	// };
 
 	return (
-		// <Box boxShadow="0 1px 4px rgba(23,25,27,0.05)">
-			<Box
-        // background="red"
-				position="sticky"
-				top={0}
-				zIndex={1}
+			<Stack
+        // background="green"
+        alignItems="center"
+        direction="row"
+        height="90px"
 				width="100%"
-				backgroundColor="white"
-				maxW="1600px"
-        paddingLeft="40px"
-        paddingRight="40px"
-        paddingTop="20px"
-        paddingBottom="20px"
+        paddingLeft="60px"
+        paddingRight="60px"
+        paddingTop="25px"
+        paddingBottom="25px"
 			>
-					<Flex
-						justifyContent="space-between"
-						alignItems="center"
-						// padding={4}
-						// background="green"
-					>
-						<NavLogo href="/" /> 
-						<Stack
-							isInline={true}
-							spacing="30px"
-							textAlign="center"
-							shouldWrapChildren
-						>
-							<NavLink href="/">HOME</NavLink>
 
-							<NavLinkWithDropDown
-								isActive={pathname.startsWith("/about")}
-								submenuItemsList={[
-									{ href: "/about/who_we_are", text: "WHO WE ARE" },
-									{ href: "/about/what_we_believe", text: "WHAT WE BELIEVE" },
-								]}
-							/>
+      {/* <NavLogo href="/" />  */}
+      <Image
+      // background="green"
+      src="/assets/rccg_logo2.png"
+      alt="logo"
+      size="50px"
+      maxW="60px" />
+      
+      <Spacer  /> 
+      <Stack
+        // isInline={true}
+        direction="row"
+        spacing="30px"
+        textAlign="center"
+        shouldWrapChildren
+        alignItems="center"
+      >
+        <NavLink href="/">HOME</NavLink>
 
-							<NavLink href="/services">WEEKLY SERVICES</NavLink>
-							<NavLink href="/give">GIVE</NavLink>
-							<NavLink href="/building-project"> BUILDING PROJECT </NavLink>
-							<NavLink href={`${pathname}#contact`}>CONTACT</NavLink>
-						</Stack>
-					</Flex>
-				</Box>
-		
-		// </Box>
+        <NavLinkWithDropDown
+          isActive={pathname.startsWith("/about")}
+          submenuItemsList={[
+            { href: "/about/who_we_are", text: "WHO WE ARE" },
+            { href: "/about/what_we_believe", text: "WHAT WE BELIEVE" },
+          ]}
+        />
+
+        <NavLink href="/services">WEEKLY SERVICES</NavLink>
+        <NavLink href="/give">GIVE</NavLink>
+        <NavLink href="/building-project"> BUILDING PROJECT </NavLink>
+        <NavLink href={`${pathname}#contact`}>CONTACT</NavLink>
+      </Stack>
+    </Stack>
 	);
 }
 

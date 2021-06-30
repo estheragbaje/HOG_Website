@@ -1,17 +1,18 @@
-import { Box, Button, Text } from "@chakra-ui/core";
+import { Box, Button, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import AboutUsList from "../../components/AboutUsList";
 import { FlexCard } from "../../components/Common";
-import DepartmentList from "../../components/DepartmentList";
 import { Footer } from "../../components/Footer";
 import MainHeading from "../../components/MainHeading";
+import { PageLayout } from "../../components/PageLayout";
 import SubHeading from "../../components/SubHeading";
 import { GetApiProvider } from "../../services/providers/api-provider";
 
 function WhoWeAre({ abouts, departments }) {
 	return (
-		<Box maxWidth="100%">
+    <PageLayout>
+		<Box width="100%">
 			<Box
 				backgroundImage="url(/assets/hero_about_us.jpg) "
 				backgroundSize="cover"
@@ -135,6 +136,8 @@ function WhoWeAre({ abouts, departments }) {
 
 			<Footer />
 		</Box>
+          
+    </PageLayout>
 	);
 }
 

@@ -1,17 +1,12 @@
-import React from "react";
 import {
-	Box,
-	Text,
-	Image,
-	Flex,
-	SimpleGrid,
-	Button,
-	Stack,
-} from "@chakra-ui/core";
+  Box, Button, Flex, Stack, Text
+} from "@chakra-ui/react";
 import Link from "next/link";
-import SubHeading from "../components/SubHeading";
-import MainHeading from "../components/MainHeading";
+import React from "react";
 import { Footer } from "../components/Footer";
+import MainHeading from "../components/MainHeading";
+import { PageLayout } from "../components/PageLayout";
+import SubHeading from "../components/SubHeading";
 import { GetApiProvider } from "../services/providers/api-provider";
 
 const CommonFontSize = ["17px", "19px"];
@@ -99,6 +94,8 @@ const TextGiving = () => {
 function Give() {
 	const apiProvider = GetApiProvider();
 	return (
+    <PageLayout>
+
 		<Box maxWidth="100%">
 			<Box
 				backgroundImage="url(/assets/about_us_bg.jpg) "
@@ -156,6 +153,8 @@ function Give() {
 
 			<Footer />
 		</Box>
+    </PageLayout>
+
 	);
 }
 

@@ -1,7 +1,8 @@
-import { Box, Button, Heading, Image, SimpleGrid, Text } from "@chakra-ui/core";
+import { Box, Button, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { Footer } from "../components/Footer";
+import { PageLayout } from "../components/PageLayout";
 import { GetApiProvider } from "../services/providers/api-provider";
 
 interface ParagraphTextProps {
@@ -58,7 +59,14 @@ const IconLink = (props: IconLinkProps) => {
     	<a target="_blank">
       <Box 
         // background="red" 
-        maxW="140px" 
+        // borderColor="black"
+        borderWidth="1px"
+        borderRadius="5px"
+        // padding="30px"
+        paddingLeft="5px"
+        paddingRight="5px"
+        shadow="md"
+        maxW="200px" 
         maxHeight="80px" 
         flexDirection="row" 
         display="flex"
@@ -112,6 +120,8 @@ const BuildingProject = (props: any) => {
 	const buildingProjectGiveUrl = apiProvider.give().getBuildingProjectGiveUrl();
 
 	return (
+    <PageLayout>
+
 		<Box
 			display="flex"
 			flexDirection="column"
@@ -191,6 +201,8 @@ const BuildingProject = (props: any) => {
 
 			<Footer />
 		</Box>
+    </PageLayout>
+
 	);
 };
 

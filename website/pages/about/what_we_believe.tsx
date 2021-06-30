@@ -1,17 +1,17 @@
-import React from "react";
-import { Box, Flex, Image, Text, Button } from "@chakra-ui/core";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import Navigation from "../../components/Navigation";
-import SubHeading from "../../components/SubHeading";
-import MainHeading from "../../components/MainHeading";
-import AboutUsList from "../../components/AboutUsList";
-import { CustomButton } from "../../components/Common";
+import React from "react";
 import AccordionList from "../../components/AccordionList";
 import { Footer } from "../../components/Footer";
+import MainHeading from "../../components/MainHeading";
+import { PageLayout } from "../../components/PageLayout";
+import SubHeading from "../../components/SubHeading";
 import { GetApiProvider } from "../../services/providers/api-provider";
 
 function WhatWeBelieve({ beliefs }) {
 	return (
+    <PageLayout>
+
 		<Box maxWidth="100%">
 			<Box
 				backgroundImage="url(/assets/we_believe.jpeg) "
@@ -71,19 +71,7 @@ function WhatWeBelieve({ beliefs }) {
 						{/* </Box> */}
 					</Box>
 					{/* <Box size={['24px', '24px', '50px']} flexShrink='0'></Box> */}
-					{/* <Image
-						paddingLeft={["0px", "0px", "0px", "20px"]}
-						src="/assets/what_we_believe.png"
-						alt="About us"
-						maxWidth="550px"
-						objectFit="cover"
-						flexShrink="0"
-						// borderRadius='10px'
-						objectFit="cover"
-						minWidth="400px"
-						// minHeight={['200px', '200px', '750px']}
-						display={["none", "block", "block"]}
-					/> */}
+				
 				</Flex>
 			</Box>
 			<Box backgroundColor="#F7F8F7">
@@ -111,6 +99,8 @@ function WhatWeBelieve({ beliefs }) {
 			</Box>
 			<Footer />
 		</Box>
+          
+    </PageLayout>
 	);
 }
 

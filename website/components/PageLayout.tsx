@@ -8,8 +8,6 @@ import { SideDrawer } from './SideDrawer';
 
 // import { useMediaQuery } from "@chakra-ui/react"
 
-
-
 const MobileNav  = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { pathname } = useRouter();
@@ -58,9 +56,10 @@ export const PageLayout = (props: PageLayoutProps) => {
   const [isMobileView] = useMediaQuery("(min-width: 790px)")
 
   return (
-  <Stack width="100%" height="100%" spacing={0}>
+  <Stack direction="column" width="100%" height="100%" spacing={0} 
+  >
     {/* <Navigation /> */}
-    <Box width="100%"  >
+    <Box width="100%" >
       {isMobileView? <DesktopNav /> : <MobileNav/> }
     </Box>
 

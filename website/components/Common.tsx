@@ -32,7 +32,7 @@ export function CustomButton({
 			width={width}
 			height={height}
 			variant={variant}
-			variantColor={variantColor}
+			// variantColor={variantColor}
 			{...rest}
 		>
 			{content}
@@ -130,7 +130,7 @@ export function IconText({ name, content, ...rest }) {
 
 export function EventCard({ src, alt, title, date, time, ...rest }) {
 	return (
-		<PseudoBox
+		<Box
 			borderRadius="10px"
 			cursor="pointer"
 			_hover={{
@@ -166,7 +166,7 @@ export function EventCard({ src, alt, title, date, time, ...rest }) {
 				</SubHeading>
 				<Text>{time}</Text>
 			</Stack>
-		</PseudoBox>
+		</Box>
 	);
 }
 
@@ -199,16 +199,16 @@ export function MessageCard({
 	...rest
 }: MessageCardProps) {
 	return (
-		<PseudoBox
+		<Box
 			{...rest}
 			flex="1"
 			_hover={{
 				cursor: "pointer",
 			}}
 		>
-			<AspectRatioBox ratio={4 / 3}>
+			<Box ratio={4 / 3}>
 				{/* <Box as="iframe" title={topic} src={src} allowFullScreen /> */}
-			</AspectRatioBox>
+			</Box>
 			<Box
 				padding="10px"
 				border="1px solid #C4C4C4"
@@ -223,7 +223,7 @@ export function MessageCard({
 
 				<Text>{minister}</Text>
 			</Box>
-		</PseudoBox>
+		</Box>
 	);
 }
 

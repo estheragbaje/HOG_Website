@@ -1,10 +1,8 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import { Box, SimpleGrid, Text, Flex, Image, Button } from "@chakra-ui/core";
-import Link from "next/link";
-import { CustomButton, FlexCard, TextImage } from "../components/Common";
 import { Footer } from "../components/Footer";
 import MainHeading from "../components/MainHeading";
-import Navigation from "../components/Navigation";
+import { PageLayout } from "../components/PageLayout";
 import SubHeading from "../components/SubHeading";
 import WeeklyServicesList from "../components/WeeklyServicesList";
 import { WeeklyServiceModel } from "../services/providers/api-models";
@@ -16,6 +14,9 @@ interface ServicesProps {
 
 function Services({ services }: ServicesProps) {
 	return (
+    <PageLayout>
+
+  
 		<Box maxWidth="100%">
 			<Box
 				backgroundImage="url(/assets/about_us_bg.jpg)"
@@ -63,6 +64,7 @@ function Services({ services }: ServicesProps) {
 
 			<Footer />
 		</Box>
+    </PageLayout>
 	);
 }
 

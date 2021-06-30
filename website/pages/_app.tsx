@@ -1,4 +1,4 @@
-import { ChakraProvider, theme } from "@chakra-ui/react";
+import { ChakraProvider, theme, ThemeProvider } from "@chakra-ui/react";
 // import NextHead from "next/head";
 import React from "react";
 
@@ -24,24 +24,10 @@ function MyApp({ Component, pageProps }) {
 			// </NextHead> */}
 				// <CSSReset />
         <ChakraProvider>
-        {/* <ThemeProvider
-				// @ts-ignore
-				theme={myTheme}
-			> */}
-          {/* <Box 
-            width="100%" 
-            height="100vh" 
-            display="flex" 
-            flexDirection="column"
-            background="green" >
-            <Navigation />
-            <Box width="100%" height="100%" display="flex" flexDirection="row">
-         
-            </Box>
-          </Box> */}
-
-          <Component {...pageProps} /> 
-
+          <ThemeProvider
+                theme={myTheme}>
+            <Component {...pageProps} />
+          </ThemeProvider> 
         </ChakraProvider>
 	);
 }

@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Image, Input, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { Footer } from "../components/Footer";
@@ -56,29 +56,29 @@ interface IconLinkProps {
 const IconLink = (props: IconLinkProps) => {
   return ( 
     <Link href={props.href}> 
-    	<a target="_blank">
+     <a target="_blank"> 
       <Box 
         // background="red" 
         // borderColor="black"
         borderWidth="1px"
         borderRadius="5px"
-        // padding="30px"
-        paddingLeft="5px"
-        paddingRight="5px"
+        padding="30px"
+        // paddingLeft="5px"
+        // paddingRight="5px"
         shadow="md"
         maxW="200px" 
-        maxHeight="80px" 
+        height="90px" 
         flexDirection="row" 
         display="flex"
         alignItems="center"
         justifyContent="center"
       >
-        <Image src={props.iconSrc} height="80px" maxW="130px" /> 
+        
+          <Image src={props.iconSrc} size="20px" height="80px" maxW="130px" /> 
+       
       </Box>
-      </a>
-    </Link>
-  
-   
+      </a> 
+      </Link>
   );
 }
 
@@ -87,6 +87,44 @@ const GoFundMeLink = () => {
     <IconLink 
     href = "https://gofund.me/ea369f9d"
     iconSrc="/assets/go_fund_me_logo2.png" />
+  )
+}
+
+const PayPal = () => {
+  return (
+    <Box 
+    // borderColor="black" 
+    height="100%"
+    borderWidth="1px"
+    shadow="md"
+    padding={["20px","10px"]}
+    borderRadius="5px"
+    display="flex" 
+    flexDirection="row" 
+    justifyContent="center"
+    alignItems="center"
+    > 
+   <form action="https://www.paypal.com/donate" method="post" target="_top">
+      <Input _focus={{}} type="hidden" name="hosted_button_id" value="U68H58LP3HFYA" />
+      <Input 
+      _focus={{}}
+      _focusVisible={{}}
+      type="image" 
+      src="/assets/paypal_logo2.png"
+       border="0" 
+       name="submit" 
+       size="40px"
+      maxW="200px"
+      //  maxH="80px"
+      width="150px"
+       height="60px"
+      title="PayPal - The safer, easier way to pay online!" 
+      alt="Donate with PayPal button" />
+
+      {/* <Img alt="" border="0"  src="/assets/paypal_logo2.png" width="10px" /> */}
+    </form>
+    </Box>
+ 
   )
 }
 
@@ -101,14 +139,17 @@ const GivingOptions = (props: GivingOptionsProps) => {
     display="flex" 
     flexDirection="row" 
     alignItems="center"
-    justifyContent="flex-start">  
-      <SimpleGrid columns={[1,2]} spacing={["5px", "30px"]} alignItems="center"> 
-        <Box width="100%" marginTop="40px" marginBottom={["20px", "40px"]}>
+    justifyContent={["center", "flex-start"]}>  
+      <Stack direction={["column", "row"]} spacing={["30px", "40px"]} alignItems="center"> 
+        {/* <Box width="100%" marginTop="40px" marginBottom={["20px", "40px"]}> */}
 					<GiveButton href={props.buildingProjectGiveUrl} />
-				</Box>
+				{/* </Box> */}
+         {/* PayPal */}
+         <PayPal />
         {/* GoFundMe */}
         <GoFundMeLink /> 
-      </SimpleGrid>
+       
+      </Stack>
      
     </Box>
   )
@@ -188,7 +229,7 @@ const BuildingProject = (props: any) => {
 					Thank you for your love, prayers and support!
 				</ParagraphText>
 
-				<ParagraphText marginTop="30px">
+				<ParagraphText marginTop="30px" marginBottom="10px">
 					- Your RCCG-HOG Church Family
 				</ParagraphText>
 

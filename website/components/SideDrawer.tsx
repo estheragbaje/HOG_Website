@@ -30,7 +30,8 @@ export const SideDrawer = ({onClose, isOpen}: SideDrawerProps) => {
           src="/assets/rccg_logo.png"
           alt="logo"
           marginLeft="20px"
-          size="60px"
+          size="40px"
+          maxW="40px"
           objectFit="contain"
           margin="auto"
         />

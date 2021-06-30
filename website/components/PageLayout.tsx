@@ -14,10 +14,10 @@ const MobileNav  = () => {
   return (
     <>
   <Stack direction="row"
-    height="70px"
+    height="80px"
     width="100%"
     // height="100%" 
-    // background="red"
+    background="red"
     paddingTop="10px"
     paddingBottom="10px"
     paddingLeft="15px"

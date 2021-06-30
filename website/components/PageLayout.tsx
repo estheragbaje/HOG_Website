@@ -17,7 +17,7 @@ const MobileNav  = () => {
     height="80px"
     width="100%"
     // height="100%" 
-    background="red"
+    // background="red"
     paddingTop="10px"
     paddingBottom="10px"
     paddingLeft="15px"
@@ -27,8 +27,10 @@ const MobileNav  = () => {
       // background="green"
       src="/assets/rccg_logo2.png"
       alt="logo"
-      size="50px"
-      maxW="60px" />
+      // size="50px"
+      maxW="60px" 
+      maxH="60px"
+      />
     <Spacer />
 
     <IconButton

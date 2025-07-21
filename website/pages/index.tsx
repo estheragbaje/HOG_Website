@@ -8,6 +8,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { PhoneIcon, EmailIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -265,7 +266,7 @@ function HomePage({ services }: HomePageProps) {
                   aims of leading individuals to Christ.
                 </Text>
                 <Stack spacing={2} marginTop='10px'>
-                  <ContactItem icon={<Icon name='phone' color='#3AC7B1' />}>
+                  <ContactItem icon={<PhoneIcon color='#3AC7B1' />}>
                     3617569889
                   </ContactItem>
                   <ContactItem
@@ -273,7 +274,7 @@ function HomePage({ services }: HomePageProps) {
                   >
                     6814 Sandra Ln, Corpus Christi, TX 78414
                   </ContactItem>
-                  <ContactItem icon={<Icon name='email' color='#3AC7B1' />}>
+                  <ContactItem icon={<EmailIcon color='#3AC7B1' />}>
                     rccghogcorpuschristi@gmail.com
                   </ContactItem>
                 </Stack>
